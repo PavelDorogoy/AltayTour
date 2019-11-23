@@ -5,10 +5,10 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\TouristRouteRepository")
- * @ORM\Table(name="`routes`")
+ * @ORM\Entity(repositoryClass="App\Repository\EquipmentRepository")
+ * @ORM\Table(name="`equipments`")
  */
-class TouristRoute
+class Equipment
 {
     /**
      * @ORM\Id()
@@ -18,7 +18,7 @@ class TouristRoute
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=45)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
@@ -33,20 +33,14 @@ class TouristRoute
     private $logo;
 
     /**
-     * @ORM\Column(type="float")
-     */
-    private $distance;
-
-    /**
      * @ORM\Column(type="integer")
      */
-    private $days;
+    private $count;
 
     /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\TouristRouteType")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\Column(type="float")
      */
-    private $type;
+    private $price;
 
     public function getId(): ?int
     {
@@ -70,7 +64,7 @@ class TouristRoute
         return $this->description;
     }
 
-    public function setDescription(string $description): self
+    public function setDescription(?string $description): self
     {
         $this->description = $description;
 
@@ -89,38 +83,26 @@ class TouristRoute
         return $this;
     }
 
-    public function getDistance(): ?float
+    public function getCount(): ?int
     {
-        return $this->distance;
+        return $this->count;
     }
 
-    public function setDistance(float $distance): self
+    public function setCount(int $count): self
     {
-        $this->distance = $distance;
+        $this->count = $count;
 
         return $this;
     }
 
-    public function getDays(): ?int
+    public function getPrice(): ?float
     {
-        return $this->days;
+        return $this->price;
     }
 
-    public function setDays(int $days): self
+    public function setPrice(float $price): self
     {
-        $this->days = $days;
-
-        return $this;
-    }
-
-    public function getType(): ?TouristRouteType
-    {
-        return $this->type;
-    }
-
-    public function setType(?TouristRouteType $type): self
-    {
-        $this->type = $type;
+        $this->price = $price;
 
         return $this;
     }
