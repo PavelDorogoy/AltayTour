@@ -86,7 +86,14 @@
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/templates/security" />
     <property name="settings.editor.selected.configurable" value="Symfony2.SettingsForm" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WEB\OSPanel\domains\altaytour\templates\security" />
+      <recent name="E:\WEB\OSPanel\domains\altaytour\templates" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -110,7 +117,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1574509864277</updated>
-      <workItem from="1574509865639" duration="21101000" />
+      <workItem from="1574509865639" duration="42763000" />
     </task>
     <servers />
   </component>

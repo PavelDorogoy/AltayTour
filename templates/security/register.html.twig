@@ -1,0 +1,26 @@
+{% extends "base.html.twig." %}
+
+{% block title %}Register page{% endblock %}
+{% block body %}
+    {{ form_start(form) }}
+    {{ form_row(form.email, {
+        'label': 'E-mail'
+    }) }}
+
+    {{ form_row(form.plainPassword.first, {
+        'label': 'Пароль'
+    }) }}
+    {{ form_row(form.plainPassword.second, {
+        'label': 'Пароль ещё раз'
+    }) }}
+
+    {{ form_row(form.name, {
+        'label': 'Имя'
+    }) }}
+
+    {{ form_row(form.phone, {
+        'label': 'Телефон'
+    }) }}
+    <button type="submit">Зарегистрироваться</button>
+    {{ form_end(form) }}
+{% endblock %}

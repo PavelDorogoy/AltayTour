@@ -2,16 +2,25 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
+ * @UniqueEntity(fields="email", message="Email already taken")
  * @ORM\Table(name="`users`")
  */
-class User
+class User implements UserInterface
 {
+    public function __construct()
+    {
+        $this->roles = ['ROLE_USER'];
+        $this->is_active = false;
+        $this->is_confirmed = false;
+    }
     /**
      * @ORM\Id()
      * @ORM\GeneratedValue()
@@ -20,6 +29,9 @@ class User
     private $id;
 
     /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=3)
+     * @Assert\Email(message = "The email '{{ value }}' is not a valid.")
      * @ORM\Column(type="string", length=255)
      */
     private $email;
@@ -30,7 +42,7 @@ class User
     private $password;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     *@ORM\Column(type="string", length=255)
      */
     private $name;
 
@@ -60,7 +72,7 @@ class User
     private $is_confirmed;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $confirmationCode;
 
@@ -69,6 +81,10 @@ class User
      */
     private $roles = [];
 
+   /**
+     * @Assert\NotBlank()
+     * @Assert\Length(min=6)
+     */
     private $plainPassword;
 
 
@@ -207,5 +223,41 @@ class User
         $this->plainPassword = $plainPassword;
 
         return $this;
+    }
+
+    /**
+     * Returns the salt that was originally used to encode the password.
+     *
+     * This can return null if the password was not encoded using a salt.
+     *
+     * @return string|null The salt
+     */
+    public function getSalt()
+    {
+        // TODO: Implement getSalt() method.
+        return null;
+    }
+
+    /**
+     * Returns the username used to authenticate the user.
+     *
+     * @return string The username
+     */
+    public function getUsername()
+    {
+        // TODO: Implement getUsername() method.
+        return $this->email;
+    }
+
+    /**
+     * Removes sensitive data from the user.
+     *
+     * This is important if, at any given point, sensitive information like
+     * the plain-text password is stored on this object.
+     */
+    public function eraseCredentials()
+    {
+        // TODO: Implement eraseCredentials() method.
+        $this->plainPassword = null;
     }
 }
