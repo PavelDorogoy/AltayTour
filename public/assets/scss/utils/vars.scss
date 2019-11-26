@@ -1,0 +1,62 @@
+// Font
+$font_opensans_light     : 'OpenSans Light';
+$font_gtwalsheim         : 'GTWalsheimPro';
+$font_gtwalsheim_medium  : 'GTWalsheimPro Medium';
+$font_roboto             : 'Roboto Regular';
+$font_roboto_light       : 'Roboto Light';
+
+// Size
+$mainFontColor           : #000000;
+$mainFontSize            : 14px;
+$mainFontWeight          : 400;
+$mainLineHeight          : 1.4;
+
+$desktopWidth            : 1440px;
+$desktopLargeWidth       : 1300px;
+$smDesktopWidth          : 1024px;
+$tableWidth              : 768px;
+$phoneWidth              : 480px;
+$smPhoneWidth            : 320px;
+
+// Main color
+$default-color           : #ffffff;
+$primary-color           : #5293C4;
+$main-gradient-color     : linear-gradient(282deg, #5293C4, #02618E);
+$revert-gradient-color   : linear-gradient(282deg, #02618E, #5293C4);
+$success-color           : #26de81;
+$danger-color            : #fc5c65;
+$warning-color           : #fed330;
+$light-color             : #999999;
+$purple-color            : #1d1b1f;
+$whire-color             : #fff;
+$black-color             : #000;
+
+// Btn
+$btn-primary-color       : #02618E;
+$btn-white-outline-color : #02618E;
+$btn-dark-outline-color  : #02618E;
+
+// Btn border color
+$border-btn-dark         : #d1d1d1;
+$border-btn-dark-hover   : #969696;
+
+// Neutral Color
+$neutral-primary         : #303133;
+$neutral-regular         : #606266;
+$neutral-secondary       : #909399;
+$neutral-placeholder     : #C0C4CC;
+
+// Border Color
+$border-base             : #DCDFE6;
+$border-light            : #E4E7ED;
+$border-lighter          : #EBEEF5;
+$border-lightex          : #F2F6FC;
+
+// Border Radius
+$border-radius-btn       : 20px;
+$border-block            : 1px solid #e5e5e5;
+
+
+$finalHeight: 310px;
+$finalWidth: 3 * $finalHeight;
+$scrollBarHeight: 0;

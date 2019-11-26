@@ -1,38 +1,37 @@
-{% extends 'base.html.twig' %}
+<form class="form-horizontal" role="form" method="post" action="{{ path('app_login') }}">
+    <h2 class="title-small other-margin">Вход</h2>
 
-{% block title %}Log in!{% endblock %}
-{% block pageHeader %}Login page{% endblock %}
+    {% if error %}
+        <p id="error-popup-login" class="text" style="color: red">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+    {% endif %}
 
-{% block body %}
-    <form method="post">
-        {% if error %}
-            <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-        {% endif %}
-
-        {% if app.user %}
-            <div class="mb-3">
-                You are logged in as {{ app.user.username }}, <a href="{{ path('app_logout') }}">Logout</a>
+    {% if app.user %}
+        <p class="text">Вы уже вошли как {{ app.user.username }},
+            <a class="link dark" href="{{ path('app_logout') }}">Выйти</a>
+        </p>
+    {% else %}
+        <div class="input-wrapper">
+            <div class="input-container">
+                <input type="email" name="email" id="login-name" class="input" placeholder="Введите email" value="{{ last_username }}" pattern=".+" required>
+                <label class="label" for="email">Ваш email</label>
             </div>
-        {% else %}
-            <label for="inputEmail">Email</label>
-            <input type="email" value="{{ last_username }}" name="email" id="inputEmail" placeholder="Email" required autofocus>
+        </div>
 
-            <label for="inputPassword">Пароль</label>
-            <input type="password" name="password" id="inputPassword" placeholder="Пароль" required>
+        <div class="input-wrapper">
+            <div class="input-container">
+                <input type="password" name="password" id="login-password" class="input" placeholder="Введите пароль" pattern=".+" required>
+                <label class="label" for="password">Ваш пароль</label>
+            </div>
+        </div>
 
-            <button type="submit">Войти</button>
-            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" >
 
-            {#
-                Uncomment this section and add a remember_me option below your firewall to activate remember me functionality.
-                See https://symfony.com/doc/current/security/remember_me.html
+        <p class="text">У вас нет аккаунта?
+            <a class="link dark" id="registration" href="#popup-registration">Регистрация</a>
+        </p>
 
-                <div class="checkbox mb-3">
-                    <label>
-                        <input type="checkbox" name="_remember_me"> Remember me
-                    </label>
-                </div>
-            #}
-        {% endif %}
-    </form>
-{% endblock %}
+        <button type="submit" class="btn gradient-outline">
+            <span>Войти</span>
+        </button>
+    {% endif %}
+</form>

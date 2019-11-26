@@ -19,6 +19,21 @@ class TourRepository extends ServiceEntityRepository
         parent::__construct($registry, Tour::class);
     }
 
+    /**
+    * @return Tour[] Returns an array of Tour objects
+    */
+    public function findCurrent()
+    {
+        $curDate = new \DateTime('now');
+        $curDate->setTime(0, 0, 0);
+
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('u')
+            ->where('u.date >= :curDate')
+            ->setParameter('curDate', $curDate);
+        return $qb->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Tour[] Returns an array of Tour objects
     //  */

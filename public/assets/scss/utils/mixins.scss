@@ -1,0 +1,814 @@
+// link
+@mixin link {
+  position: relative;
+  font-family: $font_gtwalsheim_medium;
+  font-size: 14px;
+  cursor: pointer;
+
+  &.account {
+    color: #000;
+    text-decoration: none !important;
+    font-family: $font_gtwalsheim;
+    font-size: 16px;
+    font-weight: bold;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &.white {
+    color: $default-color;
+
+    &::before {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: $default-color;
+      border-radius: 20px;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    }
+
+    &.active {
+      &::before {
+        width: 100%;
+      }
+    }
+
+    &:hover {
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+
+  &.dark {
+    color: $primary-color;
+    text-decoration: underline;
+
+    &:hover {
+      text-decoration: none;
+    }
+
+    &.news {
+      position: absolute;
+      left: 92px;
+      top: 0;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      @media screen and (max-width: 910px) {
+        display: none;
+      }
+
+      &::after {
+        content:'';
+        width: 18px; 
+        height: 10px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10"><path fill="%235D2E88" fill-rule="nonzero" d="M8.997 9.989c-.323 0-.645-.12-.89-.36L.368 2.1a1.203 1.203 0 0 1 0-1.734 1.285 1.285 0 0 1 1.782 0l6.846 6.663L15.843.365a1.285 1.285 0 0 1 1.782 0 1.203 1.203 0 0 1 0 1.734L9.888 9.63c-.246.24-.569.36-.891.36z"/></svg>') bottom no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 5px;
+        left: -24px;
+        transform: rotate(90deg);
+        transition: all ease 0.25s;
+      }
+    }
+  }
+}
+
+// input
+@mixin input {
+  font-family: $font_gtwalsheim;
+  color: #858585;
+  height: 70px;
+  ::-webkit-input-placeholder { color:#858585; opacity: 0.5; }
+
+  @media screen and (max-width: $phoneWidth) {
+    height: 50px;
+  }
+
+  input {
+    width: 520px;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    box-shadow: 0 0 0 1px inset #e5e5e5;
+    -webkit-box-shadow: 0 0 0 1px inset #e5e5e5;
+    padding: 41px 20px 13px 20px;
+    transition: .2s ease-in-out;
+    box-sizing: border-box;
+    font-family: $font_gtwalsheim;
+    font-size: 16px;
+    transition: 0.2s ease all;
+
+    &.feedback {
+      width: 310px;
+    }
+  
+    @media screen and (max-width: $phoneWidth) {
+      padding: 30px 20px 13px 20px;
+      font-size: 14px;
+    }
+  }
+  
+  label {
+    width: 520px;
+    top: 15px;
+    left: 20px; right: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 14px;
+    cursor: text;
+    transition: .2s ease-in-out;
+    box-sizing: border-box;
+
+    &.feedback {
+      width: 310px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      top: 9px;
+      font-size: 12px;
+    }
+  }
+
+  /* Interation */
+  input:valid,
+  input:focus {
+    box-shadow: 0 0 0 2px inset $primary-color;
+    color: $black-color;
+  }
+
+  input:valid {
+    box-shadow: 0 0 0 1px inset #e5e5e5;
+  }
+
+  input:valid + label,
+  input:focus + label {
+    pointer-events: none;
+  }
+}
+
+// textarea
+@mixin textarea {
+  font-family: $font_gtwalsheim;
+  color: #858585;
+  height: 200px;
+  textarea::-webkit-input-placeholder {
+    color:#858585; opacity: 0.5; 
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    height: 100px;
+  }
+
+  textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 0 1px inset #e5e5e5;
+    box-shadow: 0 0 0 1px inset #e5e5e5;
+    padding: 41px 20px 13px 20px;
+    transition: .2s ease-in-out;
+    box-sizing: border-box;
+    font-family: $font_gtwalsheim;
+    font-size: 16px;
+    transition: 0.2s ease all;
+
+    @media screen and (max-width: $phoneWidth) {
+      padding: 30px 20px 13px 20px;
+      font-size: 14px;
+    }
+  }
+  
+  label {
+    width: 100%;
+    top: 15px;
+    left: 20px; right: 0;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    font-size: 14px;
+    cursor: text;
+    transition: .2s ease-in-out;
+    box-sizing: border-box;
+
+    @media screen and (max-width: $phoneWidth) {
+      top: 9px;
+      font-size: 12px;
+    }
+  }
+
+  /* Interation */
+  textarea:focus {
+    box-shadow: 0 0 0 2px inset $primary-color;
+    color: $black-color;
+  }
+}
+
+// btn
+@mixin btn {
+  border-radius: $border-radius-btn;
+  font-family: $font_gtwalsheim_medium;
+  font-size: $mainFontSize;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  cursor: pointer;
+  width: 160px;
+  height: 40px;
+  // transition: all 0.3s ease 0s;
+}
+
+@mixin btn-fill {
+  color: $btn-primary-color;
+  background: $default-color;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: background 0.3s ease 0s;
+
+  &:hover {
+    color: $default-color;
+    background: transparent;
+    border: 2px solid $default-color;
+  }
+}
+
+@mixin btn-fill-gradient {
+  position: relative;
+  background-image: $main-gradient-color;
+	border-radius: 40px;
+  box-sizing: border-box;
+	color: $default-color;
+  padding: 2px;
+  transition: background-image 0.3s ease 0s;
+  
+  &:hover {
+    span {
+      background: $default-color;
+      color: $btn-primary-color;
+    }
+  }
+
+  span {
+    align-items: center;
+    background: $main-gradient-color;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: background 0.3s ease 0s;
+  }
+}
+
+@mixin btn-gradient-outline {
+  position: relative;
+	display: block;
+  background-image: $main-gradient-color;
+	border-radius: 40px;
+  box-sizing: border-box;
+	color: $btn-primary-color;
+  padding: 2px;
+  transition: all 0.3s ease 0s;
+  
+  &:hover {
+    span {
+      background: $main-gradient-color;
+      color: $default-color;
+    }
+  }
+
+  span {
+    align-items: center;
+    background: $default-color;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease 0s; 
+  }
+}
+
+@mixin btn-white-outline {
+  color: $default-color;
+  background: transparent;
+  border: 2px solid $default-color;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    color: $btn-primary-color;
+    background-color: $default-color;
+  }
+}
+
+
+@mixin btn-dark-outline {
+  color: $btn-dark-outline-color;
+  background: transparent;
+  border: 1px solid $border-btn-dark;
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    background-color: $btn-dark-outline-color;
+    color: $default-color;
+    border: none;
+  }
+}
+
+@mixin btn-mobile-fill {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.18);
+  transition: all 0.3s ease 0s;
+  background-color: $default-color;
+
+  img {
+    position: absolute;
+    width: 19px;
+    height: 20px;
+    left: 11px;
+    top: 11px;
+    background-repeat: no-repeat;
+  }
+
+  &:active {
+    background-color: darken($default-color, 5%);
+  }
+}
+
+@mixin card {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  flex-direction: column;
+  border-radius: 15px;
+  min-width: 310px;
+  max-width: 310px;
+  padding: 20px;
+  box-sizing: border-box;
+  color: $default-color;
+  text-align: left;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  transition: box-shadow .25s ease-out;
+  background: #5293C4;
+
+  &.snow {
+    background: linear-gradient(to right, rgba(49, 49, 49, 0.5), rgba(49, 49, 49, 0.5)), url(/assets/img/slider/card_gesh.jpg) no-repeat center /cover;
+  }
+
+  &:hover {
+    box-shadow: 1px 12px 12px rgba(0, 0, 0, 0.25);
+    transition: box-shadow .25s ease-in;
+  }
+
+  &.instructor {
+    min-width: 350px;
+    max-width: 350px;
+    justify-content: space-between;
+
+    &.ivan {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(/assets/img/instructor/instr_1.jpg) no-repeat center /cover;
+    }
+
+    &.alexey {
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url(/assets/img/instructor/instr_2.jpg) no-repeat center /cover;
+    }
+  }
+}
+
+// card
+@mixin card-slider {
+  min-height: 527px;
+  margin-bottom: 23px;
+  position: relative;
+  @include card;
+  font-family: $font_gtwalsheim;
+  font-size: 14px;
+  line-height: 21px;
+
+  &-title {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 100%;
+    background: url('data:image/svg+xml;utf8,<svg width="200" height="24" viewBox="0 0 200 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M200 0H0V23.1707H200L185.933 12.0891L200 0Z" fill="white"/></svg>') left no-repeat;
+    color: #324B4D;
+    font-family: $font_gtwalsheim_medium;
+    font-size: 16px;
+    padding-left: 18px;
+  }
+
+  &-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px;
+
+    &.snow {
+      background: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 9H15.83L19.07 5.76L17.66 4.34L13 9H11V7L15.66 2.34L14.24 0.93L11 4.17V0H9V4.17L5.76 0.93L4.34 2.34L9 7V9H7L2.34 4.34L0.93 5.76L4.17 9H0V11H4.17L0.93 14.24L2.34 15.66L7 11H9V13L4.34 17.66L5.76 19.07L9 15.83V20H11V15.83L14.24 19.07L15.66 17.66L11 13V11H13L17.66 15.66L19.07 14.24L15.83 11H20V9Z" fill="white"/></svg>') center no-repeat;
+    }
+  }
+
+  &-rate {
+    position: absolute;
+    top: 90px;
+    left: 18px;
+    width: 100px;
+    height: 18px;
+    background: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.05357 13.7074L14.5163 17.0045L13.0666 10.7905L17.8929 6.60948L11.5374 6.07028L9.05357 0.209839L6.56973 6.07028L0.214285 6.60948L5.04054 10.7905L3.59089 17.0045L9.05357 13.7074Z" fill="%23FAC917"/><path d="M9.05357 13.7074L14.5163 17.0045L13.0666 10.7905L17.8929 6.60948L11.5374 6.07028L9.05357 0.209839L6.56973 6.07028L0.214285 6.60948L5.04054 10.7905L3.59089 17.0045L9.05357 13.7074Z" fill="%23FAC917"/></svg>') left;
+
+    &.one {
+      width: 18px;
+    }
+
+    &.two {
+      width: 36px;
+    }
+
+    &.three {
+      width: 54px;
+    }
+
+    &.four {
+      width: 72px;
+    }
+
+    &.five {
+      width: 90px;
+    }
+  }
+
+  &-name {
+    position: absolute;
+    left: 18px;
+    top: 135px;
+    font-family: $font_gtwalsheim_medium;
+    font-size: 20px;
+    line-height: 24px;
+  }
+
+  &-list {
+    position: absolute;
+    top: 210px;
+    left: 18px;
+    font-family: $font_gtwalsheim;
+    font-size: 14px;
+    line-height: 27px;
+
+    li {
+      padding-left: 18px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+        background: #94B0B3;
+      }
+    }
+  }
+
+  &-info {
+    position: absolute;
+    top: 336px;
+    display: flex;
+    width: 100%;
+    height: 24px;
+    justify-content: space-evenly;
+    align-items: center;
+
+    span {
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        left: -25px;
+        top: -3px;
+        width: 21px;
+        height: 24px;
+      }
+
+      &.time {
+        &::before {
+          background: url('data:image/svg+xml;utf8,<svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 0H14V2.28682H7V0ZM9.33333 14.8642V8.00385H11.6667V14.8642H9.33333ZM18.7017 7.29492L20.3583 5.67129C19.8567 5.08815 19.3083 4.53932 18.7133 4.05909L17.0567 5.68272C15.2483 4.2649 12.9733 3.41878 10.5 3.41878C4.70167 3.41878 0 8.0267 0 13.7094C0 19.3921 4.69 24 10.5 24C16.31 24 21 19.3921 21 13.7094C21 11.2968 20.1367 9.06719 18.7017 7.29492ZM2.33333 13.7209C2.33333 18.1458 5.985 21.7247 10.5 21.7247C15.015 21.7247 18.6667 18.1458 18.6667 13.7209C18.6667 9.29589 15.015 5.71704 10.5 5.71704C5.985 5.71704 2.33333 9.29589 2.33333 13.7209Z" fill="%23FAC917"/></svg>') center no-repeat;
+        }
+      }
+
+      &.complexity {
+        &::before {
+          background: url('data:image/svg+xml;utf8,<svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.78 5.841L13 0.210999L22 12.211H0L5.53 4.841L9.54 10.211H18L13 3.541L10.03 7.511L8.78 5.841ZM5.52002 8.18098L4 10.211H7.04004L5.52002 8.18098Z" fill="%23FAC917"/></svg>') center no-repeat;
+        }
+      }
+
+      &.distance {
+        &::before {
+          background: url('data:image/svg+xml;utf8,<svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 6.10352e-05C10.31 6.10352e-05 13 2.69006 13 6.00006C13 10.5001 7 17.0001 7 17.0001C7 17.0001 1 10.5001 1 6.00006C1 2.69006 3.69 6.10352e-05 7 6.10352e-05ZM14 20.0001V18.0001H0V20.0001H14ZM3 6.00006C3 3.79006 4.79 2.00006 7 2.00006C9.21 2.00006 11 3.79006 11 6.00006C11 8.13006 8.92 11.4601 7 13.9101C5.08 11.4701 3 8.13006 3 6.00006ZM5 6.00006C5 4.90006 5.9 4.00006 7 4.00006C8.1 4.00006 9 4.90006 9 6.00006C9 7.10006 8.11 8.00006 7 8.00006C5.9 8.00006 5 7.10006 5 6.00006Z" fill="%23FAC917"/></svg>') center no-repeat;
+        }
+      }
+    }
+  }
+
+  &-price {
+    position: absolute;
+    top: 385px;
+    width: 100%;
+    text-align: left;
+    padding-left: 18px;
+    font-family: $font_gtwalsheim_medium;
+    font-size: 22px;
+  }
+
+  &-instructor-name {
+    font-family: $font_gtwalsheim_medium;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: left;
+    width: 100%;
+    max-width: 300px;
+
+    .familyName {
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+
+    .name {
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+
+  &-instructor-list {
+    font-family: $font_gtwalsheim;
+    font-size: 14px;
+    line-height: 27px;
+    width: 100%;
+
+    li {
+      padding-left: 18px;
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 7px;
+        width: 12px;
+        height: 12px;
+        border-radius: 10px;
+        background: #94B0B3;
+      }
+    }
+  }
+
+}
+
+@mixin header-title {
+  font-family: $font_gtwalsheim_medium;
+  font-size: 60px;
+  line-height: 71px;
+  color: #000000;
+  margin-bottom: 18px;
+
+  &.all-tours {
+    font-size: 46px;
+    margin-top: 46px;
+    width: 100%;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 18px;
+  }
+}
+
+@mixin middle-tittle {
+  font-family: $font_gtwalsheim_medium;
+  font-size: 46px;
+  line-height: 54px;
+  color: #000000;
+
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 18px;
+  }
+}
+
+@mixin title-small {
+  font-family: $font_gtwalsheim_medium;
+  font-size: 18px;
+  font-weight: 500;
+  font-stretch: normal;
+  line-height: 1.33;
+  color: #000000;
+  margin-bottom: 10px;
+
+  &.other-margin {
+    margin-bottom: 20px;
+  }
+}
+
+@mixin header-text {
+  font-family: $font_gtwalsheim_medium;
+  font-size: 16px;
+  opacity: 0.5;
+  color: #000000;
+}
+
+@mixin title {
+  font-family: $font_gtwalsheim_medium;
+  font-size: 16px;
+  font-weight: 500;
+  color: #000000;
+  line-height: 1;
+}
+
+@mixin description {
+  font-family: $font_roboto_light;
+  font-size: 14px;
+  line-height: 1.71;
+  color: #000000;
+}
+
+@mixin container {
+  position: relative;
+  max-width: $desktopWidth;
+  margin: 0 auto;
+  display: flex;
+}
+
+@mixin container-wrap {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row wrap;
+
+
+  @media screen and (max-width: $phoneWidth) {
+    width: calc(100% - 13%);
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin combobox {
+  position: relative;
+  width: 50%;
+  height: 70px;
+  font-family: $font_gtwalsheim;
+
+  @media screen and (max-width: $tableWidth) {
+    width: 90%;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    display: none;
+  }
+
+  .select-text {
+    position: relative;
+    font-family: inherit;
+    width: 50%;
+    height: 100%;
+    padding: 35px 19px 13px;
+    font-size: 16px;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px inset #e5e5e5;
+    background: linear-gradient(to bottom, $default-color, $default-color);
+    transition: 0.2s ease all;
+
+    @media screen and (max-width: $tableWidth) {
+      width: 90%;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px inset $primary-color;
+    }
+  }
+
+  select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    text-indent: 1px;
+    text-overflow: '';
+  }
+  
+  .select .select-text {
+    -moz-appearance: none; 
+    -webkit-appearance: none; 
+    appearance: none;
+  }
+  
+  .select-label {
+    color: #858585;
+    font-size: 14px;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 26px;
+    top: 13px;
+  }
+
+  &.mobile {
+    display: none;
+
+    @media screen and (max-width: $phoneWidth) {
+      display: block;
+      width: 95%;
+
+      &::after {
+        content:'';
+        width: 18px; 
+        height: 10px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10"><path fill="%235D2E88" fill-rule="nonzero" d="M8.997 9.989c-.323 0-.645-.12-.89-.36L.368 2.1a1.203 1.203 0 0 1 0-1.734 1.285 1.285 0 0 1 1.782 0l6.846 6.663L15.843.365a1.285 1.285 0 0 1 1.782 0 1.203 1.203 0 0 1 0 1.734L9.888 9.63c-.246.24-.569.36-.891.36z"/></svg>') bottom no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        transition: all ease 0.25s;
+      }
+
+      .select-text {
+        width: 95%;
+      }
+    }
+  }
+}
+
+@mixin tab {
+  list-style: none;
+  position: relative;
+  width: auto;
+  height: 44px;
+  margin: 20px;
+  text-align: center;
+  font-family: $font_gtwalsheim;
+  font-size: 16px;
+  color: #9e9e9e;
+  cursor: pointer;
+
+  @media screen and (max-width: $phoneWidth) {
+    margin: 15px;
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    border-radius: 20px;
+    background: $main-gradient-color no-repeat center bottom;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  }
+
+  &.active {
+    color: $mainFontColor;
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:hover {
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+
+    &::before {
+      width: 100%;
+    }
+  }
+}

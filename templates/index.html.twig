@@ -1,4 +1,91 @@
 {% extends "base.html.twig" %}
 
-{% block title %}Home page{% endblock %}
-{% block body %}Hello world{% endblock %}
+{% block title %}Главная | ALTAI TRAVEL{% endblock %}
+{% block headerWrapClass %}main{% endblock %}
+{% block headerWaveWrapClass %}main{% endblock %}
+{% block headerContent %}
+    <!-- Title wrapper -->
+    <div class="wrapper">
+        <div class="content-wrapper">
+
+            <div class="content-header">
+                <h1 class=header-title>ТУРОПЕРАТОР <br>ALTAI TRAVEL</h1>
+                <div class="header-text">
+                    <p>Яркие впечатления<br>
+                        гарантируем</p>
+                    <p>Запоминающие воспоминания<br>
+                        надолго</p>
+                    <p>Комфортная и приятная<br>
+                        атмосфера</p>
+                </div>
+            </div>
+
+            <!--  slider -->
+            <a class="btn fill" href="/all-tours">
+                <span>Все туры</span>
+            </a>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+{% if tourist_routes is not empty %}
+<!-- popular tour wrapper -->
+<div class="tour-wrapper">
+    <h1 class="middle-tittle">ПОПУЛЯРНЫЕ ТУРЫ</h1>
+    <div class="slider">
+        {% for key, tourist_route in tourist_routes %}
+        <a class="slide " href="/tours/{{ key }}" style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ tourist_route.logo }}) no-repeat 50%/cover;">
+            <div class="slide-icon snow"></div>
+            <div class="slide-title">Ближайший: {{ tourist_route.minDate }}</div>
+            <div class="slide-rate five"></div>
+            <div class="slide-name">{{ tourist_route.name }}</div>
+            <div class="slide-list">{{ tourist_route.annotation | raw }}</div>
+            <div class="slide-info">
+                <span class="time">{{ tourist_route.days }} дней</span>
+                <span class="distance">{{ tourist_route.distance }} км.</span>
+            </div>
+            <div class="slide-price">от {{ tourist_route.minPrice }} руб/чел.</div>
+
+            <div class="slide-btn"><button class="btn white-outline">Программа тура</button></div>
+        </a>
+        {% endfor %}
+    </div>
+    <a class="btn fill-gradient" href="#">
+        <span>Смотреть все</span>
+    </a>
+</div>
+{% endif %}
+
+{% if instructors is not empty %}
+<!-- instuctor wrapper -->
+<div class="instuctor-wrapper" id="instructor">
+    <h1 class="middle-tittle">Список инструкторов</h1>
+    <div class="slider instructor">
+        {% for key, instructor in instructors %}
+        <!-- {{ key }} -->
+        <div class="slide instructor" style="background: linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.5)),url({{ instructor.photo }}) no-repeat 50%/cover;">
+            <div class="slide-instructor-name">
+                <p class="name">{{ instructor.name }}</p>
+            </div>
+            <div class="slide-instructor-list">
+                {{ instructor.description }}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}
+
+<!-- about -->
+<div class="about-wrapper" id="about">
+    <div class="about-content">
+        <h1 class="middle-tittle">О НАС</h1>
+        <p>
+            Вся наша команда инструкторов начинала работать гидами на турбазах Горного Алтая. С 2009 года изучив все минусы «классических» туров, я начал самостоятельно разрабатывать и организовать туры для небольших групп туристов. Моя задача была показать людям настоящий, красивый и нетронутый Алтай. За годы работы сформировалась слаженная команда гидов, вернее проводников. Проводников по уникальному и неистово красивому месту. Мы хотим показать его самые скрытые и в тоже время доступные места. Все наши туры стартуют от двух человек (кроме индивидуальных и корпоративных туров). Ведь только в маленькой, дружной обстановке можно с комфортом и с наслаждением путешествовать.
+            <br><br>
+            С 2014 года наша команда гидов начала разведывать Монголию, Казахстан и Киргизию. Это уникальные места для путешествий, несмотря на свою отдаленность: горные перевалы, голубые озера, высочайшие вершины Памира так и манят. Каждый должен это увидеть, ну а мы поможем. Все наши туры авторские, мы продумываем всё до мелочей и находим подход к каждому туристу.
+        </p>
+    </div>
+</div>
+{% endblock %}

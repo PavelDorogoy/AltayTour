@@ -1,0 +1,75 @@
+// footer style
+.footer-wrapper {
+  display: block;
+  position: relative;
+  max-width: $desktopWidth;
+  margin: 0 auto;
+  height: 74px;
+
+  &.absolute {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  @media screen and (max-width: $phoneWidth) {
+    &:before {
+      position: absolute;
+      content: '';
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 34px;
+      background: #f8f5fc;
+      z-index: 1;
+    }
+  }
+
+  .footer {
+    width: calc(100% - 140px);
+    height: 100%;
+    border-top: $border-block;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: $font_gtwalsheim;
+
+    &>div {
+      flex-basis: 33.3%;
+      text-align: center;
+
+      .footer-copyright {
+        text-align: start;
+      }
+    }
+
+    .footer-design-author {
+      position: relative;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+
+      .icon {
+        width: 16px;
+        height: 29px;
+        margin-right: 10px;
+        background: url('data:image/svg+xml;utf8,<svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.9231 0.297363H3.07692C1.37846 0.297363 0 1.75034 0 3.54061V25.5947C0 27.3849 1.37846 28.8379 3.07692 28.8379H12.9231C14.6215 28.8379 16 27.3849 16 25.5947V3.54061C16 1.75034 14.6215 0.297363 12.9231 0.297363ZM7.99999 27.5405C6.97845 27.5405 6.15384 26.6713 6.15384 25.5946C6.15384 24.5178 6.97845 23.6486 7.99999 23.6486C9.02153 23.6486 9.84615 24.5178 9.84615 25.5946C9.84615 26.6713 9.02153 27.5405 7.99999 27.5405ZM2.46153 22.3514H13.5385V4.18927H2.46153V22.3514Z" fill="%235293C4"/></svg>') center no-repeat /contain;
+      }
+    }
+
+    @media screen and (max-width: $tableWidth) {
+      width: calc(100% - 68px);
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      flex-wrap: wrap;
+      width: calc(100% - 13%);
+
+      .footer-design-author {
+        z-index: 2;
+      }
+    }
+  }
+}

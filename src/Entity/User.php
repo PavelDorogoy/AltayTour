@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
- * @UniqueEntity(fields="email", message="Email already taken")
+ * @UniqueEntity(fields="email", message="Этот E-mail уже зарегистрирован")
  * @ORM\Table(name="`users`")
  */
 class User implements UserInterface
@@ -47,7 +47,7 @@ class User implements UserInterface
     private $name;
 
     /**
-     * @ORM\Column(type="string", length=15, nullable=true)
+     * @ORM\Column(type="string", length=30, nullable=true)
      */
     private $phone;
 

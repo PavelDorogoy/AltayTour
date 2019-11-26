@@ -1,26 +1,57 @@
-{% extends "base.html.twig." %}
+{{ form_start(form, {
+    'method' : 'post',
+    'action' : path('register'),
+    'attr' : {
+        'class' : 'horizontal',
+        'role' : 'form'
+    }
+}) }}
+    <h2 class="title-small other-margin">Регистрация</h2>
 
-{% block title %}Register page{% endblock %}
-{% block body %}
-    {{ form_start(form) }}
-    {{ form_row(form.email, {
-        'label': 'E-mail'
-    }) }}
+    {% if form_errors(form) is not null %}
+        {{ form_errors(form) }}
+    {% endif %}
+{{ form_errors(form) }}
+    {% if form.name.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.name) }}</div>{% endif %}
+    <div class="input-wrapper">
+        <div class="input-container">
+            {{ form_widget(form.name, { 'attr': {'class': 'input', 'placeholder': 'Введите имя', 'pattern' : '.+'} }) }}
+            {{ form_label(form.name, 'Ваше Имя', {'label_attr': {'class': 'label'}}) }}
+        </div>
+    </div>
 
-    {{ form_row(form.plainPassword.first, {
-        'label': 'Пароль'
-    }) }}
-    {{ form_row(form.plainPassword.second, {
-        'label': 'Пароль ещё раз'
-    }) }}
+    {% if form.email.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.email) }}</div>{% endif %}
+    <div class="input-wrapper">
+        <div class="input-container">
+            {{ form_widget(form.email, { 'attr': {'class': 'input', 'placeholder': 'Введите e-mail', 'pattern' : '.+'} }) }}
+            {{ form_label(form.email, 'Ваш e-mail', {'label_attr': {'class': 'label'}}) }}
+        </div>
+    </div>
 
-    {{ form_row(form.name, {
-        'label': 'Имя'
-    }) }}
+    {% if form.phone.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.phone) }}</div>{% endif %}
+    <div class="input-wrapper">
+        <div class="input-container">
+            {{ form_widget(form.phone, { 'attr': {'type' : 'tel','class': 'input', 'placeholder': 'Введите телефон', 'pattern' : '.+'} }) }}
+            {{ form_label(form.phone, 'Ваш телефон', {'label_attr': {'class': 'label'}}) }}
+        </div>
+    </div>
 
-    {{ form_row(form.phone, {
-        'label': 'Телефон'
-    }) }}
-    <button type="submit">Зарегистрироваться</button>
-    {{ form_end(form) }}
-{% endblock %}
+    {% if form.plainPassword.first.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.plainPassword.first) }}</div>{% endif %}
+    <div class="input-wrapper">
+        <div class="input-container">
+            {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'input', 'placeholder': 'Введите пароль', 'pattern' : '.+'} }) }}
+            {{ form_label(form.plainPassword.first, 'Ваш пароль', {'label_attr': {'class': 'label'}}) }}
+        </div>
+    </div>
+
+    {% if form.plainPassword.second.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.plainPassword.second) }}</div>{% endif %}
+    <div class="input-wrapper">
+        <div class="input-container">
+            {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'input', 'placeholder': 'Повторите пароль', 'pattern' : '.+'} }) }}
+            {{ form_label(form.plainPassword.second, 'Повторите пароль', {'label_attr': {'class': 'label'}}) }}
+        </div>
+    </div>
+
+    <button type="submit" class="btn gradient-outline"><span>Подтвердить</span></button>
+{{ form_end(form) }}
+

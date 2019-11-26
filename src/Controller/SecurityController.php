@@ -8,6 +8,7 @@ use App\Repository\UserRepository;
 use App\Service\CodeGenerator;
 use App\Service\Mailer;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,6 +42,8 @@ class SecurityController extends AbstractController
 
             // 5) отправляем письмо
             $mailer->sendConfirmationMessage($user);
+            $url = $this->get('router')->generate('register_success', array('email' => $user->getEmail()));
+            return new RedirectResponse($url);
         }
 
         return $this->render(
@@ -48,6 +51,21 @@ class SecurityController extends AbstractController
                 'form' => $form->createView()
             ]
         );
+    }
+    /**
+     * @Route("/register-success/{email}", name="register_success")
+     */
+    public function registerSuccess(UserRepository $userRepository, string $email)
+    {
+        /** @var User $user */
+        $user = $userRepository->findOneBy(['email' => $email]);
+
+        if ($user === null) {
+            return new Response('404');
+        }
+        return $this->render('security/register_success.html.twig', [
+            'user' => $user,
+        ]);
     }
 
     /**

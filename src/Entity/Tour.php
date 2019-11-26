@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -40,6 +38,11 @@ class Tour
      * @ORM\JoinColumn(nullable=false)
      */
     private $route;
+
+    /**
+     * @ORM\Column(type="float")
+     */
+    private $price;
 
     public function getId(): ?int
     {
@@ -90,6 +93,18 @@ class Tour
     public function setRoute(?TouristRoute $route): self
     {
         $this->route = $route;
+
+        return $this;
+    }
+
+    public function getPrice(): ?float
+    {
+        return $this->price;
+    }
+
+    public function setPrice(float $price): self
+    {
+        $this->price = $price;
 
         return $this;
     }

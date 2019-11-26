@@ -28,6 +28,11 @@ class TouristRoute
     private $description;
 
     /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $annotation;
+
+    /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $logo;
@@ -73,6 +78,18 @@ class TouristRoute
     public function setDescription(string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getAnnotation(): ?string
+    {
+        return $this->annotation;
+    }
+
+    public function setAnnotation(string $annotation): self
+    {
+        $this->annotation = $annotation;
 
         return $this;
     }

@@ -1,0 +1,4597 @@
+@charset "UTF-8";
+a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, body, canvas, caption, center, cite, code, dd, del, details, dfn, div, dl, dt, em, embed, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, output, p, pre, q, ruby, s, samp, section, small, span, strike, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline
+}
+
+a:active, a:hover {
+    outline: 0
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: 400
+}
+
+*, :after, :before, html {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+:focus {
+    outline: 0
+}
+
+audio, img, video {
+    max-width: 100%;
+    height: auto
+}
+
+audio, canvas, iframe, img, svg, video {
+    vertical-align: middle
+}
+
+iframe {
+    border: 0
+}
+
+textarea {
+    resize: none;
+    overflow: auto;
+    vertical-align: top;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none
+}
+
+button, input, select, textarea {
+    outline: none;
+    border: none;
+    font-size: 100%;
+    margin: 0
+}
+
+button, input {
+    line-height: normal
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0
+}
+
+td, th {
+    padding: 0;
+    text-align: left
+}
+
+.main-wrap {
+    width: 100%;
+    height: 100%
+}
+
+.main-wrap .header-wrap {
+    width: 100%;
+    height: 130px;
+    background: -o-linear-gradient(168deg, #02618e, #5293c4);
+    background: linear-gradient(282deg, #02618e, #5293c4);
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100%, cover
+}
+
+.main-wrap .header-wrap.main {
+    height: 100vh;
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(49, 49, 49, .5)), to(rgba(49, 49, 49, .5))), url(/assets/img/main_bg.jpg);
+    background-image: -o-linear-gradient(left, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/main_bg.jpg);
+    background-image: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/main_bg.jpg)
+}
+
+.main-wrap .header-wrap.page-not-found {
+    height: auto;
+    min-height: auto
+}
+
+.main-wrap .header-wrap .wrapper {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 auto;
+    height: calc(100% - 210px);
+    max-width: 1440px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.main-wrap .header-wrap .wrapper.page-not-found {
+    height: auto
+}
+
+.main-header {
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    width: 100%
+}
+
+.main-header, .main-header .header-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.main-header .header-wrapper {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 90%;
+    height: 100px;
+    margin: 15px auto
+}
+
+.main-header .header-wrapper.main {
+    margin: 30px auto 80px
+}
+
+.main-header .header-wrapper .header-logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 200px;
+    height: 100px;
+    z-index: 11
+}
+
+.main-header .header-wrapper .main-nav {
+    pointer-events: auto;
+    font-size: 14px;
+    font-family: GTWalsheimPro;
+    line-height: 30px;
+    z-index: 11;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1
+}
+
+.main-header .header-wrapper .main-nav, .main-header .header-wrapper .main-nav .nav-links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.main-header .header-wrapper .main-nav .nav-links li {
+    position: relative;
+    height: 30px;
+    overflow: hidden;
+    margin: 0 0 0 40px
+}
+
+.main-header .header-wrapper .main-nav #nav-icon {
+    width: 17px;
+    height: 17px;
+    margin: 15px 15px 15px 0;
+    position: relative;
+    cursor: pointer;
+    z-index: 11;
+    display: none
+}
+
+.main-header .header-wrapper .main-nav #nav-icon, .main-header .header-wrapper .main-nav #nav-icon span {
+    -webkit-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .3s ease-in-out;
+    -o-transition: .3s ease-in-out;
+    transition: .3s ease-in-out
+}
+
+.main-header .header-wrapper .main-nav #nav-icon span {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 1.5px;
+    opacity: 1;
+    left: 0
+}
+
+.main-header .header-wrapper .main-nav #nav-icon span:first-child {
+    top: 0
+}
+
+.main-header .header-wrapper .main-nav #nav-icon span:nth-child(2) {
+    width: 65%;
+    top: 7px
+}
+
+.main-header .header-wrapper .main-nav #nav-icon span:nth-child(3) {
+    top: 14px
+}
+
+.main-header .header-wrapper .main-nav #nav-icon.open span:first-child {
+    top: 7px;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg)
+}
+
+.main-header .header-wrapper .main-nav #nav-icon.open span:nth-child(2) {
+    opacity: 0;
+    left: -60px
+}
+
+.main-header .header-wrapper .main-nav #nav-icon.open span:nth-child(3) {
+    top: 7px;
+    -webkit-transform: rotate(-135deg);
+    -ms-transform: rotate(-135deg);
+    transform: rotate(-135deg)
+}
+
+.main-header .header-wrapper .btn-mobile {
+    display: none
+}
+
+.profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: relative
+}
+
+.btn-profile {
+    outline: 0;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0);
+    min-width: 260px;
+    border: 0;
+    border-radius: 4px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-family: GTWalsheimPro Medium;
+    color: #fff;
+    font-size: 14px;
+    overflow: hidden;
+    cursor: pointer
+}
+
+.btn-profile:active .dropdown, .btn-profile:focus .dropdown {
+    -webkit-transform: translateY(20px);
+    -ms-transform: translateY(20px);
+    transform: translateY(20px);
+    opacity: 1;
+    visibility: visible
+}
+
+.btn-profile .material-icons {
+    border-radius: 100%
+}
+
+.btn-profile .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #fff;
+    width: 100%;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .5);
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .3s ease;
+    -o-transition: .3s ease;
+    transition: .3s ease;
+    z-index: 1
+}
+
+.btn-profile .dropdown:before {
+    content: "";
+    position: absolute;
+    top: -5px;
+    right: 20px;
+    width: 0;
+    height: 0;
+    -webkit-box-shadow: 2px -2px 6px rgba(0, 0, 0, .05);
+    box-shadow: 2px -2px 6px rgba(0, 0, 0, .05);
+    border-color: #fff #fff rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
+    border-style: solid;
+    border-width: 6px;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    mix-blend-mode: multiple
+}
+
+.btn-profile .dropdown li {
+    z-index: 1;
+    position: relative;
+    background: #fff;
+    padding: 0 20px;
+    color: #000
+}
+
+.btn-profile .dropdown li:hover {
+    background: #c4daeb
+}
+
+.btn-profile .dropdown li.active {
+    color: #5293c4
+}
+
+.btn-profile .dropdown li:first-child {
+    border-radius: 4px 4px 0 0
+}
+
+.btn-profile .dropdown li:last-child {
+    border-radius: 0 0 4px 4px
+}
+
+.btn-profile .dropdown li:last-child a {
+    border-bottom: 0
+}
+
+.btn-profile .dropdown a {
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, .05);
+    padding: 16px 0;
+    color: inherit;
+    text-decoration: none
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    -webkit-transform: translateX(-100%);
+    -ms-transform: translateX(-100%);
+    transform: translateX(-100%);
+    background-image: -o-linear-gradient(120deg, #f99da2, #5d2e88);
+    background-image: linear-gradient(330deg, #f99da2, #5d2e88);
+    padding-top: 20%;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform .3s ease-out;
+    transition: -webkit-transform .3s ease-out;
+    -o-transition: transform .3s ease-out;
+    transition: transform .3s ease-out;
+    transition: transform .3s ease-out, -webkit-transform .3s ease-out;
+    z-index: 10;
+    opacity: 0;
+    overflow: hidden
+}
+
+.sidebar.active {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1
+}
+
+.sidebar ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    height: 100%
+}
+
+.sidebar a {
+    display: block;
+    font-size: 24px;
+    margin-bottom: 2.5rem
+}
+
+.overflow-scroll {
+    overflow: hidden
+}
+
+.content-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 3% auto 0;
+    width: 90%;
+    max-width: 1300px
+}
+
+.content-wrapper.page-not-found {
+    margin-top: 100px
+}
+
+.content-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 7%;
+    width: 100%
+}
+
+.content-header.detail-rate {
+    border-radius: 10px;
+    padding: 50px;
+    margin-bottom: 0
+}
+
+.content-header.detail-rate.snow {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(49, 49, 49, .5)), to(rgba(49, 49, 49, .5))), url(/assets/img/detail-tour.jpg) top no-repeat/cover;
+    background: -o-linear-gradient(left, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/detail-tour.jpg) top no-repeat/cover;
+    background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/detail-tour.jpg) top no-repeat/cover
+}
+
+.content-header.page-not-found {
+    max-width: 420px
+}
+
+.content-header .header-title {
+    max-width: 630px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 60px;
+    line-height: 71px;
+    color: #000;
+    color: #fff;
+    margin-bottom: 98px
+}
+
+.content-header .header-title.all-tours {
+    font-size: 46px;
+    margin-top: 46px;
+    width: 100%
+}
+
+.content-header .header-title.page-not-found {
+    font-size: 200px;
+    line-height: 1;
+    margin-bottom: 5px
+}
+
+.content-header .header-text {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    width: 100%;
+    font-family: GTWalsheimPro;
+    font-size: 16px;
+    line-height: 19px
+}
+
+.content-header .header-text.snow {
+    width: auto;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px dotted #fff;
+    margin-bottom: 25px
+}
+
+.content-header .header-text p {
+    position: relative
+}
+
+.content-header .header-text p:not(:last-child):before {
+    content: "";
+    position: absolute;
+    right: -40%;
+    top: 0;
+    width: 2px;
+    height: 29px;
+    background: #8fbde1
+}
+
+.content-header--logo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    border-radius: 15px;
+    -webkit-box-shadow: 0 5px 17px 0 rgba(0, 0, 0, .15);
+    box-shadow: 0 5px 17px 0 rgba(0, 0, 0, .15);
+    background-color: #fff;
+    margin-bottom: 20px
+}
+
+.content-header--logo .icon {
+    width: 70px;
+    height: 70px;
+    background-size: contain;
+    background-position: 50%;
+    background-repeat: no-repeat
+}
+
+.content-header--logo .icon.snow {
+    background-image: url('data:image/svg+xml;utf8,<svg width="90" height="90" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 9H15.83L19.07 5.76L17.66 4.34L13 9H11V7L15.66 2.34L14.24 0.93L11 4.17V0H9V4.17L5.76 0.93L4.34 2.34L9 7V9H7L2.34 4.34L0.93 5.76L4.17 9H0V11H4.17L0.93 14.24L2.34 15.66L7 11H9V13L4.34 17.66L5.76 19.07L9 15.83V20H11V15.83L14.24 19.07L15.66 17.66L11 13V11H13L17.66 15.66L19.07 14.24L15.83 11H20V9Z" fill="%23307177"/></svg>')
+}
+
+.content-header .btn {
+    margin-top: 30px
+}
+
+.tour-wrapper {
+    margin-top: 82px;
+    margin-bottom: 64px
+}
+
+.tour-wrapper h1 {
+    margin-bottom: 66px
+}
+
+.instuctor-wrapper {
+    padding-bottom: 64px;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(49, 49, 49, .5)), to(rgba(49, 49, 49, .5))), url(/assets/img/instr_bg.jpg) 50% no-repeat/cover;
+    background: -o-linear-gradient(left, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/instr_bg.jpg) 50% no-repeat/cover;
+    background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/instr_bg.jpg) 50% no-repeat/cover
+}
+
+.instuctor-wrapper .middle-tittle {
+    padding-top: 82px;
+    margin-bottom: 66px;
+    color: #fff;
+    text-transform: uppercase
+}
+
+.instuctor-wrapper .slide {
+    cursor: default
+}
+
+.content-compare {
+    width: 90%;
+    margin-bottom: 162px
+}
+
+.content-compare .compare-cards-more {
+    display: none
+}
+
+.content-compare span {
+    margin-top: 20px
+}
+
+.content-compare .content-compare-cards {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.content-compare .content-compare-cards input[type=checkbox][id^=compare], input[type=checkbox][id^=equipment] {
+    display: none
+}
+
+.container-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    height: 211px
+}
+
+.container-title .header-title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 60px;
+    line-height: 71px;
+    color: #000;
+    margin-bottom: 18px
+}
+
+.container-title .header-title.all-tours {
+    font-size: 46px;
+    margin-top: 46px;
+    width: 100%
+}
+
+.container-title .header-title.acquiring {
+    margin-bottom: 8px
+}
+
+.container-title .header-text {
+    font-family: GTWalsheimPro Medium;
+    font-size: 16px;
+    opacity: .5;
+    color: #000
+}
+
+.slick-slide {
+    margin: 0 10px
+}
+
+.slick-slide:first-child {
+    margin-left: 0 !important
+}
+
+.slider {
+    max-width: 1300px;
+    margin: 0 auto 40px
+}
+
+.slider.instructor {
+    max-width: 1095px
+}
+
+.slider .slick-prev {
+    top: 45%;
+    z-index: 1;
+    left: -40px
+}
+
+.slider .slick-prev:before {
+    display: none
+}
+
+.slider .slick-prev.slick-arrow {
+    width: 49px;
+    height: 49px;
+    background-color: #5293c4;
+    opacity: .9;
+    border-radius: 100%
+}
+
+.slider .slick-prev.slick-arrow:active {
+    background-color: #4087bc
+}
+
+.slider .slick-prev.slick-arrow:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 49px;
+    height: 49px;
+    background: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><svg version="1.1" baseProfile="tiny" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 451.8 451.8" xml:space="preserve"><g><path fill="%23FFFFFF" d="M345.4,248.3L151.2,442.6c-12.4,12.4-32.4,12.4-44.8,0s-12.4-32.4,0-44.7L278.3,226L106.4,54C94,41.6,94,21.6,106.4,9.3c12.4-12.4,32.4-12.4,44.8,0l194.3,194.3c6.2,6.2,9.3,14.3,9.3,22.4C354.7,234,351.6,242.1,345.4,248.3z"/></g></svg>') 50% no-repeat;
+    background-size: 100% 20px;
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.slider .slick-next {
+    top: 45%;
+    right: -40px
+}
+
+.slider .slick-next:before {
+    display: none
+}
+
+.slider .slick-next.slick-arrow {
+    width: 49px;
+    height: 49px;
+    background-color: #5293c4;
+    opacity: .9;
+    border-radius: 100%
+}
+
+.slider .slick-next.slick-arrow:active {
+    background-color: #4087bc
+}
+
+.slider .slick-next.slick-arrow:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 49px;
+    height: 49px;
+    background: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><svg version="1.1" baseProfile="tiny" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 451.8 451.8" xml:space="preserve"><g><path fill="%23FFFFFF" d="M345.4,248.3L151.2,442.6c-12.4,12.4-32.4,12.4-44.8,0s-12.4-32.4,0-44.7L278.3,226L106.4,54C94,41.6,94,21.6,106.4,9.3c12.4-12.4,32.4-12.4,44.8,0l194.3,194.3c6.2,6.2,9.3,14.3,9.3,22.4C354.7,234,351.6,242.1,345.4,248.3z"/></g></svg>') 50% no-repeat;
+    background-size: 100% 20px
+}
+
+.slide {
+    min-height: 527px;
+    margin-bottom: 23px;
+    position: relative;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 15px;
+    min-width: 310px;
+    max-width: 310px;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-out;
+    transition: -webkit-box-shadow .25s ease-out;
+    -o-transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out, -webkit-box-shadow .25s ease-out;
+    background: #5293c4;
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 21px
+}
+
+.slide.snow {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(49, 49, 49, .5)), to(rgba(49, 49, 49, .5))), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(left, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover;
+    background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover
+}
+
+.slide:hover {
+    -webkit-box-shadow: 1px 12px 12px rgba(0, 0, 0, .25);
+    box-shadow: 1px 12px 12px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-in;
+    transition: -webkit-box-shadow .25s ease-in;
+    -o-transition: box-shadow .25s ease-in;
+    transition: box-shadow .25s ease-in;
+    transition: box-shadow .25s ease-in, -webkit-box-shadow .25s ease-in
+}
+
+.slide.instructor {
+    min-width: 350px;
+    max-width: 350px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.slide.instructor.ivan {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover
+}
+
+.slide.instructor.alexey {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover
+}
+
+.slide-title {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 100%;
+    background: url('data:image/svg+xml;utf8,<svg width="200" height="24" viewBox="0 0 200 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M200 0H0V23.1707H200L185.933 12.0891L200 0Z" fill="white"/></svg>') 0 no-repeat;
+    color: #324b4d;
+    font-family: GTWalsheimPro Medium;
+    font-size: 16px;
+    padding-left: 18px
+}
+
+.slide-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px
+}
+
+.slide-icon.snow {
+    background: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 9H15.83L19.07 5.76L17.66 4.34L13 9H11V7L15.66 2.34L14.24 0.93L11 4.17V0H9V4.17L5.76 0.93L4.34 2.34L9 7V9H7L2.34 4.34L0.93 5.76L4.17 9H0V11H4.17L0.93 14.24L2.34 15.66L7 11H9V13L4.34 17.66L5.76 19.07L9 15.83V20H11V15.83L14.24 19.07L15.66 17.66L11 13V11H13L17.66 15.66L19.07 14.24L15.83 11H20V9Z" fill="white"/></svg>') 50% no-repeat
+}
+
+.slide-rate {
+    position: absolute;
+    top: 90px;
+    left: 18px;
+    width: 100px;
+    height: 18px;
+    background: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.05357 13.7074L14.5163 17.0045L13.0666 10.7905L17.8929 6.60948L11.5374 6.07028L9.05357 0.209839L6.56973 6.07028L0.214285 6.60948L5.04054 10.7905L3.59089 17.0045L9.05357 13.7074Z" fill="%23FAC917"/><path d="M9.05357 13.7074L14.5163 17.0045L13.0666 10.7905L17.8929 6.60948L11.5374 6.07028L9.05357 0.209839L6.56973 6.07028L0.214285 6.60948L5.04054 10.7905L3.59089 17.0045L9.05357 13.7074Z" fill="%23FAC917"/></svg>') 0
+}
+
+.slide-rate.one {
+    width: 18px
+}
+
+.slide-rate.two {
+    width: 36px
+}
+
+.slide-rate.three {
+    width: 54px
+}
+
+.slide-rate.four {
+    width: 72px
+}
+
+.slide-rate.five {
+    width: 90px
+}
+
+.slide-name {
+    top: 135px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 20px;
+    line-height: 24px
+}
+
+.slide-list, .slide-name {
+    position: absolute;
+    left: 18px
+}
+
+.slide-list {
+    top: 210px;
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 27px
+}
+
+.slide-list li {
+    padding-left: 18px;
+    position: relative
+}
+
+.slide-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #94b0b3
+}
+
+.slide-info {
+    position: absolute;
+    top: 336px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 24px;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.slide-info span {
+    position: relative
+}
+
+.slide-info span:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: -3px;
+    width: 21px;
+    height: 24px
+}
+
+.slide-info span.time:before {
+    background: url('data:image/svg+xml;utf8,<svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 0H14V2.28682H7V0ZM9.33333 14.8642V8.00385H11.6667V14.8642H9.33333ZM18.7017 7.29492L20.3583 5.67129C19.8567 5.08815 19.3083 4.53932 18.7133 4.05909L17.0567 5.68272C15.2483 4.2649 12.9733 3.41878 10.5 3.41878C4.70167 3.41878 0 8.0267 0 13.7094C0 19.3921 4.69 24 10.5 24C16.31 24 21 19.3921 21 13.7094C21 11.2968 20.1367 9.06719 18.7017 7.29492ZM2.33333 13.7209C2.33333 18.1458 5.985 21.7247 10.5 21.7247C15.015 21.7247 18.6667 18.1458 18.6667 13.7209C18.6667 9.29589 15.015 5.71704 10.5 5.71704C5.985 5.71704 2.33333 9.29589 2.33333 13.7209Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.slide-info span.complexity:before {
+    background: url('data:image/svg+xml;utf8,<svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.78 5.841L13 0.210999L22 12.211H0L5.53 4.841L9.54 10.211H18L13 3.541L10.03 7.511L8.78 5.841ZM5.52002 8.18098L4 10.211H7.04004L5.52002 8.18098Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.slide-info span.distance:before {
+    background: url('data:image/svg+xml;utf8,<svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 6.10352e-05C10.31 6.10352e-05 13 2.69006 13 6.00006C13 10.5001 7 17.0001 7 17.0001C7 17.0001 1 10.5001 1 6.00006C1 2.69006 3.69 6.10352e-05 7 6.10352e-05ZM14 20.0001V18.0001H0V20.0001H14ZM3 6.00006C3 3.79006 4.79 2.00006 7 2.00006C9.21 2.00006 11 3.79006 11 6.00006C11 8.13006 8.92 11.4601 7 13.9101C5.08 11.4701 3 8.13006 3 6.00006ZM5 6.00006C5 4.90006 5.9 4.00006 7 4.00006C8.1 4.00006 9 4.90006 9 6.00006C9 7.10006 8.11 8.00006 7 8.00006C5.9 8.00006 5 7.10006 5 6.00006Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.slide-price {
+    position: absolute;
+    top: 385px;
+    padding-left: 18px;
+    font-size: 22px
+}
+
+.slide-instructor-name, .slide-price {
+    width: 100%;
+    text-align: left;
+    font-family: GTWalsheimPro Medium
+}
+
+.slide-instructor-name {
+    font-size: 36px;
+    line-height: 42px;
+    max-width: 300px
+}
+
+.slide-instructor-name .familyName, .slide-instructor-name .name {
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.slide-instructor-list {
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 27px;
+    width: 100%
+}
+
+.slide-instructor-list li {
+    padding-left: 18px;
+    position: relative
+}
+
+.slide-instructor-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #94b0b3
+}
+
+.footer-wrapper {
+    display: block;
+    position: relative;
+    max-width: 1440px;
+    margin: 0 auto;
+    height: 74px
+}
+
+.footer-wrapper.absolute {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0
+}
+
+.footer-wrapper .footer {
+    width: calc(100% - 140px);
+    height: 100%;
+    border-top: 1px solid #e5e5e5;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: GTWalsheimPro
+}
+
+.footer-wrapper .footer > div {
+    -ms-flex-preferred-size: 33.3%;
+    flex-basis: 33.3%;
+    text-align: center
+}
+
+.footer-wrapper .footer > div .footer-copyright {
+    text-align: start
+}
+
+.footer-wrapper .footer .footer-design-author {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.footer-wrapper .footer .footer-design-author .icon {
+    width: 16px;
+    height: 29px;
+    margin-right: 10px;
+    background: url('data:image/svg+xml;utf8,<svg width="16" height="29" viewBox="0 0 16 29" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12.9231 0.297363H3.07692C1.37846 0.297363 0 1.75034 0 3.54061V25.5947C0 27.3849 1.37846 28.8379 3.07692 28.8379H12.9231C14.6215 28.8379 16 27.3849 16 25.5947V3.54061C16 1.75034 14.6215 0.297363 12.9231 0.297363ZM7.99999 27.5405C6.97845 27.5405 6.15384 26.6713 6.15384 25.5946C6.15384 24.5178 6.97845 23.6486 7.99999 23.6486C9.02153 23.6486 9.84615 24.5178 9.84615 25.5946C9.84615 26.6713 9.02153 27.5405 7.99999 27.5405ZM2.46153 22.3514H13.5385V4.18927H2.46153V22.3514Z" fill="%235293C4"/></svg>') 50% no-repeat/contain
+}
+
+@font-face {
+    font-family: OpenSans Light;
+    src: url(../fonts/OpenSans-Light.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: GTWalsheimPro;
+    src: url(../fonts/GTWalsheimProRegular.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal
+}
+
+@font-face {
+    font-family: GTWalsheimPro Medium;
+    src: url(../fonts/GT-Walsheim-Pro-Medium.ttf) format("truetype");
+    font-weight: 500;
+    font-style: normal
+}
+
+@font-face {
+    font-family: Roboto Regular;
+    src: url(../fonts/Roboto-Regular.ttf) format("truetype")
+}
+
+@font-face {
+    font-family: Roboto Light;
+    src: url(../fonts/Roboto-Light.ttf) format("truetype")
+}
+
+html {
+    line-height: 1.4;
+    font-size: 14px;
+    color: #000;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth
+}
+
+html.overflow-scroll {
+    overflow: hidden
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: OpenSans Light;
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #fff;
+    overflow-x: hidden
+}
+
+body.overflow-scroll {
+    overflow: hidden
+}
+
+*, :after, :before, div {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0
+}
+
+a {
+    text-decoration: none
+}
+
+li, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+.section, section {
+    position: relative;
+    padding: 40px 0
+}
+
+.tabs-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 377px;
+    margin: 40px auto 0
+}
+
+.tabs-wrapper.acquiring {
+    margin-top: 0
+}
+
+.tabs-wrapper .tabs-header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    height: 40px;
+    margin: 0 auto 40px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.tabs-wrapper .tabs-title {
+    position: absolute;
+    left: 0;
+    top: -10px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 24px
+}
+
+.tabs-wrapper nav {
+    width: 100%;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.tabs-wrapper .tabs, .tabs-wrapper nav {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.tabs-wrapper li {
+    list-style: none;
+    position: relative;
+    width: auto;
+    height: 44px;
+    margin: 20px;
+    text-align: center;
+    font-family: GTWalsheimPro;
+    font-size: 16px;
+    color: #9e9e9e;
+    cursor: pointer
+}
+
+.tabs-wrapper li:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 5px;
+    border-radius: 20px;
+    background: -o-linear-gradient(168deg, #5293c4, #02618e) no-repeat bottom;
+    background: linear-gradient(282deg, #5293c4, #02618e) no-repeat bottom;
+    -webkit-transition: width .3s ease 0s, left .3s ease 0s;
+    -o-transition: width .3s ease 0s, left .3s ease 0s;
+    transition: width .3s ease 0s, left .3s ease 0s
+}
+
+.tabs-wrapper li.active {
+    color: #000
+}
+
+.tabs-wrapper li.active:before {
+    width: 100%
+}
+
+.tabs-wrapper li:hover {
+    -webkit-transition: width .3s ease 0s, left .3s ease 0s;
+    -o-transition: width .3s ease 0s, left .3s ease 0s;
+    transition: width .3s ease 0s, left .3s ease 0s
+}
+
+.tabs-wrapper .tabs-content, .tabs-wrapper li:hover:before {
+    width: 100%
+}
+
+.tabs-wrapper .content {
+    display: none;
+    opacity: 0;
+    margin: 0 auto 30px;
+    width: 90%
+}
+
+.tabs-wrapper .content .list-container-products {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    margin-bottom: 17px
+}
+
+.tabs-wrapper .content .list-container-products .slide {
+    min-height: 527px;
+    margin-bottom: 23px;
+    position: relative;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 15px;
+    min-width: 310px;
+    max-width: 310px;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-out;
+    transition: -webkit-box-shadow .25s ease-out;
+    -o-transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out, -webkit-box-shadow .25s ease-out;
+    background: #5293c4;
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 21px
+}
+
+.tabs-wrapper .content .list-container-products .slide.snow {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(49, 49, 49, .5)), to(rgba(49, 49, 49, .5))), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(left, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover;
+    background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover
+}
+
+.tabs-wrapper .content .list-container-products .slide:hover {
+    -webkit-box-shadow: 1px 12px 12px rgba(0, 0, 0, .25);
+    box-shadow: 1px 12px 12px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-in;
+    transition: -webkit-box-shadow .25s ease-in;
+    -o-transition: box-shadow .25s ease-in;
+    transition: box-shadow .25s ease-in;
+    transition: box-shadow .25s ease-in, -webkit-box-shadow .25s ease-in
+}
+
+.tabs-wrapper .content .list-container-products .slide.instructor {
+    min-width: 350px;
+    max-width: 350px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.tabs-wrapper .content .list-container-products .slide.instructor.ivan {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover
+}
+
+.tabs-wrapper .content .list-container-products .slide.instructor.alexey {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover
+}
+
+.tabs-wrapper .content .list-container-products .slide-title {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 100%;
+    background: url('data:image/svg+xml;utf8,<svg width="200" height="24" viewBox="0 0 200 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M200 0H0V23.1707H200L185.933 12.0891L200 0Z" fill="white"/></svg>') 0 no-repeat;
+    color: #324b4d;
+    font-family: GTWalsheimPro Medium;
+    font-size: 16px;
+    padding-left: 18px
+}
+
+.tabs-wrapper .content .list-container-products .slide-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px
+}
+
+.tabs-wrapper .content .list-container-products .slide-icon.snow {
+    background: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 9H15.83L19.07 5.76L17.66 4.34L13 9H11V7L15.66 2.34L14.24 0.93L11 4.17V0H9V4.17L5.76 0.93L4.34 2.34L9 7V9H7L2.34 4.34L0.93 5.76L4.17 9H0V11H4.17L0.93 14.24L2.34 15.66L7 11H9V13L4.34 17.66L5.76 19.07L9 15.83V20H11V15.83L14.24 19.07L15.66 17.66L11 13V11H13L17.66 15.66L19.07 14.24L15.83 11H20V9Z" fill="white"/></svg>') 50% no-repeat
+}
+
+.tabs-wrapper .content .list-container-products .slide-rate {
+    position: absolute;
+    top: 90px;
+    left: 18px;
+    width: 100px;
+    height: 18px;
+    background: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.05357 13.7074L14.5163 17.0045L13.0666 10.7905L17.8929 6.60948L11.5374 6.07028L9.05357 0.209839L6.56973 6.07028L0.214285 6.60948L5.04054 10.7905L3.59089 17.0045L9.05357 13.7074Z" fill="%23FAC917"/><path d="M9.05357 13.7074L14.5163 17.0045L13.0666 10.7905L17.8929 6.60948L11.5374 6.07028L9.05357 0.209839L6.56973 6.07028L0.214285 6.60948L5.04054 10.7905L3.59089 17.0045L9.05357 13.7074Z" fill="%23FAC917"/></svg>') 0
+}
+
+.tabs-wrapper .content .list-container-products .slide-rate.one {
+    width: 18px
+}
+
+.tabs-wrapper .content .list-container-products .slide-rate.two {
+    width: 36px
+}
+
+.tabs-wrapper .content .list-container-products .slide-rate.three {
+    width: 54px
+}
+
+.tabs-wrapper .content .list-container-products .slide-rate.four {
+    width: 72px
+}
+
+.tabs-wrapper .content .list-container-products .slide-rate.five {
+    width: 90px
+}
+
+.tabs-wrapper .content .list-container-products .slide-name {
+    position: absolute;
+    left: 18px;
+    top: 135px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 20px;
+    line-height: 24px
+}
+
+.tabs-wrapper .content .list-container-products .slide-list {
+    position: absolute;
+    top: 210px;
+    left: 18px;
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 27px
+}
+
+.tabs-wrapper .content .list-container-products .slide-list li {
+    padding-left: 18px;
+    position: relative
+}
+
+.tabs-wrapper .content .list-container-products .slide-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #94b0b3
+}
+
+.tabs-wrapper .content .list-container-products .slide-info {
+    position: absolute;
+    top: 336px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 24px;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.tabs-wrapper .content .list-container-products .slide-info span {
+    position: relative
+}
+
+.tabs-wrapper .content .list-container-products .slide-info span:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: -3px;
+    width: 21px;
+    height: 24px
+}
+
+.tabs-wrapper .content .list-container-products .slide-info span.time:before {
+    background: url('data:image/svg+xml;utf8,<svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 0H14V2.28682H7V0ZM9.33333 14.8642V8.00385H11.6667V14.8642H9.33333ZM18.7017 7.29492L20.3583 5.67129C19.8567 5.08815 19.3083 4.53932 18.7133 4.05909L17.0567 5.68272C15.2483 4.2649 12.9733 3.41878 10.5 3.41878C4.70167 3.41878 0 8.0267 0 13.7094C0 19.3921 4.69 24 10.5 24C16.31 24 21 19.3921 21 13.7094C21 11.2968 20.1367 9.06719 18.7017 7.29492ZM2.33333 13.7209C2.33333 18.1458 5.985 21.7247 10.5 21.7247C15.015 21.7247 18.6667 18.1458 18.6667 13.7209C18.6667 9.29589 15.015 5.71704 10.5 5.71704C5.985 5.71704 2.33333 9.29589 2.33333 13.7209Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.tabs-wrapper .content .list-container-products .slide-info span.complexity:before {
+    background: url('data:image/svg+xml;utf8,<svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.78 5.841L13 0.210999L22 12.211H0L5.53 4.841L9.54 10.211H18L13 3.541L10.03 7.511L8.78 5.841ZM5.52002 8.18098L4 10.211H7.04004L5.52002 8.18098Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.tabs-wrapper .content .list-container-products .slide-info span.distance:before {
+    background: url('data:image/svg+xml;utf8,<svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 6.10352e-05C10.31 6.10352e-05 13 2.69006 13 6.00006C13 10.5001 7 17.0001 7 17.0001C7 17.0001 1 10.5001 1 6.00006C1 2.69006 3.69 6.10352e-05 7 6.10352e-05ZM14 20.0001V18.0001H0V20.0001H14ZM3 6.00006C3 3.79006 4.79 2.00006 7 2.00006C9.21 2.00006 11 3.79006 11 6.00006C11 8.13006 8.92 11.4601 7 13.9101C5.08 11.4701 3 8.13006 3 6.00006ZM5 6.00006C5 4.90006 5.9 4.00006 7 4.00006C8.1 4.00006 9 4.90006 9 6.00006C9 7.10006 8.11 8.00006 7 8.00006C5.9 8.00006 5 7.10006 5 6.00006Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.tabs-wrapper .content .list-container-products .slide-price {
+    position: absolute;
+    top: 385px;
+    width: 100%;
+    text-align: left;
+    padding-left: 18px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 22px
+}
+
+.tabs-wrapper .content .list-container-products .slide-instructor-name {
+    font-family: GTWalsheimPro Medium;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: left;
+    width: 100%;
+    max-width: 300px
+}
+
+.tabs-wrapper .content .list-container-products .slide-instructor-name .familyName, .tabs-wrapper .content .list-container-products .slide-instructor-name .name {
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.tabs-wrapper .content .list-container-products .slide-instructor-list {
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 27px;
+    width: 100%
+}
+
+.tabs-wrapper .content .list-container-products .slide-instructor-list li {
+    padding-left: 18px;
+    position: relative
+}
+
+.tabs-wrapper .content .list-container-products .slide-instructor-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #94b0b3
+}
+
+.tabs-wrapper .content .list-container-products .slide:hover {
+    -webkit-box-shadow: 0 12px 28px 0 rgba(0, 0, 0, .3) !important;
+    box-shadow: 0 12px 28px 0 rgba(0, 0, 0, .3) !important
+}
+
+.tabs-wrapper .content .tab-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 40px
+}
+
+.tabs-wrapper .content .tab-wrap .content-tab-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    width: 21.5%;
+    margin-right: 9%
+}
+
+.tabs-wrapper .content .tab-wrap .content-tab-wrapper .content-title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #000
+}
+
+.tabs-wrapper .content .tab-wrap .content-tab-wrapper .content-description-wrap {
+    font-family: Roboto Light;
+    font-size: 14px;
+    line-height: 1.57;
+    color: #949494
+}
+
+.tabs-wrapper .content .tab-wrap .content-tab-wrapper span {
+    margin-top: 10px
+}
+
+.tabs-wrapper .tabs-content .active {
+    display: block;
+    opacity: 1
+}
+
+.table-compare-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    position: relative;
+    margin: 40px auto 20px;
+    max-width: 1440px
+}
+
+.table-compare-wrapper .table-compare {
+    overflow-x: auto;
+    white-space: nowrap;
+    width: calc(100% - 140px);
+    margin: 0 auto;
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg)
+}
+
+.table-compare-wrapper .table-compare .mCS-dark-3.mCSB_scrollTools.mCSB_scrollTools_horizontal .mCSB_dragger {
+    min-width: 45%
+}
+
+.table-compare-wrapper .table-compare .mCS-dark-3.mCSB_scrollTools .mCSB_draggerRail {
+    height: 9px
+}
+
+.table-compare-wrapper .table-compare .mCS-dark-3.mCSB_scrollTools .mCSB_dragger .mCSB_dragger_bar {
+    height: 9px;
+    background: -webkit-gradient(linear, 24% 0, 70% 83%, from(#5d2e88), to(#f99da2), color-stop(.6, #b76e97))
+}
+
+.table-compare-wrapper .table-compare .column-table {
+    width: 310px;
+    margin-right: 20px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transform: rotateX(180deg);
+    transform: rotateX(180deg)
+}
+
+.table-compare-wrapper .table-compare .column-table:nth-child(2n) .column-table--block, .table-compare-wrapper .table-compare .column-table:nth-child(2n) .column-table--block.btn .btn.gradient-outline span {
+    background: #f9f2ff
+}
+
+.table-compare-wrapper .table-compare .column-table:nth-child(2n) .column-table--block.btn .btn.gradient-outline:hover span {
+    background: -o-linear-gradient(168deg, #5293c4, #02618e);
+    background: linear-gradient(282deg, #5293c4, #02618e);
+    color: #fff
+}
+
+.table-compare-wrapper .table-compare .column-table:last-child {
+    margin-right: 0
+}
+
+.table-compare-wrapper .table-compare .column-table--logo {
+    display: -webkit-box;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+    min-height: 130px;
+    background: none
+}
+
+.table-compare-wrapper .table-compare .column-table--block {
+    border-top: 1px solid #eddefa;
+    width: 100%;
+    min-height: 93px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding: 20px 0;
+    white-space: nowrap;
+    -ms-flex-negative: 0;
+    flex-shrink: 0
+}
+
+.table-compare-wrapper .table-compare .column-table--block .title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000;
+    line-height: 1;
+    line-height: 1.5;
+    margin: 0 9px 5px;
+    white-space: normal
+}
+
+.table-compare-wrapper .table-compare .column-table--block .description {
+    font-family: Roboto Light;
+    font-size: 14px;
+    color: #000;
+    margin: 0 9px;
+    line-height: 1.71;
+    white-space: normal
+}
+
+.table-compare-wrapper .table-compare .column-table--block.btn {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    border-radius: 0
+}
+
+.list-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+}
+
+.list-container .header-title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 60px;
+    line-height: 71px;
+    color: #000;
+    margin-bottom: 18px;
+    margin-top: 40px;
+    margin-bottom: 30px !important
+}
+
+.list-container .header-title.all-tours {
+    font-size: 46px;
+    margin-top: 46px;
+    width: 100%
+}
+
+.list-container .list-container-products {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    width: 52%;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin: 68px 70px
+}
+
+.list-container .list-container-products .slide {
+    min-height: 527px;
+    margin-bottom: 23px;
+    position: relative;
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 15px;
+    min-width: 310px;
+    max-width: 310px;
+    padding: 20px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-out;
+    transition: -webkit-box-shadow .25s ease-out;
+    -o-transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out, -webkit-box-shadow .25s ease-out;
+    background: #5293c4;
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 21px;
+    min-height: 550px
+}
+
+.list-container .list-container-products .slide.snow {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(49, 49, 49, .5)), to(rgba(49, 49, 49, .5))), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(left, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover;
+    background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/slider/card_gesh.jpg) no-repeat 50%/cover
+}
+
+.list-container .list-container-products .slide:hover {
+    -webkit-box-shadow: 1px 12px 12px rgba(0, 0, 0, .25);
+    box-shadow: 1px 12px 12px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-in;
+    transition: -webkit-box-shadow .25s ease-in;
+    -o-transition: box-shadow .25s ease-in;
+    transition: box-shadow .25s ease-in;
+    transition: box-shadow .25s ease-in, -webkit-box-shadow .25s ease-in
+}
+
+.list-container .list-container-products .slide.instructor {
+    min-width: 350px;
+    max-width: 350px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.list-container .list-container-products .slide.instructor.ivan {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/assets/img/instructor/instr_1.jpg) no-repeat 50%/cover
+}
+
+.list-container .list-container-products .slide.instructor.alexey {
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, .5)), to(rgba(0, 0, 0, .5))), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover;
+    background: -o-linear-gradient(top, rgba(0, 0, 0, .5) 0, rgba(0, 0, 0, .5) 100%), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover;
+    background: linear-gradient(180deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(/assets/img/instructor/instr_2.jpg) no-repeat 50%/cover
+}
+
+.list-container .list-container-products .slide-title {
+    position: absolute;
+    top: 36px;
+    left: 0;
+    width: 100%;
+    background: url('data:image/svg+xml;utf8,<svg width="200" height="24" viewBox="0 0 200 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M200 0H0V23.1707H200L185.933 12.0891L200 0Z" fill="white"/></svg>') 0 no-repeat;
+    color: #324b4d;
+    font-family: GTWalsheimPro Medium;
+    font-size: 16px;
+    padding-left: 18px
+}
+
+.list-container .list-container-products .slide-icon {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 20px;
+    height: 20px
+}
+
+.list-container .list-container-products .slide-icon.snow {
+    background: url('data:image/svg+xml;utf8,<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M20 9H15.83L19.07 5.76L17.66 4.34L13 9H11V7L15.66 2.34L14.24 0.93L11 4.17V0H9V4.17L5.76 0.93L4.34 2.34L9 7V9H7L2.34 4.34L0.93 5.76L4.17 9H0V11H4.17L0.93 14.24L2.34 15.66L7 11H9V13L4.34 17.66L5.76 19.07L9 15.83V20H11V15.83L14.24 19.07L15.66 17.66L11 13V11H13L17.66 15.66L19.07 14.24L15.83 11H20V9Z" fill="white"/></svg>') 50% no-repeat
+}
+
+.list-container .list-container-products .slide-rate {
+    position: absolute;
+    top: 90px;
+    left: 18px;
+    width: 100px;
+    height: 18px;
+    background: url('data:image/svg+xml;utf8,<svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M9.05357 13.7074L14.5163 17.0045L13.0666 10.7905L17.8929 6.60948L11.5374 6.07028L9.05357 0.209839L6.56973 6.07028L0.214285 6.60948L5.04054 10.7905L3.59089 17.0045L9.05357 13.7074Z" fill="%23FAC917"/><path d="M9.05357 13.7074L14.5163 17.0045L13.0666 10.7905L17.8929 6.60948L11.5374 6.07028L9.05357 0.209839L6.56973 6.07028L0.214285 6.60948L5.04054 10.7905L3.59089 17.0045L9.05357 13.7074Z" fill="%23FAC917"/></svg>') 0
+}
+
+.list-container .list-container-products .slide-rate.one {
+    width: 18px
+}
+
+.list-container .list-container-products .slide-rate.two {
+    width: 36px
+}
+
+.list-container .list-container-products .slide-rate.three {
+    width: 54px
+}
+
+.list-container .list-container-products .slide-rate.four {
+    width: 72px
+}
+
+.list-container .list-container-products .slide-rate.five {
+    width: 90px
+}
+
+.list-container .list-container-products .slide-name {
+    position: absolute;
+    left: 18px;
+    top: 135px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 20px;
+    line-height: 24px
+}
+
+.list-container .list-container-products .slide-list {
+    position: absolute;
+    top: 210px;
+    left: 18px;
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 27px
+}
+
+.list-container .list-container-products .slide-list li {
+    padding-left: 18px;
+    position: relative
+}
+
+.list-container .list-container-products .slide-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #94b0b3
+}
+
+.list-container .list-container-products .slide-info {
+    position: absolute;
+    top: 336px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: 24px;
+    -webkit-box-pack: space-evenly;
+    -ms-flex-pack: space-evenly;
+    justify-content: space-evenly;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.list-container .list-container-products .slide-info span {
+    position: relative
+}
+
+.list-container .list-container-products .slide-info span:before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: -3px;
+    width: 21px;
+    height: 24px
+}
+
+.list-container .list-container-products .slide-info span.time:before {
+    background: url('data:image/svg+xml;utf8,<svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 0H14V2.28682H7V0ZM9.33333 14.8642V8.00385H11.6667V14.8642H9.33333ZM18.7017 7.29492L20.3583 5.67129C19.8567 5.08815 19.3083 4.53932 18.7133 4.05909L17.0567 5.68272C15.2483 4.2649 12.9733 3.41878 10.5 3.41878C4.70167 3.41878 0 8.0267 0 13.7094C0 19.3921 4.69 24 10.5 24C16.31 24 21 19.3921 21 13.7094C21 11.2968 20.1367 9.06719 18.7017 7.29492ZM2.33333 13.7209C2.33333 18.1458 5.985 21.7247 10.5 21.7247C15.015 21.7247 18.6667 18.1458 18.6667 13.7209C18.6667 9.29589 15.015 5.71704 10.5 5.71704C5.985 5.71704 2.33333 9.29589 2.33333 13.7209Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.list-container .list-container-products .slide-info span.complexity:before {
+    background: url('data:image/svg+xml;utf8,<svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.78 5.841L13 0.210999L22 12.211H0L5.53 4.841L9.54 10.211H18L13 3.541L10.03 7.511L8.78 5.841ZM5.52002 8.18098L4 10.211H7.04004L5.52002 8.18098Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.list-container .list-container-products .slide-info span.distance:before {
+    background: url('data:image/svg+xml;utf8,<svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 6.10352e-05C10.31 6.10352e-05 13 2.69006 13 6.00006C13 10.5001 7 17.0001 7 17.0001C7 17.0001 1 10.5001 1 6.00006C1 2.69006 3.69 6.10352e-05 7 6.10352e-05ZM14 20.0001V18.0001H0V20.0001H14ZM3 6.00006C3 3.79006 4.79 2.00006 7 2.00006C9.21 2.00006 11 3.79006 11 6.00006C11 8.13006 8.92 11.4601 7 13.9101C5.08 11.4701 3 8.13006 3 6.00006ZM5 6.00006C5 4.90006 5.9 4.00006 7 4.00006C8.1 4.00006 9 4.90006 9 6.00006C9 7.10006 8.11 8.00006 7 8.00006C5.9 8.00006 5 7.10006 5 6.00006Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
+.list-container .list-container-products .slide-price {
+    position: absolute;
+    top: 385px;
+    width: 100%;
+    text-align: left;
+    padding-left: 18px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 22px
+}
+
+.list-container .list-container-products .slide-instructor-name {
+    font-family: GTWalsheimPro Medium;
+    font-size: 36px;
+    line-height: 42px;
+    text-align: left;
+    width: 100%;
+    max-width: 300px
+}
+
+.list-container .list-container-products .slide-instructor-name .familyName, .list-container .list-container-products .slide-instructor-name .name {
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    overflow: hidden
+}
+
+.list-container .list-container-products .slide-instructor-list {
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    line-height: 27px;
+    width: 100%
+}
+
+.list-container .list-container-products .slide-instructor-list li {
+    padding-left: 18px;
+    position: relative
+}
+
+.list-container .list-container-products .slide-instructor-list li:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 7px;
+    width: 12px;
+    height: 12px;
+    border-radius: 10px;
+    background: #94b0b3
+}
+
+.list-container .list-container-products .slide:hover {
+    -webkit-box-shadow: 0 12px 28px 0 rgba(0, 0, 0, .3) !important;
+    box-shadow: 0 12px 28px 0 rgba(0, 0, 0, .3) !important
+}
+
+.list-container .list-container-filters {
+    margin-top: 68px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 35%
+}
+
+.list-container .list-container-filters .filter-box {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: flex !important;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 15px;
+    min-width: 310px;
+    max-width: 310px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    text-align: left;
+    cursor: pointer;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-out;
+    transition: -webkit-box-shadow .25s ease-out;
+    -o-transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out, -webkit-box-shadow .25s ease-out;
+    background: #5293c4;
+    background: #fff;
+    min-width: 375px;
+    max-width: 375px;
+    padding: 35px
+}
+
+.list-container .list-container-filters .filter-box:hover {
+    -webkit-box-shadow: 1px 12px 12px rgba(0, 0, 0, .25);
+    box-shadow: 1px 12px 12px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-in;
+    transition: -webkit-box-shadow .25s ease-in;
+    -o-transition: box-shadow .25s ease-in;
+    transition: box-shadow .25s ease-in;
+    transition: box-shadow .25s ease-in, -webkit-box-shadow .25s ease-in
+}
+
+.list-container .list-container-filters .filter-box.instructor {
+    min-width: 350px;
+    max-width: 350px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.list-container .list-container-filters .filter-box-title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 36px;
+    line-height: 42px;
+    color: #000;
+    margin-bottom: 38px
+}
+
+.list-container .list-container-filters .filter-box .price-select-dropdown, .list-container .list-container-filters .filter-box .season-select-dropdown, .list-container .list-container-filters .filter-box .select-dropdown, .list-container .list-container-filters .filter-box .time-select-dropdown, .list-container .list-container-filters .filter-box .type-select-dropdown {
+    margin-bottom: 20px
+}
+
+.containter-detail-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-top: 40px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.containter-detail-card .slide {
+    max-height: 375px
+}
+
+.containter-detail-card .participant-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background: #f4f4f4;
+    width: 310px;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    padding: 20px;
+    border-radius: 15px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 24px;
+    margin-bottom: 30px
+}
+
+.containter-detail-card .participant-card__content {
+    width: 100%
+}
+
+.containter-detail-card .participant-card__content .title {
+    margin-bottom: 20px
+}
+
+.containter-detail-card .participant-card-avatars {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-top: 30px;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    font-size: 18px
+}
+
+.containter-detail-card .participant-card-avatars .participant-card-avatar {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-preferred-size: 32.3%;
+    flex-basis: 32.3%;
+    margin-bottom: 20px
+}
+
+.containter-detail-card .participant-card-avatars .participant-card-avatar .user-name {
+    font-size: 16px
+}
+
+.containter-detail-card .participant-card-avatars .participant-card-avatar .user-phone {
+    font-size: 14px
+}
+
+.containter-detail-card .participant-card-avatars .participant-card-avatar > div {
+    -webkit-box-shadow: 0 0 0 2px #307177;
+    box-shadow: 0 0 0 2px #307177;
+    border-radius: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative
+}
+
+.containter-detail-card .participant-card-avatars .participant-card-avatar > div:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 62px;
+    background: url(/assets/img/icons/error.png) 50% no-repeat/cover;
+    cursor: pointer;
+    border-radius: 100%
+}
+
+.containter-detail-card .book-date {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    background: #f4f4f4;
+    width: 310px;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    padding: 20px;
+    border-radius: 15px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 18px;
+    margin-bottom: 30px
+}
+
+.containter-detail-card .book-date .book-date-select {
+    margin-top: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around
+}
+
+.containter-detail-card .book-date .book-date-select div {
+    border: 2px solid #9c97bc;
+    border-radius: 4px;
+    height: 40px;
+    padding: 8px;
+    cursor: pointer
+}
+
+.containter-detail-card .book-date .book-date-select div.active {
+    background: #fff
+}
+
+.container-detail-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 40px auto;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 66.666667%;
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+    padding: 0 15px;
+    text-align: left
+}
+
+.container-detail-info .title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 60px;
+    line-height: 71px;
+    color: #000;
+    margin-bottom: 18px;
+    font-size: 24px;
+    line-height: 28px
+}
+
+.container-detail-info .title.all-tours {
+    font-size: 46px;
+    margin-top: 46px;
+    width: 100%
+}
+
+.container-detail-info .tour-information {
+    padding: 24px;
+    border: 2px solid #307177;
+    border-radius: 10px;
+    font-family: Roboto Light;
+    font-size: 15px
+}
+
+.container-detail-info .tour-information .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+.container-detail-info .tour-information .row li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 33.333333%;
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    margin-bottom: 8px;
+    padding: 0 15px;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.container-detail-info .tour-information .row li:before {
+    content: "";
+    background: #307177;
+    min-width: 6px;
+    height: 6px;
+    margin-right: 10px;
+    border-radius: 10px
+}
+
+.container-detail-info .text {
+    font-family: Roboto Light;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #000;
+    margin: 40px 0 30px
+}
+
+.container-detail-info .text .mt {
+    margin-top: 15px
+}
+
+.container-detail-info .text.list-ol {
+    counter-reset: item
+}
+
+.container-detail-info .text.list-ol > li {
+    counter-increment: item;
+    list-style-type: none;
+    padding: 0 0 0 20px;
+    text-indent: -9px
+}
+
+.container-detail-info .text.list-ol > li:before {
+    content: counter(item) ".";
+    display: inline-block;
+    font-weight: 700;
+    padding-right: 10px;
+    text-align: right;
+    width: 10px
+}
+
+.container-detail-info .text.list li {
+    position: relative;
+    padding-left: 20px
+}
+
+.container-detail-info .text.list li:before {
+    position: absolute;
+    content: "";
+    left: 0;
+    top: 7px;
+    width: 10px;
+    height: 10px;
+    border-radius: 100%;
+    background-image: -o-linear-gradient(140deg, #f99da2, #5d2e88);
+    background-image: linear-gradient(310deg, #f99da2, #5d2e88)
+}
+
+.container-detail-info .popup-gallery {
+    display: block;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 30px
+}
+
+.container-detail-info .popup-gallery .big {
+    max-width: 374px;
+    max-height: 374px;
+    overflow: hidden
+}
+
+.container-detail-info .popup-gallery .big img {
+    max-height: 374px
+}
+
+.container-detail-info .popup-gallery > div {
+    display: table;
+    margin-right: 4px;
+    margin-bottom: 7px;
+    max-width: 183px;
+    max-height: 183px;
+    overflow: hidden;
+    border-radius: 5px;
+    float: left
+}
+
+.container-detail-info .popup-gallery a > img {
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s;
+    border-radius: 5px;
+    background-size: cover;
+    max-height: 185px
+}
+
+.container-detail-info .popup-gallery a > img:hover {
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1)
+}
+
+.container-detail-info .tour-detail-information {
+    margin-bottom: 48px
+}
+
+.container-detail-info .tour-detail-information__details {
+    margin-top: 24px;
+    font-family: Roboto Light
+}
+
+.container-detail-info .tour-detail-information__details-title {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    border: 1px solid #307177;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 16px
+}
+
+.container-detail-info .tour-detail-information__details-title.active svg {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.container-detail-info .tour-detail-information__details-title svg {
+    -webkit-transition: all .4s;
+    -o-transition: all .4s;
+    transition: all .4s
+}
+
+.container-detail-info .tour-detail-information__details-wrap {
+    display: none;
+    background: #f0f3f7
+}
+
+.container-detail-info .tour-detail-information__details-wrap.one {
+    display: block
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner {
+    padding: 16px
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-wrap-title {
+    font-family: GTWalsheimPro Medium
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content {
+    margin-top: 16px
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .bold, .container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .semibold {
+    font-family: GTWalsheimPro Medium
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__list {
+    padding-left: 15px
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__list li, .container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__list ul {
+    list-style-type: inherit !important
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__car {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__car .pl {
+    padding-left: 8px
+}
+
+.container-detail-info .tour-equipment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin-bottom: 48px
+}
+
+.container-detail-info .tour-equipment__content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 18px;
+    border-bottom: 2px solid #94b0b3
+}
+
+.container-detail-info .tour-equipment__content .equipment-card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border-radius: 15px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    cursor: pointer;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+    -webkit-transition: -webkit-box-shadow .25s ease-out;
+    transition: -webkit-box-shadow .25s ease-out;
+    -o-transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out;
+    transition: box-shadow .25s ease-out, -webkit-box-shadow .25s ease-out;
+    background: #94b0b3;
+    position: relative;
+    -ms-flex-preferred-size: 19%;
+    flex-basis: 19%;
+    height: 126px;
+    margin: 10px 8px;
+    padding: 0
+}
+
+.container-detail-info .tour-equipment__content .equipment-card:hover {
+    -webkit-box-shadow: 0 3px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 3px 4px rgba(0, 0, 0, .25)
+}
+
+.container-detail-info .tour-equipment__content .equipment-card label {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    border-radius: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    cursor: pointer
+}
+
+.container-detail-info .tour-equipment__content .equipment-card label .equipment-logo {
+    width: 100%;
+    height: 60px
+}
+
+.container-detail-info .tour-equipment__content .equipment-card label .equipment-logo, .container-detail-info .tour-equipment__content .equipment-card label .equipment-logo img {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.container-detail-info .tour-equipment__content .equipment-card label .equipment-logo img {
+    width: auto;
+    max-height: 100%;
+    max-width: 60px;
+    max-height: 60px;
+    overflow: hidden
+}
+
+.container-detail-info .tour-equipment__content .equipment-card label .equipment-title {
+    font-family: GTWalsheimPro Medium;
+    color: #fff;
+    text-align: center;
+    line-height: 1
+}
+
+.container-detail-info .tour-equipment__content .equipment-card label:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 17px;
+    height: 16px;
+    -webkit-transition-duration: .4s;
+    -o-transition-duration: .4s;
+    transition-duration: .4s;
+    -webkit-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0)
+}
+
+.container-detail-info .tour-equipment__content .equipment-card :checked + label {
+    -webkit-box-shadow: 0 5px 15px 0 hsla(0, 0%, 100%, .9);
+    box-shadow: 0 5px 15px 0 hsla(0, 0%, 100%, .9)
+}
+
+.container-detail-info .tour-equipment__content .equipment-card :checked + label:before {
+    background: url('data:image/svg+xml;utf8,<?xml version="1.0" encoding="utf-8"?><svg version="1.1" baseProfile="tiny" id="Слой_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 12.9 10" xml:space="preserve"><polygon fill="%23ffffff" points="4.5,7.2 1.4,4.2 0,5.7 4.5,10 12.9,1.4 11.5,0 "/></svg>') bottom no-repeat;
+    background-size: contain;
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1)
+}
+
+.container-detail-info .tour-equipment .tour-equipment__total {
+    font-family: Roboto Light;
+    -ms-flex-item-align: end;
+    align-self: flex-end
+}
+
+.container-detail-info .tour-equipment .tour-equipment__total .bold {
+    font-weight: 600
+}
+
+.container-detail-info .img {
+    width: 100%;
+    border-radius: 10px;
+    max-height: 380px;
+    background-size: cover;
+    margin-bottom: 30px
+}
+
+.container-detail-info .btn {
+    margin-bottom: 40px
+}
+
+.container-detail-info .header-title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 60px;
+    line-height: 71px;
+    color: #000;
+    margin-bottom: 18px
+}
+
+.container-detail-info .header-title.all-tours {
+    font-size: 46px;
+    margin-top: 46px;
+    width: 100%
+}
+
+.container-detail-info .title-small {
+    font-family: GTWalsheimPro Medium;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    line-height: 1.33;
+    color: #000;
+    margin-bottom: 10px
+}
+
+.container-detail-info .title-small.other-margin {
+    margin-bottom: 20px
+}
+
+.container {
+    width: 100%;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    position: relative;
+    margin: 0 auto;
+    max-width: 1440px;
+    text-align: center
+}
+
+.container-wrapper {
+    width: 90%;
+    height: 100%;
+    margin: 0 auto;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap
+}
+
+.container-wrapper.all-tours {
+    background: url(/assets/img/all_tour_bg.jpg) 50% no-repeat/cover;
+    margin-top: 70px
+}
+
+.container-wrapper.detail-news {
+    margin: 60px auto 30px;
+    border-bottom: 1px solid #e5dbee
+}
+
+.btn {
+    border-radius: 20px;
+    font-family: GTWalsheimPro Medium;
+    font-size: 14px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 auto;
+    cursor: pointer;
+    width: 160px;
+    height: 40px
+}
+
+.btn.fill {
+    color: #02618e;
+    background: #fff;
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    box-shadow: 0 4px 4px rgba(0, 0, 0, .25);
+    -webkit-transition: background .3s ease 0s;
+    -o-transition: background .3s ease 0s;
+    transition: background .3s ease 0s
+}
+
+.btn.fill a {
+    color: red
+}
+
+.btn.fill:hover {
+    color: #fff;
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid #fff
+}
+
+.btn.fill-gradient {
+    position: relative;
+    background-image: -o-linear-gradient(168deg, #5293c4, #02618e);
+    background-image: linear-gradient(282deg, #5293c4, #02618e);
+    border-radius: 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 2px;
+    -webkit-transition: background-image .3s ease 0s;
+    -o-transition: background-image .3s ease 0s;
+    transition: background-image .3s ease 0s
+}
+
+.btn.fill-gradient:hover span {
+    background: #fff;
+    color: #02618e
+}
+
+.btn.fill-gradient span {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: -o-linear-gradient(168deg, #5293c4, #02618e);
+    background: linear-gradient(282deg, #5293c4, #02618e);
+    border-radius: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: background .3s ease 0s;
+    -o-transition: background .3s ease 0s;
+    transition: background .3s ease 0s
+}
+
+.btn.dark-outline {
+    color: #02618e;
+    background: rgba(0, 0, 0, 0);
+    border: 1px solid #d1d1d1;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s
+}
+
+.btn.dark-outline:hover {
+    background-color: #02618e;
+    color: #fff;
+    border: none
+}
+
+.btn.white-outline {
+    color: #fff;
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid #fff;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s
+}
+
+.btn.white-outline:hover {
+    color: #02618e;
+    background-color: #fff
+}
+
+.btn.gradient-outline {
+    position: relative;
+    display: block;
+    background-image: -o-linear-gradient(168deg, #5293c4, #02618e);
+    background-image: linear-gradient(282deg, #5293c4, #02618e);
+    border-radius: 40px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #02618e;
+    padding: 2px;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s
+}
+
+.btn.gradient-outline:hover span {
+    background: -o-linear-gradient(168deg, #5293c4, #02618e);
+    background: linear-gradient(282deg, #5293c4, #02618e);
+    color: #fff
+}
+
+.btn.gradient-outline span {
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%
+}
+
+.btn-mobile.fill, .btn.gradient-outline span {
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s
+}
+
+.btn-mobile.fill {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .18);
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, .18);
+    background-color: #fff
+}
+
+.btn-mobile.fill img {
+    position: absolute;
+    width: 19px;
+    height: 20px;
+    left: 11px;
+    top: 11px;
+    background-repeat: no-repeat
+}
+
+.btn-mobile.fill:active {
+    background-color: #f2f2f2
+}
+
+.link {
+    position: relative;
+    font-family: GTWalsheimPro Medium;
+    font-size: 14px;
+    cursor: pointer
+}
+
+.link.account {
+    color: #000;
+    text-decoration: none !important;
+    font-family: GTWalsheimPro;
+    font-size: 16px;
+    font-weight: 700
+}
+
+.link.account:hover {
+    text-decoration: none
+}
+
+.link.account:after {
+    display: none
+}
+
+.link.white {
+    color: #fff
+}
+
+.link.white:before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #fff;
+    border-radius: 20px;
+    -webkit-transition: width .3s ease 0s, left .3s ease 0s;
+    -o-transition: width .3s ease 0s, left .3s ease 0s;
+    transition: width .3s ease 0s, left .3s ease 0s
+}
+
+.link.white.active:before {
+    width: 100%
+}
+
+.link.white:hover {
+    -webkit-transition: width .3s ease 0s, left .3s ease 0s;
+    -o-transition: width .3s ease 0s, left .3s ease 0s;
+    transition: width .3s ease 0s, left .3s ease 0s
+}
+
+.link.white:hover:before {
+    width: 100%
+}
+
+.link.dark {
+    color: #5293c4;
+    text-decoration: underline
+}
+
+.link.dark.news, .link.dark:hover {
+    text-decoration: none
+}
+
+.link.dark.news {
+    position: absolute;
+    left: 92px;
+    top: 0
+}
+
+.link.dark.news:hover {
+    text-decoration: underline
+}
+
+.link.dark.news:after {
+    content: "";
+    width: 18px;
+    height: 10px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10"><path fill="%235D2E88" fill-rule="nonzero" d="M8.997 9.989c-.323 0-.645-.12-.89-.36L.368 2.1a1.203 1.203 0 0 1 0-1.734 1.285 1.285 0 0 1 1.782 0l6.846 6.663L15.843.365a1.285 1.285 0 0 1 1.782 0 1.203 1.203 0 0 1 0 1.734L9.888 9.63c-.246.24-.569.36-.891.36z"/></svg>') bottom no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 5px;
+    left: -24px;
+    -webkit-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+    -webkit-transition: all .25s ease;
+    -o-transition: all ease .25s;
+    transition: all .25s ease
+}
+
+.price-select-dropdown, .season-select-dropdown, .select-dropdown, .time-select-dropdown, .type-select-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    max-width: 640px;
+    height: 70px;
+    font-family: GTWalsheimPro;
+    list-style-type: none;
+    color: #000;
+    text-align: left;
+    padding: 35px 20px 13px;
+    font-size: 16px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 0 1px inset #e5e5e5;
+    box-shadow: inset 0 0 0 1px #e5e5e5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+    background: -o-linear-gradient(top, #fff, #fff);
+    background: linear-gradient(180deg, #fff, #fff);
+    -webkit-transition: all .2s ease;
+    -o-transition: .2s ease all;
+    transition: all .2s ease;
+    cursor: pointer
+}
+
+.price-select-dropdown .price-selected-option, .price-select-dropdown .season-selected-option, .price-select-dropdown .selected-option, .price-select-dropdown .time-selected-option, .price-select-dropdown .type-selected-option, .season-select-dropdown .price-selected-option, .season-select-dropdown .season-selected-option, .season-select-dropdown .selected-option, .season-select-dropdown .time-selected-option, .season-select-dropdown .type-selected-option, .select-dropdown .price-selected-option, .select-dropdown .season-selected-option, .select-dropdown .selected-option, .select-dropdown .time-selected-option, .select-dropdown .type-selected-option, .time-select-dropdown .price-selected-option, .time-select-dropdown .season-selected-option, .time-select-dropdown .selected-option, .time-select-dropdown .time-selected-option, .time-select-dropdown .type-selected-option, .type-select-dropdown .price-selected-option, .type-select-dropdown .season-selected-option, .type-select-dropdown .selected-option, .type-select-dropdown .time-selected-option, .type-select-dropdown .type-selected-option {
+    padding: 0;
+    position: relative
+}
+
+.price-select-dropdown .price-selected-option .options, .price-select-dropdown .price-selected-option .price-options, .price-select-dropdown .price-selected-option .season-options, .price-select-dropdown .price-selected-option .time-options, .price-select-dropdown .price-selected-option .type-options, .price-select-dropdown .season-selected-option .options, .price-select-dropdown .season-selected-option .price-options, .price-select-dropdown .season-selected-option .season-options, .price-select-dropdown .season-selected-option .time-options, .price-select-dropdown .season-selected-option .type-options, .price-select-dropdown .selected-option .options, .price-select-dropdown .selected-option .price-options, .price-select-dropdown .selected-option .season-options, .price-select-dropdown .selected-option .time-options, .price-select-dropdown .selected-option .type-options, .price-select-dropdown .time-selected-option .options, .price-select-dropdown .time-selected-option .price-options, .price-select-dropdown .time-selected-option .season-options, .price-select-dropdown .time-selected-option .time-options, .price-select-dropdown .time-selected-option .type-options, .price-select-dropdown .type-selected-option .options, .price-select-dropdown .type-selected-option .price-options, .price-select-dropdown .type-selected-option .season-options, .price-select-dropdown .type-selected-option .time-options, .price-select-dropdown .type-selected-option .type-options, .season-select-dropdown .price-selected-option .options, .season-select-dropdown .price-selected-option .price-options, .season-select-dropdown .price-selected-option .season-options, .season-select-dropdown .price-selected-option .time-options, .season-select-dropdown .price-selected-option .type-options, .season-select-dropdown .season-selected-option .options, .season-select-dropdown .season-selected-option .price-options, .season-select-dropdown .season-selected-option .season-options, .season-select-dropdown .season-selected-option .time-options, .season-select-dropdown .season-selected-option .type-options, .season-select-dropdown .selected-option .options, .season-select-dropdown .selected-option .price-options, .season-select-dropdown .selected-option .season-options, .season-select-dropdown .selected-option .time-options, .season-select-dropdown .selected-option .type-options, .season-select-dropdown .time-selected-option .options, .season-select-dropdown .time-selected-option .price-options, .season-select-dropdown .time-selected-option .season-options, .season-select-dropdown .time-selected-option .time-options, .season-select-dropdown .time-selected-option .type-options, .season-select-dropdown .type-selected-option .options, .season-select-dropdown .type-selected-option .price-options, .season-select-dropdown .type-selected-option .season-options, .season-select-dropdown .type-selected-option .time-options, .season-select-dropdown .type-selected-option .type-options, .select-dropdown .price-selected-option .options, .select-dropdown .price-selected-option .price-options, .select-dropdown .price-selected-option .season-options, .select-dropdown .price-selected-option .time-options, .select-dropdown .price-selected-option .type-options, .select-dropdown .season-selected-option .options, .select-dropdown .season-selected-option .price-options, .select-dropdown .season-selected-option .season-options, .select-dropdown .season-selected-option .time-options, .select-dropdown .season-selected-option .type-options, .select-dropdown .selected-option .options, .select-dropdown .selected-option .price-options, .select-dropdown .selected-option .season-options, .select-dropdown .selected-option .time-options, .select-dropdown .selected-option .type-options, .select-dropdown .time-selected-option .options, .select-dropdown .time-selected-option .price-options, .select-dropdown .time-selected-option .season-options, .select-dropdown .time-selected-option .time-options, .select-dropdown .time-selected-option .type-options, .select-dropdown .type-selected-option .options, .select-dropdown .type-selected-option .price-options, .select-dropdown .type-selected-option .season-options, .select-dropdown .type-selected-option .time-options, .select-dropdown .type-selected-option .type-options, .time-select-dropdown .price-selected-option .options, .time-select-dropdown .price-selected-option .price-options, .time-select-dropdown .price-selected-option .season-options, .time-select-dropdown .price-selected-option .time-options, .time-select-dropdown .price-selected-option .type-options, .time-select-dropdown .season-selected-option .options, .time-select-dropdown .season-selected-option .price-options, .time-select-dropdown .season-selected-option .season-options, .time-select-dropdown .season-selected-option .time-options, .time-select-dropdown .season-selected-option .type-options, .time-select-dropdown .selected-option .options, .time-select-dropdown .selected-option .price-options, .time-select-dropdown .selected-option .season-options, .time-select-dropdown .selected-option .time-options, .time-select-dropdown .selected-option .type-options, .time-select-dropdown .time-selected-option .options, .time-select-dropdown .time-selected-option .price-options, .time-select-dropdown .time-selected-option .season-options, .time-select-dropdown .time-selected-option .time-options, .time-select-dropdown .time-selected-option .type-options, .time-select-dropdown .type-selected-option .options, .time-select-dropdown .type-selected-option .price-options, .time-select-dropdown .type-selected-option .season-options, .time-select-dropdown .type-selected-option .time-options, .time-select-dropdown .type-selected-option .type-options, .type-select-dropdown .price-selected-option .options, .type-select-dropdown .price-selected-option .price-options, .type-select-dropdown .price-selected-option .season-options, .type-select-dropdown .price-selected-option .time-options, .type-select-dropdown .price-selected-option .type-options, .type-select-dropdown .season-selected-option .options, .type-select-dropdown .season-selected-option .price-options, .type-select-dropdown .season-selected-option .season-options, .type-select-dropdown .season-selected-option .time-options, .type-select-dropdown .season-selected-option .type-options, .type-select-dropdown .selected-option .options, .type-select-dropdown .selected-option .price-options, .type-select-dropdown .selected-option .season-options, .type-select-dropdown .selected-option .time-options, .type-select-dropdown .selected-option .type-options, .type-select-dropdown .time-selected-option .options, .type-select-dropdown .time-selected-option .price-options, .type-select-dropdown .time-selected-option .season-options, .type-select-dropdown .time-selected-option .time-options, .type-select-dropdown .time-selected-option .type-options, .type-select-dropdown .type-selected-option .options, .type-select-dropdown .type-selected-option .price-options, .type-select-dropdown .type-selected-option .season-options, .type-select-dropdown .type-selected-option .time-options, .type-select-dropdown .type-selected-option .type-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: 26px 0 0;
+    background: rgba(0, 0, 0, 0);
+    position: absolute;
+    max-width: 640px;
+    width: calc(100% + 38px);
+    max-height: 0;
+    overflow: hidden;
+    top: 20px;
+    left: -20px;
+    -webkit-transition: all .25s ease;
+    -o-transition: all ease .25s;
+    transition: all .25s ease
+}
+
+.price-select-dropdown .price-selected-option .options li, .price-select-dropdown .price-selected-option .price-options li, .price-select-dropdown .price-selected-option .season-options li, .price-select-dropdown .price-selected-option .time-options li, .price-select-dropdown .price-selected-option .type-options li, .price-select-dropdown .season-selected-option .options li, .price-select-dropdown .season-selected-option .price-options li, .price-select-dropdown .season-selected-option .season-options li, .price-select-dropdown .season-selected-option .time-options li, .price-select-dropdown .season-selected-option .type-options li, .price-select-dropdown .selected-option .options li, .price-select-dropdown .selected-option .price-options li, .price-select-dropdown .selected-option .season-options li, .price-select-dropdown .selected-option .time-options li, .price-select-dropdown .selected-option .type-options li, .price-select-dropdown .time-selected-option .options li, .price-select-dropdown .time-selected-option .price-options li, .price-select-dropdown .time-selected-option .season-options li, .price-select-dropdown .time-selected-option .time-options li, .price-select-dropdown .time-selected-option .type-options li, .price-select-dropdown .type-selected-option .options li, .price-select-dropdown .type-selected-option .price-options li, .price-select-dropdown .type-selected-option .season-options li, .price-select-dropdown .type-selected-option .time-options li, .price-select-dropdown .type-selected-option .type-options li, .season-select-dropdown .price-selected-option .options li, .season-select-dropdown .price-selected-option .price-options li, .season-select-dropdown .price-selected-option .season-options li, .season-select-dropdown .price-selected-option .time-options li, .season-select-dropdown .price-selected-option .type-options li, .season-select-dropdown .season-selected-option .options li, .season-select-dropdown .season-selected-option .price-options li, .season-select-dropdown .season-selected-option .season-options li, .season-select-dropdown .season-selected-option .time-options li, .season-select-dropdown .season-selected-option .type-options li, .season-select-dropdown .selected-option .options li, .season-select-dropdown .selected-option .price-options li, .season-select-dropdown .selected-option .season-options li, .season-select-dropdown .selected-option .time-options li, .season-select-dropdown .selected-option .type-options li, .season-select-dropdown .time-selected-option .options li, .season-select-dropdown .time-selected-option .price-options li, .season-select-dropdown .time-selected-option .season-options li, .season-select-dropdown .time-selected-option .time-options li, .season-select-dropdown .time-selected-option .type-options li, .season-select-dropdown .type-selected-option .options li, .season-select-dropdown .type-selected-option .price-options li, .season-select-dropdown .type-selected-option .season-options li, .season-select-dropdown .type-selected-option .time-options li, .season-select-dropdown .type-selected-option .type-options li, .select-dropdown .price-selected-option .options li, .select-dropdown .price-selected-option .price-options li, .select-dropdown .price-selected-option .season-options li, .select-dropdown .price-selected-option .time-options li, .select-dropdown .price-selected-option .type-options li, .select-dropdown .season-selected-option .options li, .select-dropdown .season-selected-option .price-options li, .select-dropdown .season-selected-option .season-options li, .select-dropdown .season-selected-option .time-options li, .select-dropdown .season-selected-option .type-options li, .select-dropdown .selected-option .options li, .select-dropdown .selected-option .price-options li, .select-dropdown .selected-option .season-options li, .select-dropdown .selected-option .time-options li, .select-dropdown .selected-option .type-options li, .select-dropdown .time-selected-option .options li, .select-dropdown .time-selected-option .price-options li, .select-dropdown .time-selected-option .season-options li, .select-dropdown .time-selected-option .time-options li, .select-dropdown .time-selected-option .type-options li, .select-dropdown .type-selected-option .options li, .select-dropdown .type-selected-option .price-options li, .select-dropdown .type-selected-option .season-options li, .select-dropdown .type-selected-option .time-options li, .select-dropdown .type-selected-option .type-options li, .time-select-dropdown .price-selected-option .options li, .time-select-dropdown .price-selected-option .price-options li, .time-select-dropdown .price-selected-option .season-options li, .time-select-dropdown .price-selected-option .time-options li, .time-select-dropdown .price-selected-option .type-options li, .time-select-dropdown .season-selected-option .options li, .time-select-dropdown .season-selected-option .price-options li, .time-select-dropdown .season-selected-option .season-options li, .time-select-dropdown .season-selected-option .time-options li, .time-select-dropdown .season-selected-option .type-options li, .time-select-dropdown .selected-option .options li, .time-select-dropdown .selected-option .price-options li, .time-select-dropdown .selected-option .season-options li, .time-select-dropdown .selected-option .time-options li, .time-select-dropdown .selected-option .type-options li, .time-select-dropdown .time-selected-option .options li, .time-select-dropdown .time-selected-option .price-options li, .time-select-dropdown .time-selected-option .season-options li, .time-select-dropdown .time-selected-option .time-options li, .time-select-dropdown .time-selected-option .type-options li, .time-select-dropdown .type-selected-option .options li, .time-select-dropdown .type-selected-option .price-options li, .time-select-dropdown .type-selected-option .season-options li, .time-select-dropdown .type-selected-option .time-options li, .time-select-dropdown .type-selected-option .type-options li, .type-select-dropdown .price-selected-option .options li, .type-select-dropdown .price-selected-option .price-options li, .type-select-dropdown .price-selected-option .season-options li, .type-select-dropdown .price-selected-option .time-options li, .type-select-dropdown .price-selected-option .type-options li, .type-select-dropdown .season-selected-option .options li, .type-select-dropdown .season-selected-option .price-options li, .type-select-dropdown .season-selected-option .season-options li, .type-select-dropdown .season-selected-option .time-options li, .type-select-dropdown .season-selected-option .type-options li, .type-select-dropdown .selected-option .options li, .type-select-dropdown .selected-option .price-options li, .type-select-dropdown .selected-option .season-options li, .type-select-dropdown .selected-option .time-options li, .type-select-dropdown .selected-option .type-options li, .type-select-dropdown .time-selected-option .options li, .type-select-dropdown .time-selected-option .price-options li, .type-select-dropdown .time-selected-option .season-options li, .type-select-dropdown .time-selected-option .time-options li, .type-select-dropdown .time-selected-option .type-options li, .type-select-dropdown .type-selected-option .options li, .type-select-dropdown .type-selected-option .price-options li, .type-select-dropdown .type-selected-option .season-options li, .type-select-dropdown .type-selected-option .time-options li, .type-select-dropdown .type-selected-option .type-options li {
+    padding: 19px 20px;
+    border-bottom: 1px solid #e5e5e5
+}
+
+.price-select-dropdown .price-selected-option .options li:hover, .price-select-dropdown .price-selected-option .price-options li:hover, .price-select-dropdown .price-selected-option .season-options li:hover, .price-select-dropdown .price-selected-option .time-options li:hover, .price-select-dropdown .price-selected-option .type-options li:hover, .price-select-dropdown .season-selected-option .options li:hover, .price-select-dropdown .season-selected-option .price-options li:hover, .price-select-dropdown .season-selected-option .season-options li:hover, .price-select-dropdown .season-selected-option .time-options li:hover, .price-select-dropdown .season-selected-option .type-options li:hover, .price-select-dropdown .selected-option .options li:hover, .price-select-dropdown .selected-option .price-options li:hover, .price-select-dropdown .selected-option .season-options li:hover, .price-select-dropdown .selected-option .time-options li:hover, .price-select-dropdown .selected-option .type-options li:hover, .price-select-dropdown .time-selected-option .options li:hover, .price-select-dropdown .time-selected-option .price-options li:hover, .price-select-dropdown .time-selected-option .season-options li:hover, .price-select-dropdown .time-selected-option .time-options li:hover, .price-select-dropdown .time-selected-option .type-options li:hover, .price-select-dropdown .type-selected-option .options li:hover, .price-select-dropdown .type-selected-option .price-options li:hover, .price-select-dropdown .type-selected-option .season-options li:hover, .price-select-dropdown .type-selected-option .time-options li:hover, .price-select-dropdown .type-selected-option .type-options li:hover, .season-select-dropdown .price-selected-option .options li:hover, .season-select-dropdown .price-selected-option .price-options li:hover, .season-select-dropdown .price-selected-option .season-options li:hover, .season-select-dropdown .price-selected-option .time-options li:hover, .season-select-dropdown .price-selected-option .type-options li:hover, .season-select-dropdown .season-selected-option .options li:hover, .season-select-dropdown .season-selected-option .price-options li:hover, .season-select-dropdown .season-selected-option .season-options li:hover, .season-select-dropdown .season-selected-option .time-options li:hover, .season-select-dropdown .season-selected-option .type-options li:hover, .season-select-dropdown .selected-option .options li:hover, .season-select-dropdown .selected-option .price-options li:hover, .season-select-dropdown .selected-option .season-options li:hover, .season-select-dropdown .selected-option .time-options li:hover, .season-select-dropdown .selected-option .type-options li:hover, .season-select-dropdown .time-selected-option .options li:hover, .season-select-dropdown .time-selected-option .price-options li:hover, .season-select-dropdown .time-selected-option .season-options li:hover, .season-select-dropdown .time-selected-option .time-options li:hover, .season-select-dropdown .time-selected-option .type-options li:hover, .season-select-dropdown .type-selected-option .options li:hover, .season-select-dropdown .type-selected-option .price-options li:hover, .season-select-dropdown .type-selected-option .season-options li:hover, .season-select-dropdown .type-selected-option .time-options li:hover, .season-select-dropdown .type-selected-option .type-options li:hover, .select-dropdown .price-selected-option .options li:hover, .select-dropdown .price-selected-option .price-options li:hover, .select-dropdown .price-selected-option .season-options li:hover, .select-dropdown .price-selected-option .time-options li:hover, .select-dropdown .price-selected-option .type-options li:hover, .select-dropdown .season-selected-option .options li:hover, .select-dropdown .season-selected-option .price-options li:hover, .select-dropdown .season-selected-option .season-options li:hover, .select-dropdown .season-selected-option .time-options li:hover, .select-dropdown .season-selected-option .type-options li:hover, .select-dropdown .selected-option .options li:hover, .select-dropdown .selected-option .price-options li:hover, .select-dropdown .selected-option .season-options li:hover, .select-dropdown .selected-option .time-options li:hover, .select-dropdown .selected-option .type-options li:hover, .select-dropdown .time-selected-option .options li:hover, .select-dropdown .time-selected-option .price-options li:hover, .select-dropdown .time-selected-option .season-options li:hover, .select-dropdown .time-selected-option .time-options li:hover, .select-dropdown .time-selected-option .type-options li:hover, .select-dropdown .type-selected-option .options li:hover, .select-dropdown .type-selected-option .price-options li:hover, .select-dropdown .type-selected-option .season-options li:hover, .select-dropdown .type-selected-option .time-options li:hover, .select-dropdown .type-selected-option .type-options li:hover, .time-select-dropdown .price-selected-option .options li:hover, .time-select-dropdown .price-selected-option .price-options li:hover, .time-select-dropdown .price-selected-option .season-options li:hover, .time-select-dropdown .price-selected-option .time-options li:hover, .time-select-dropdown .price-selected-option .type-options li:hover, .time-select-dropdown .season-selected-option .options li:hover, .time-select-dropdown .season-selected-option .price-options li:hover, .time-select-dropdown .season-selected-option .season-options li:hover, .time-select-dropdown .season-selected-option .time-options li:hover, .time-select-dropdown .season-selected-option .type-options li:hover, .time-select-dropdown .selected-option .options li:hover, .time-select-dropdown .selected-option .price-options li:hover, .time-select-dropdown .selected-option .season-options li:hover, .time-select-dropdown .selected-option .time-options li:hover, .time-select-dropdown .selected-option .type-options li:hover, .time-select-dropdown .time-selected-option .options li:hover, .time-select-dropdown .time-selected-option .price-options li:hover, .time-select-dropdown .time-selected-option .season-options li:hover, .time-select-dropdown .time-selected-option .time-options li:hover, .time-select-dropdown .time-selected-option .type-options li:hover, .time-select-dropdown .type-selected-option .options li:hover, .time-select-dropdown .type-selected-option .price-options li:hover, .time-select-dropdown .type-selected-option .season-options li:hover, .time-select-dropdown .type-selected-option .time-options li:hover, .time-select-dropdown .type-selected-option .type-options li:hover, .type-select-dropdown .price-selected-option .options li:hover, .type-select-dropdown .price-selected-option .price-options li:hover, .type-select-dropdown .price-selected-option .season-options li:hover, .type-select-dropdown .price-selected-option .time-options li:hover, .type-select-dropdown .price-selected-option .type-options li:hover, .type-select-dropdown .season-selected-option .options li:hover, .type-select-dropdown .season-selected-option .price-options li:hover, .type-select-dropdown .season-selected-option .season-options li:hover, .type-select-dropdown .season-selected-option .time-options li:hover, .type-select-dropdown .season-selected-option .type-options li:hover, .type-select-dropdown .selected-option .options li:hover, .type-select-dropdown .selected-option .price-options li:hover, .type-select-dropdown .selected-option .season-options li:hover, .type-select-dropdown .selected-option .time-options li:hover, .type-select-dropdown .selected-option .type-options li:hover, .type-select-dropdown .time-selected-option .options li:hover, .type-select-dropdown .time-selected-option .price-options li:hover, .type-select-dropdown .time-selected-option .season-options li:hover, .type-select-dropdown .time-selected-option .time-options li:hover, .type-select-dropdown .time-selected-option .type-options li:hover, .type-select-dropdown .type-selected-option .options li:hover, .type-select-dropdown .type-selected-option .price-options li:hover, .type-select-dropdown .type-selected-option .season-options li:hover, .type-select-dropdown .type-selected-option .time-options li:hover, .type-select-dropdown .type-selected-option .type-options li:hover {
+    background: hsla(0, 0%, 100%, .2)
+}
+
+.price-select-dropdown .price-selected-option .options li:last-of-type, .price-select-dropdown .price-selected-option .price-options li:last-of-type, .price-select-dropdown .price-selected-option .season-options li:last-of-type, .price-select-dropdown .price-selected-option .time-options li:last-of-type, .price-select-dropdown .price-selected-option .type-options li:last-of-type, .price-select-dropdown .season-selected-option .options li:last-of-type, .price-select-dropdown .season-selected-option .price-options li:last-of-type, .price-select-dropdown .season-selected-option .season-options li:last-of-type, .price-select-dropdown .season-selected-option .time-options li:last-of-type, .price-select-dropdown .season-selected-option .type-options li:last-of-type, .price-select-dropdown .selected-option .options li:last-of-type, .price-select-dropdown .selected-option .price-options li:last-of-type, .price-select-dropdown .selected-option .season-options li:last-of-type, .price-select-dropdown .selected-option .time-options li:last-of-type, .price-select-dropdown .selected-option .type-options li:last-of-type, .price-select-dropdown .time-selected-option .options li:last-of-type, .price-select-dropdown .time-selected-option .price-options li:last-of-type, .price-select-dropdown .time-selected-option .season-options li:last-of-type, .price-select-dropdown .time-selected-option .time-options li:last-of-type, .price-select-dropdown .time-selected-option .type-options li:last-of-type, .price-select-dropdown .type-selected-option .options li:last-of-type, .price-select-dropdown .type-selected-option .price-options li:last-of-type, .price-select-dropdown .type-selected-option .season-options li:last-of-type, .price-select-dropdown .type-selected-option .time-options li:last-of-type, .price-select-dropdown .type-selected-option .type-options li:last-of-type, .season-select-dropdown .price-selected-option .options li:last-of-type, .season-select-dropdown .price-selected-option .price-options li:last-of-type, .season-select-dropdown .price-selected-option .season-options li:last-of-type, .season-select-dropdown .price-selected-option .time-options li:last-of-type, .season-select-dropdown .price-selected-option .type-options li:last-of-type, .season-select-dropdown .season-selected-option .options li:last-of-type, .season-select-dropdown .season-selected-option .price-options li:last-of-type, .season-select-dropdown .season-selected-option .season-options li:last-of-type, .season-select-dropdown .season-selected-option .time-options li:last-of-type, .season-select-dropdown .season-selected-option .type-options li:last-of-type, .season-select-dropdown .selected-option .options li:last-of-type, .season-select-dropdown .selected-option .price-options li:last-of-type, .season-select-dropdown .selected-option .season-options li:last-of-type, .season-select-dropdown .selected-option .time-options li:last-of-type, .season-select-dropdown .selected-option .type-options li:last-of-type, .season-select-dropdown .time-selected-option .options li:last-of-type, .season-select-dropdown .time-selected-option .price-options li:last-of-type, .season-select-dropdown .time-selected-option .season-options li:last-of-type, .season-select-dropdown .time-selected-option .time-options li:last-of-type, .season-select-dropdown .time-selected-option .type-options li:last-of-type, .season-select-dropdown .type-selected-option .options li:last-of-type, .season-select-dropdown .type-selected-option .price-options li:last-of-type, .season-select-dropdown .type-selected-option .season-options li:last-of-type, .season-select-dropdown .type-selected-option .time-options li:last-of-type, .season-select-dropdown .type-selected-option .type-options li:last-of-type, .select-dropdown .price-selected-option .options li:last-of-type, .select-dropdown .price-selected-option .price-options li:last-of-type, .select-dropdown .price-selected-option .season-options li:last-of-type, .select-dropdown .price-selected-option .time-options li:last-of-type, .select-dropdown .price-selected-option .type-options li:last-of-type, .select-dropdown .season-selected-option .options li:last-of-type, .select-dropdown .season-selected-option .price-options li:last-of-type, .select-dropdown .season-selected-option .season-options li:last-of-type, .select-dropdown .season-selected-option .time-options li:last-of-type, .select-dropdown .season-selected-option .type-options li:last-of-type, .select-dropdown .selected-option .options li:last-of-type, .select-dropdown .selected-option .price-options li:last-of-type, .select-dropdown .selected-option .season-options li:last-of-type, .select-dropdown .selected-option .time-options li:last-of-type, .select-dropdown .selected-option .type-options li:last-of-type, .select-dropdown .time-selected-option .options li:last-of-type, .select-dropdown .time-selected-option .price-options li:last-of-type, .select-dropdown .time-selected-option .season-options li:last-of-type, .select-dropdown .time-selected-option .time-options li:last-of-type, .select-dropdown .time-selected-option .type-options li:last-of-type, .select-dropdown .type-selected-option .options li:last-of-type, .select-dropdown .type-selected-option .price-options li:last-of-type, .select-dropdown .type-selected-option .season-options li:last-of-type, .select-dropdown .type-selected-option .time-options li:last-of-type, .select-dropdown .type-selected-option .type-options li:last-of-type, .time-select-dropdown .price-selected-option .options li:last-of-type, .time-select-dropdown .price-selected-option .price-options li:last-of-type, .time-select-dropdown .price-selected-option .season-options li:last-of-type, .time-select-dropdown .price-selected-option .time-options li:last-of-type, .time-select-dropdown .price-selected-option .type-options li:last-of-type, .time-select-dropdown .season-selected-option .options li:last-of-type, .time-select-dropdown .season-selected-option .price-options li:last-of-type, .time-select-dropdown .season-selected-option .season-options li:last-of-type, .time-select-dropdown .season-selected-option .time-options li:last-of-type, .time-select-dropdown .season-selected-option .type-options li:last-of-type, .time-select-dropdown .selected-option .options li:last-of-type, .time-select-dropdown .selected-option .price-options li:last-of-type, .time-select-dropdown .selected-option .season-options li:last-of-type, .time-select-dropdown .selected-option .time-options li:last-of-type, .time-select-dropdown .selected-option .type-options li:last-of-type, .time-select-dropdown .time-selected-option .options li:last-of-type, .time-select-dropdown .time-selected-option .price-options li:last-of-type, .time-select-dropdown .time-selected-option .season-options li:last-of-type, .time-select-dropdown .time-selected-option .time-options li:last-of-type, .time-select-dropdown .time-selected-option .type-options li:last-of-type, .time-select-dropdown .type-selected-option .options li:last-of-type, .time-select-dropdown .type-selected-option .price-options li:last-of-type, .time-select-dropdown .type-selected-option .season-options li:last-of-type, .time-select-dropdown .type-selected-option .time-options li:last-of-type, .time-select-dropdown .type-selected-option .type-options li:last-of-type, .type-select-dropdown .price-selected-option .options li:last-of-type, .type-select-dropdown .price-selected-option .price-options li:last-of-type, .type-select-dropdown .price-selected-option .season-options li:last-of-type, .type-select-dropdown .price-selected-option .time-options li:last-of-type, .type-select-dropdown .price-selected-option .type-options li:last-of-type, .type-select-dropdown .season-selected-option .options li:last-of-type, .type-select-dropdown .season-selected-option .price-options li:last-of-type, .type-select-dropdown .season-selected-option .season-options li:last-of-type, .type-select-dropdown .season-selected-option .time-options li:last-of-type, .type-select-dropdown .season-selected-option .type-options li:last-of-type, .type-select-dropdown .selected-option .options li:last-of-type, .type-select-dropdown .selected-option .price-options li:last-of-type, .type-select-dropdown .selected-option .season-options li:last-of-type, .type-select-dropdown .selected-option .time-options li:last-of-type, .type-select-dropdown .selected-option .type-options li:last-of-type, .type-select-dropdown .time-selected-option .options li:last-of-type, .type-select-dropdown .time-selected-option .price-options li:last-of-type, .type-select-dropdown .time-selected-option .season-options li:last-of-type, .type-select-dropdown .time-selected-option .time-options li:last-of-type, .type-select-dropdown .time-selected-option .type-options li:last-of-type, .type-select-dropdown .type-selected-option .options li:last-of-type, .type-select-dropdown .type-selected-option .price-options li:last-of-type, .type-select-dropdown .type-selected-option .season-options li:last-of-type, .type-select-dropdown .type-selected-option .time-options li:last-of-type, .type-select-dropdown .type-selected-option .type-options li:last-of-type {
+    border-bottom: 0
+}
+
+.price-select-dropdown .price-selected-option .options.open, .price-select-dropdown .price-selected-option .price-options.open, .price-select-dropdown .price-selected-option .season-options.open, .price-select-dropdown .price-selected-option .time-options.open, .price-select-dropdown .price-selected-option .type-options.open, .price-select-dropdown .season-selected-option .options.open, .price-select-dropdown .season-selected-option .price-options.open, .price-select-dropdown .season-selected-option .season-options.open, .price-select-dropdown .season-selected-option .time-options.open, .price-select-dropdown .season-selected-option .type-options.open, .price-select-dropdown .selected-option .options.open, .price-select-dropdown .selected-option .price-options.open, .price-select-dropdown .selected-option .season-options.open, .price-select-dropdown .selected-option .time-options.open, .price-select-dropdown .selected-option .type-options.open, .price-select-dropdown .time-selected-option .options.open, .price-select-dropdown .time-selected-option .price-options.open, .price-select-dropdown .time-selected-option .season-options.open, .price-select-dropdown .time-selected-option .time-options.open, .price-select-dropdown .time-selected-option .type-options.open, .price-select-dropdown .type-selected-option .options.open, .price-select-dropdown .type-selected-option .price-options.open, .price-select-dropdown .type-selected-option .season-options.open, .price-select-dropdown .type-selected-option .time-options.open, .price-select-dropdown .type-selected-option .type-options.open, .season-select-dropdown .price-selected-option .options.open, .season-select-dropdown .price-selected-option .price-options.open, .season-select-dropdown .price-selected-option .season-options.open, .season-select-dropdown .price-selected-option .time-options.open, .season-select-dropdown .price-selected-option .type-options.open, .season-select-dropdown .season-selected-option .options.open, .season-select-dropdown .season-selected-option .price-options.open, .season-select-dropdown .season-selected-option .season-options.open, .season-select-dropdown .season-selected-option .time-options.open, .season-select-dropdown .season-selected-option .type-options.open, .season-select-dropdown .selected-option .options.open, .season-select-dropdown .selected-option .price-options.open, .season-select-dropdown .selected-option .season-options.open, .season-select-dropdown .selected-option .time-options.open, .season-select-dropdown .selected-option .type-options.open, .season-select-dropdown .time-selected-option .options.open, .season-select-dropdown .time-selected-option .price-options.open, .season-select-dropdown .time-selected-option .season-options.open, .season-select-dropdown .time-selected-option .time-options.open, .season-select-dropdown .time-selected-option .type-options.open, .season-select-dropdown .type-selected-option .options.open, .season-select-dropdown .type-selected-option .price-options.open, .season-select-dropdown .type-selected-option .season-options.open, .season-select-dropdown .type-selected-option .time-options.open, .season-select-dropdown .type-selected-option .type-options.open, .select-dropdown .price-selected-option .options.open, .select-dropdown .price-selected-option .price-options.open, .select-dropdown .price-selected-option .season-options.open, .select-dropdown .price-selected-option .time-options.open, .select-dropdown .price-selected-option .type-options.open, .select-dropdown .season-selected-option .options.open, .select-dropdown .season-selected-option .price-options.open, .select-dropdown .season-selected-option .season-options.open, .select-dropdown .season-selected-option .time-options.open, .select-dropdown .season-selected-option .type-options.open, .select-dropdown .selected-option .options.open, .select-dropdown .selected-option .price-options.open, .select-dropdown .selected-option .season-options.open, .select-dropdown .selected-option .time-options.open, .select-dropdown .selected-option .type-options.open, .select-dropdown .time-selected-option .options.open, .select-dropdown .time-selected-option .price-options.open, .select-dropdown .time-selected-option .season-options.open, .select-dropdown .time-selected-option .time-options.open, .select-dropdown .time-selected-option .type-options.open, .select-dropdown .type-selected-option .options.open, .select-dropdown .type-selected-option .price-options.open, .select-dropdown .type-selected-option .season-options.open, .select-dropdown .type-selected-option .time-options.open, .select-dropdown .type-selected-option .type-options.open, .time-select-dropdown .price-selected-option .options.open, .time-select-dropdown .price-selected-option .price-options.open, .time-select-dropdown .price-selected-option .season-options.open, .time-select-dropdown .price-selected-option .time-options.open, .time-select-dropdown .price-selected-option .type-options.open, .time-select-dropdown .season-selected-option .options.open, .time-select-dropdown .season-selected-option .price-options.open, .time-select-dropdown .season-selected-option .season-options.open, .time-select-dropdown .season-selected-option .time-options.open, .time-select-dropdown .season-selected-option .type-options.open, .time-select-dropdown .selected-option .options.open, .time-select-dropdown .selected-option .price-options.open, .time-select-dropdown .selected-option .season-options.open, .time-select-dropdown .selected-option .time-options.open, .time-select-dropdown .selected-option .type-options.open, .time-select-dropdown .time-selected-option .options.open, .time-select-dropdown .time-selected-option .price-options.open, .time-select-dropdown .time-selected-option .season-options.open, .time-select-dropdown .time-selected-option .time-options.open, .time-select-dropdown .time-selected-option .type-options.open, .time-select-dropdown .type-selected-option .options.open, .time-select-dropdown .type-selected-option .price-options.open, .time-select-dropdown .type-selected-option .season-options.open, .time-select-dropdown .type-selected-option .time-options.open, .time-select-dropdown .type-selected-option .type-options.open, .type-select-dropdown .price-selected-option .options.open, .type-select-dropdown .price-selected-option .price-options.open, .type-select-dropdown .price-selected-option .season-options.open, .type-select-dropdown .price-selected-option .time-options.open, .type-select-dropdown .price-selected-option .type-options.open, .type-select-dropdown .season-selected-option .options.open, .type-select-dropdown .season-selected-option .price-options.open, .type-select-dropdown .season-selected-option .season-options.open, .type-select-dropdown .season-selected-option .time-options.open, .type-select-dropdown .season-selected-option .type-options.open, .type-select-dropdown .selected-option .options.open, .type-select-dropdown .selected-option .price-options.open, .type-select-dropdown .selected-option .season-options.open, .type-select-dropdown .selected-option .time-options.open, .type-select-dropdown .selected-option .type-options.open, .type-select-dropdown .time-selected-option .options.open, .type-select-dropdown .time-selected-option .price-options.open, .type-select-dropdown .time-selected-option .season-options.open, .type-select-dropdown .time-selected-option .time-options.open, .type-select-dropdown .time-selected-option .type-options.open, .type-select-dropdown .type-selected-option .options.open, .type-select-dropdown .type-selected-option .price-options.open, .type-select-dropdown .type-selected-option .season-options.open, .type-select-dropdown .type-selected-option .time-options.open, .type-select-dropdown .type-selected-option .type-options.open {
+    border-radius: 10px;
+    -webkit-box-shadow: 0 4px 12px 0 rgba(93, 46, 136, .2);
+    box-shadow: 0 4px 12px 0 rgba(93, 46, 136, .2);
+    background-color: #fff;
+    min-height: 243px;
+    max-height: 1000%;
+    z-index: 1
+}
+
+.price-select-dropdown .price-selected-option .options.open li, .price-select-dropdown .price-selected-option .price-options.open li, .price-select-dropdown .price-selected-option .season-options.open li, .price-select-dropdown .price-selected-option .time-options.open li, .price-select-dropdown .price-selected-option .type-options.open li, .price-select-dropdown .season-selected-option .options.open li, .price-select-dropdown .season-selected-option .price-options.open li, .price-select-dropdown .season-selected-option .season-options.open li, .price-select-dropdown .season-selected-option .time-options.open li, .price-select-dropdown .season-selected-option .type-options.open li, .price-select-dropdown .selected-option .options.open li, .price-select-dropdown .selected-option .price-options.open li, .price-select-dropdown .selected-option .season-options.open li, .price-select-dropdown .selected-option .time-options.open li, .price-select-dropdown .selected-option .type-options.open li, .price-select-dropdown .time-selected-option .options.open li, .price-select-dropdown .time-selected-option .price-options.open li, .price-select-dropdown .time-selected-option .season-options.open li, .price-select-dropdown .time-selected-option .time-options.open li, .price-select-dropdown .time-selected-option .type-options.open li, .price-select-dropdown .type-selected-option .options.open li, .price-select-dropdown .type-selected-option .price-options.open li, .price-select-dropdown .type-selected-option .season-options.open li, .price-select-dropdown .type-selected-option .time-options.open li, .price-select-dropdown .type-selected-option .type-options.open li, .season-select-dropdown .price-selected-option .options.open li, .season-select-dropdown .price-selected-option .price-options.open li, .season-select-dropdown .price-selected-option .season-options.open li, .season-select-dropdown .price-selected-option .time-options.open li, .season-select-dropdown .price-selected-option .type-options.open li, .season-select-dropdown .season-selected-option .options.open li, .season-select-dropdown .season-selected-option .price-options.open li, .season-select-dropdown .season-selected-option .season-options.open li, .season-select-dropdown .season-selected-option .time-options.open li, .season-select-dropdown .season-selected-option .type-options.open li, .season-select-dropdown .selected-option .options.open li, .season-select-dropdown .selected-option .price-options.open li, .season-select-dropdown .selected-option .season-options.open li, .season-select-dropdown .selected-option .time-options.open li, .season-select-dropdown .selected-option .type-options.open li, .season-select-dropdown .time-selected-option .options.open li, .season-select-dropdown .time-selected-option .price-options.open li, .season-select-dropdown .time-selected-option .season-options.open li, .season-select-dropdown .time-selected-option .time-options.open li, .season-select-dropdown .time-selected-option .type-options.open li, .season-select-dropdown .type-selected-option .options.open li, .season-select-dropdown .type-selected-option .price-options.open li, .season-select-dropdown .type-selected-option .season-options.open li, .season-select-dropdown .type-selected-option .time-options.open li, .season-select-dropdown .type-selected-option .type-options.open li, .select-dropdown .price-selected-option .options.open li, .select-dropdown .price-selected-option .price-options.open li, .select-dropdown .price-selected-option .season-options.open li, .select-dropdown .price-selected-option .time-options.open li, .select-dropdown .price-selected-option .type-options.open li, .select-dropdown .season-selected-option .options.open li, .select-dropdown .season-selected-option .price-options.open li, .select-dropdown .season-selected-option .season-options.open li, .select-dropdown .season-selected-option .time-options.open li, .select-dropdown .season-selected-option .type-options.open li, .select-dropdown .selected-option .options.open li, .select-dropdown .selected-option .price-options.open li, .select-dropdown .selected-option .season-options.open li, .select-dropdown .selected-option .time-options.open li, .select-dropdown .selected-option .type-options.open li, .select-dropdown .time-selected-option .options.open li, .select-dropdown .time-selected-option .price-options.open li, .select-dropdown .time-selected-option .season-options.open li, .select-dropdown .time-selected-option .time-options.open li, .select-dropdown .time-selected-option .type-options.open li, .select-dropdown .type-selected-option .options.open li, .select-dropdown .type-selected-option .price-options.open li, .select-dropdown .type-selected-option .season-options.open li, .select-dropdown .type-selected-option .time-options.open li, .select-dropdown .type-selected-option .type-options.open li, .time-select-dropdown .price-selected-option .options.open li, .time-select-dropdown .price-selected-option .price-options.open li, .time-select-dropdown .price-selected-option .season-options.open li, .time-select-dropdown .price-selected-option .time-options.open li, .time-select-dropdown .price-selected-option .type-options.open li, .time-select-dropdown .season-selected-option .options.open li, .time-select-dropdown .season-selected-option .price-options.open li, .time-select-dropdown .season-selected-option .season-options.open li, .time-select-dropdown .season-selected-option .time-options.open li, .time-select-dropdown .season-selected-option .type-options.open li, .time-select-dropdown .selected-option .options.open li, .time-select-dropdown .selected-option .price-options.open li, .time-select-dropdown .selected-option .season-options.open li, .time-select-dropdown .selected-option .time-options.open li, .time-select-dropdown .selected-option .type-options.open li, .time-select-dropdown .time-selected-option .options.open li, .time-select-dropdown .time-selected-option .price-options.open li, .time-select-dropdown .time-selected-option .season-options.open li, .time-select-dropdown .time-selected-option .time-options.open li, .time-select-dropdown .time-selected-option .type-options.open li, .time-select-dropdown .type-selected-option .options.open li, .time-select-dropdown .type-selected-option .price-options.open li, .time-select-dropdown .type-selected-option .season-options.open li, .time-select-dropdown .type-selected-option .time-options.open li, .time-select-dropdown .type-selected-option .type-options.open li, .type-select-dropdown .price-selected-option .options.open li, .type-select-dropdown .price-selected-option .price-options.open li, .type-select-dropdown .price-selected-option .season-options.open li, .type-select-dropdown .price-selected-option .time-options.open li, .type-select-dropdown .price-selected-option .type-options.open li, .type-select-dropdown .season-selected-option .options.open li, .type-select-dropdown .season-selected-option .price-options.open li, .type-select-dropdown .season-selected-option .season-options.open li, .type-select-dropdown .season-selected-option .time-options.open li, .type-select-dropdown .season-selected-option .type-options.open li, .type-select-dropdown .selected-option .options.open li, .type-select-dropdown .selected-option .price-options.open li, .type-select-dropdown .selected-option .season-options.open li, .type-select-dropdown .selected-option .time-options.open li, .type-select-dropdown .selected-option .type-options.open li, .type-select-dropdown .time-selected-option .options.open li, .type-select-dropdown .time-selected-option .price-options.open li, .type-select-dropdown .time-selected-option .season-options.open li, .type-select-dropdown .time-selected-option .time-options.open li, .type-select-dropdown .time-selected-option .type-options.open li, .type-select-dropdown .type-selected-option .options.open li, .type-select-dropdown .type-selected-option .price-options.open li, .type-select-dropdown .type-selected-option .season-options.open li, .type-select-dropdown .type-selected-option .time-options.open li, .type-select-dropdown .type-selected-option .type-options.open li {
+    -webkit-transition: all .25s;
+    -o-transition: all .25s;
+    transition: all .25s
+}
+
+.price-select-dropdown .price-selected-option .options.open li:hover, .price-select-dropdown .price-selected-option .price-options.open li:hover, .price-select-dropdown .price-selected-option .season-options.open li:hover, .price-select-dropdown .price-selected-option .time-options.open li:hover, .price-select-dropdown .price-selected-option .type-options.open li:hover, .price-select-dropdown .season-selected-option .options.open li:hover, .price-select-dropdown .season-selected-option .price-options.open li:hover, .price-select-dropdown .season-selected-option .season-options.open li:hover, .price-select-dropdown .season-selected-option .time-options.open li:hover, .price-select-dropdown .season-selected-option .type-options.open li:hover, .price-select-dropdown .selected-option .options.open li:hover, .price-select-dropdown .selected-option .price-options.open li:hover, .price-select-dropdown .selected-option .season-options.open li:hover, .price-select-dropdown .selected-option .time-options.open li:hover, .price-select-dropdown .selected-option .type-options.open li:hover, .price-select-dropdown .time-selected-option .options.open li:hover, .price-select-dropdown .time-selected-option .price-options.open li:hover, .price-select-dropdown .time-selected-option .season-options.open li:hover, .price-select-dropdown .time-selected-option .time-options.open li:hover, .price-select-dropdown .time-selected-option .type-options.open li:hover, .price-select-dropdown .type-selected-option .options.open li:hover, .price-select-dropdown .type-selected-option .price-options.open li:hover, .price-select-dropdown .type-selected-option .season-options.open li:hover, .price-select-dropdown .type-selected-option .time-options.open li:hover, .price-select-dropdown .type-selected-option .type-options.open li:hover, .season-select-dropdown .price-selected-option .options.open li:hover, .season-select-dropdown .price-selected-option .price-options.open li:hover, .season-select-dropdown .price-selected-option .season-options.open li:hover, .season-select-dropdown .price-selected-option .time-options.open li:hover, .season-select-dropdown .price-selected-option .type-options.open li:hover, .season-select-dropdown .season-selected-option .options.open li:hover, .season-select-dropdown .season-selected-option .price-options.open li:hover, .season-select-dropdown .season-selected-option .season-options.open li:hover, .season-select-dropdown .season-selected-option .time-options.open li:hover, .season-select-dropdown .season-selected-option .type-options.open li:hover, .season-select-dropdown .selected-option .options.open li:hover, .season-select-dropdown .selected-option .price-options.open li:hover, .season-select-dropdown .selected-option .season-options.open li:hover, .season-select-dropdown .selected-option .time-options.open li:hover, .season-select-dropdown .selected-option .type-options.open li:hover, .season-select-dropdown .time-selected-option .options.open li:hover, .season-select-dropdown .time-selected-option .price-options.open li:hover, .season-select-dropdown .time-selected-option .season-options.open li:hover, .season-select-dropdown .time-selected-option .time-options.open li:hover, .season-select-dropdown .time-selected-option .type-options.open li:hover, .season-select-dropdown .type-selected-option .options.open li:hover, .season-select-dropdown .type-selected-option .price-options.open li:hover, .season-select-dropdown .type-selected-option .season-options.open li:hover, .season-select-dropdown .type-selected-option .time-options.open li:hover, .season-select-dropdown .type-selected-option .type-options.open li:hover, .select-dropdown .price-selected-option .options.open li:hover, .select-dropdown .price-selected-option .price-options.open li:hover, .select-dropdown .price-selected-option .season-options.open li:hover, .select-dropdown .price-selected-option .time-options.open li:hover, .select-dropdown .price-selected-option .type-options.open li:hover, .select-dropdown .season-selected-option .options.open li:hover, .select-dropdown .season-selected-option .price-options.open li:hover, .select-dropdown .season-selected-option .season-options.open li:hover, .select-dropdown .season-selected-option .time-options.open li:hover, .select-dropdown .season-selected-option .type-options.open li:hover, .select-dropdown .selected-option .options.open li:hover, .select-dropdown .selected-option .price-options.open li:hover, .select-dropdown .selected-option .season-options.open li:hover, .select-dropdown .selected-option .time-options.open li:hover, .select-dropdown .selected-option .type-options.open li:hover, .select-dropdown .time-selected-option .options.open li:hover, .select-dropdown .time-selected-option .price-options.open li:hover, .select-dropdown .time-selected-option .season-options.open li:hover, .select-dropdown .time-selected-option .time-options.open li:hover, .select-dropdown .time-selected-option .type-options.open li:hover, .select-dropdown .type-selected-option .options.open li:hover, .select-dropdown .type-selected-option .price-options.open li:hover, .select-dropdown .type-selected-option .season-options.open li:hover, .select-dropdown .type-selected-option .time-options.open li:hover, .select-dropdown .type-selected-option .type-options.open li:hover, .time-select-dropdown .price-selected-option .options.open li:hover, .time-select-dropdown .price-selected-option .price-options.open li:hover, .time-select-dropdown .price-selected-option .season-options.open li:hover, .time-select-dropdown .price-selected-option .time-options.open li:hover, .time-select-dropdown .price-selected-option .type-options.open li:hover, .time-select-dropdown .season-selected-option .options.open li:hover, .time-select-dropdown .season-selected-option .price-options.open li:hover, .time-select-dropdown .season-selected-option .season-options.open li:hover, .time-select-dropdown .season-selected-option .time-options.open li:hover, .time-select-dropdown .season-selected-option .type-options.open li:hover, .time-select-dropdown .selected-option .options.open li:hover, .time-select-dropdown .selected-option .price-options.open li:hover, .time-select-dropdown .selected-option .season-options.open li:hover, .time-select-dropdown .selected-option .time-options.open li:hover, .time-select-dropdown .selected-option .type-options.open li:hover, .time-select-dropdown .time-selected-option .options.open li:hover, .time-select-dropdown .time-selected-option .price-options.open li:hover, .time-select-dropdown .time-selected-option .season-options.open li:hover, .time-select-dropdown .time-selected-option .time-options.open li:hover, .time-select-dropdown .time-selected-option .type-options.open li:hover, .time-select-dropdown .type-selected-option .options.open li:hover, .time-select-dropdown .type-selected-option .price-options.open li:hover, .time-select-dropdown .type-selected-option .season-options.open li:hover, .time-select-dropdown .type-selected-option .time-options.open li:hover, .time-select-dropdown .type-selected-option .type-options.open li:hover, .type-select-dropdown .price-selected-option .options.open li:hover, .type-select-dropdown .price-selected-option .price-options.open li:hover, .type-select-dropdown .price-selected-option .season-options.open li:hover, .type-select-dropdown .price-selected-option .time-options.open li:hover, .type-select-dropdown .price-selected-option .type-options.open li:hover, .type-select-dropdown .season-selected-option .options.open li:hover, .type-select-dropdown .season-selected-option .price-options.open li:hover, .type-select-dropdown .season-selected-option .season-options.open li:hover, .type-select-dropdown .season-selected-option .time-options.open li:hover, .type-select-dropdown .season-selected-option .type-options.open li:hover, .type-select-dropdown .selected-option .options.open li:hover, .type-select-dropdown .selected-option .price-options.open li:hover, .type-select-dropdown .selected-option .season-options.open li:hover, .type-select-dropdown .selected-option .time-options.open li:hover, .type-select-dropdown .selected-option .type-options.open li:hover, .type-select-dropdown .time-selected-option .options.open li:hover, .type-select-dropdown .time-selected-option .price-options.open li:hover, .type-select-dropdown .time-selected-option .season-options.open li:hover, .type-select-dropdown .time-selected-option .time-options.open li:hover, .type-select-dropdown .time-selected-option .type-options.open li:hover, .type-select-dropdown .type-selected-option .options.open li:hover, .type-select-dropdown .type-selected-option .price-options.open li:hover, .type-select-dropdown .type-selected-option .season-options.open li:hover, .type-select-dropdown .type-selected-option .time-options.open li:hover, .type-select-dropdown .type-selected-option .type-options.open li:hover {
+    background: #e4f3fa
+}
+
+.price-select-dropdown .select-label, .season-select-dropdown .select-label, .select-dropdown .select-label, .time-select-dropdown .select-label, .type-select-dropdown .select-label {
+    color: #858585;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    pointer-events: none;
+    left: 20px;
+    top: 13px
+}
+
+.price-select-dropdown:before, .season-select-dropdown:before, .select-dropdown:before, .time-select-dropdown:before, .type-select-dropdown:before {
+    content: "";
+    width: 18px;
+    height: 10px;
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10"><path fill="%2302618E" fill-rule="nonzero" d="M8.997 9.989c-.323 0-.645-.12-.89-.36L.368 2.1a1.203 1.203 0 0 1 0-1.734 1.285 1.285 0 0 1 1.782 0l6.846 6.663L15.843.365a1.285 1.285 0 0 1 1.782 0 1.203 1.203 0 0 1 0 1.734L9.888 9.63c-.246.24-.569.36-.891.36z"/></svg>') bottom no-repeat;
+    background-size: contain;
+    position: absolute;
+    top: 30px;
+    right: 20px;
+    -webkit-transition: all .25s ease;
+    -o-transition: all ease .25s;
+    transition: all .25s ease
+}
+
+.price-select-dropdown.open, .season-select-dropdown.open, .select-dropdown.open, .time-select-dropdown.open, .type-select-dropdown.open {
+    -webkit-box-shadow: 0 0 0 2px inset #5293c4;
+    box-shadow: inset 0 0 0 2px #5293c4
+}
+
+.price-select-dropdown.open:before, .season-select-dropdown.open:before, .select-dropdown.open:before, .time-select-dropdown.open:before, .type-select-dropdown.open:before {
+    -webkit-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg)
+}
+
+.select {
+    position: relative;
+    width: 50%;
+    height: 70px;
+    font-family: GTWalsheimPro
+}
+
+.select .select-text {
+    position: relative;
+    font-family: inherit;
+    width: 50%;
+    height: 100%;
+    padding: 35px 19px 13px;
+    font-size: 16px;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 0 0 1px inset #e5e5e5;
+    box-shadow: inset 0 0 0 1px #e5e5e5;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+    background: -o-linear-gradient(top, #fff, #fff);
+    background: linear-gradient(180deg, #fff, #fff);
+    -webkit-transition: all .2s ease;
+    -o-transition: .2s ease all;
+    transition: all .2s ease
+}
+
+.select .select-text::-ms-expand {
+    display: none
+}
+
+.select .select-text:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 0 2px inset #5293c4;
+    box-shadow: inset 0 0 0 2px #5293c4
+}
+
+.select select {
+    text-indent: 1px;
+    -o-text-overflow: "";
+    text-overflow: ""
+}
+
+.select .select .select-text, .select select {
+    -webkit-appearance: none;
+    -moz-appearance: none
+}
+
+.select .select .select-text {
+    appearance: none
+}
+
+.select .select-label {
+    color: #858585;
+    font-size: 14px;
+    font-weight: 400;
+    position: absolute;
+    pointer-events: none;
+    left: 26px;
+    top: 13px
+}
+
+.select.mobile {
+    display: none
+}
+
+.popup {
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    width: auto;
+    max-width: 700px;
+    margin: 20px auto;
+    border-radius: 10px;
+    overflow-x: hidden
+}
+
+.popup.login, .popup.registration {
+    max-width: 580px
+}
+
+.popup .form-horizontal .title-small {
+    font-family: GTWalsheimPro Medium;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    line-height: 1.33;
+    color: #000;
+    margin-bottom: 10px
+}
+
+.popup .form-horizontal .title-small.other-margin {
+    margin-bottom: 20px
+}
+
+.popup .form-horizontal .text {
+    font-family: Roboto Light;
+    font-size: 14px;
+    line-height: 1.71;
+    color: #000;
+    margin-bottom: 20px
+}
+
+.popup .form-horizontal .textarea-container {
+    position: relative;
+    font-family: GTWalsheimPro;
+    color: #858585;
+    height: 200px;
+    margin-bottom: 20px
+}
+
+.popup .form-horizontal .textarea-container textarea::-webkit-input-placeholder {
+    color: #858585;
+    opacity: .5
+}
+
+.popup .form-horizontal .textarea-container textarea {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    -webkit-box-shadow: 0 0 0 1px inset #e5e5e5;
+    box-shadow: inset 0 0 0 1px #e5e5e5;
+    padding: 41px 20px 13px;
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: GTWalsheimPro;
+    font-size: 16px;
+    -webkit-transition: all .2s ease;
+    -o-transition: .2s ease all;
+    transition: all .2s ease
+}
+
+.popup .form-horizontal .textarea-container label {
+    width: 100%;
+    top: 15px;
+    left: 20px;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    font-size: 14px;
+    cursor: text;
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.popup .form-horizontal .textarea-container textarea:focus {
+    -webkit-box-shadow: 0 0 0 2px inset #5293c4;
+    box-shadow: inset 0 0 0 2px #5293c4;
+    color: #000
+}
+.input-errors {
+    color: red;
+    margin-bottom: 10px;
+    width: 460px;
+}
+.input-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 20px
+}
+
+.input-wrapper .input-container {
+    position: relative;
+    font-family: GTWalsheimPro;
+    color: #858585;
+    height: 70px
+}
+
+.input-wrapper .input-container ::-webkit-input-placeholder {
+    color: #858585;
+    opacity: .5
+}
+
+.input-wrapper .input-container input {
+    width: 520px;
+    height: 100%;
+    border-radius: 10px;
+    -webkit-appearance: none;
+    box-shadow: inset 0 0 0 1px #e5e5e5;
+    -webkit-box-shadow: 0 0 0 1px inset #e5e5e5;
+    padding: 41px 20px 13px;
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    font-family: GTWalsheimPro;
+    font-size: 16px;
+    -webkit-transition: all .2s ease;
+    -o-transition: .2s ease all;
+    transition: all .2s ease
+}
+
+.input-wrapper .input-container input.feedback {
+    width: 310px
+}
+
+.input-wrapper .input-container label {
+    width: 520px;
+    top: 15px;
+    left: 20px;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: absolute;
+    font-size: 14px;
+    cursor: text;
+    -webkit-transition: .2s ease-in-out;
+    -o-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+.input-wrapper .input-container label.feedback {
+    width: 310px
+}
+
+.input-wrapper .input-container input:focus, .input-wrapper .input-container input:valid {
+    -webkit-box-shadow: 0 0 0 2px inset #5293c4;
+    box-shadow: inset 0 0 0 2px #5293c4;
+    color: #000
+}
+
+.input-wrapper .input-container input:valid {
+    -webkit-box-shadow: 0 0 0 1px inset #e5e5e5;
+    box-shadow: inset 0 0 0 1px #e5e5e5
+}
+
+.input-wrapper .input-container input:focus + label, .input-wrapper .input-container input:valid + label {
+    pointer-events: none
+}
+
+.list-wrapper {
+    overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 17px
+}
+
+.list-item {
+    max-width: 326px;
+    width: 29%;
+    text-align: left;
+    margin-bottom: 40px
+}
+
+.list-item .content-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    margin-bottom: 20px
+}
+
+.list-item .content-image.stocks {
+    border-radius: 8px;
+    border: 1px solid #eddefa;
+    background-color: #fff;
+    -ms-flex-pack: center;
+    -ms-flex-line-pack: center;
+    align-content: center
+}
+
+.list-item .content-image.stocks, .list-item .content-image.stocks .image {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center
+}
+
+.list-item .content-image.stocks .image {
+    -ms-flex-pack: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    -ms-flex-item-align: center;
+    align-self: center;
+    background-size: contain
+}
+
+.list-item .content-image img {
+    border-radius: 8px
+}
+
+.list-item .content-title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 10px;
+    color: #000
+}
+
+.list-item .content-description-wrap {
+    font-family: Roboto Light;
+    font-size: 14px;
+    line-height: 1.57;
+    color: #949494;
+    margin-bottom: 10px
+}
+
+.list-item .content-bottom {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.list-item .date {
+    font-family: Roboto Light;
+    font-size: 14px;
+    line-height: 1;
+    color: #949494
+}
+
+.simple-pagination ul {
+    margin: 0 0 20px;
+    list-style: none;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.simple-pagination li {
+    margin-right: 10px;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex
+}
+
+.simple-pagination li.disabled {
+    opacity: .3
+}
+
+.simple-pagination li.disabled span.prev:before {
+    content: "Начало"
+}
+
+.simple-pagination li.disabled span.next:before {
+    content: "Конец"
+}
+
+.simple-pagination li a, .simple-pagination li span {
+    width: 40px;
+    height: 40px;
+    color: #5293c4;
+    font-family: GTWalsheimPro;
+    font-size: 14px;
+    padding: 10px 16px;
+    border-radius: 100%;
+    text-decoration: none;
+    -webkit-box-shadow: 0 0 0 2px inset #5293c4;
+    box-shadow: inset 0 0 0 2px #5293c4;
+    background-color: #fff;
+    -webkit-transition: all .3s ease 0s;
+    -o-transition: all .3s ease 0s;
+    transition: all .3s ease 0s
+}
+
+.simple-pagination li a:hover, .simple-pagination li span:hover {
+    color: #fff;
+    background: -o-linear-gradient(140deg, #f99da2, #5d2e88);
+    background: linear-gradient(310deg, #f99da2, #5d2e88)
+}
+
+.simple-pagination li a.prev, .simple-pagination li span.prev {
+    position: relative;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: none;
+    color: rgba(0, 0, 0, 0)
+}
+
+.simple-pagination li a.prev:hover:before, .simple-pagination li span.prev:hover:before {
+    text-decoration: underline
+}
+
+.simple-pagination li a.prev:before, .simple-pagination li span.prev:before {
+    content: "Назад";
+    position: absolute;
+    left: -10px;
+    color: #5293c4;
+    top: 0;
+    padding-top: 10px;
+    width: 40px;
+    height: 40px
+}
+
+.simple-pagination li a.next, .simple-pagination li span.next {
+    position: relative;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background: none;
+    color: rgba(0, 0, 0, 0)
+}
+
+.simple-pagination li a.next:hover:before, .simple-pagination li span.next:hover:before {
+    text-decoration: underline
+}
+
+.simple-pagination li a.next:before, .simple-pagination li span.next:before {
+    content: "Вперед";
+    position: absolute;
+    left: 0;
+    color: #5293c4;
+    top: 0;
+    padding-top: 10px;
+    width: 40px;
+    height: 40px
+}
+
+.simple-pagination .current {
+    color: #fff;
+    background: -o-linear-gradient(140deg, #f99da2, #5d2e88);
+    background: linear-gradient(310deg, #f99da2, #5d2e88);
+    -webkit-box-shadow: none;
+    box-shadow: none
+}
+
+.simple-pagination .current.next, .simple-pagination .current.prev {
+    border: none;
+    background: none;
+    color: rgba(0, 0, 0, 0)
+}
+
+.guide {
+    max-width: 1120px;
+    padding: 0 125px;
+    margin: 0 auto
+}
+
+.no-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.header-title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 60px;
+    line-height: 71px;
+    color: #000;
+    margin-bottom: 18px
+}
+
+.header-title.all-tours {
+    font-size: 46px;
+    margin-top: 46px;
+    width: 100%
+}
+
+.middle-tittle {
+    font-size: 46px;
+    line-height: 54px;
+    text-align: center
+}
+
+.middle-tittle, .title-small {
+    font-family: GTWalsheimPro Medium;
+    color: #000
+}
+
+.title-small {
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    line-height: 1.33;
+    margin-bottom: 10px
+}
+
+.title-small.other-margin {
+    margin-bottom: 20px
+}
+
+.about-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: -webkit-gradient(linear, left top, right top, from(rgba(49, 49, 49, .5)), to(rgba(49, 49, 49, .5))), url(/assets/img/about_bg.jpg) 50% no-repeat/cover;
+    background: -o-linear-gradient(left, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/about_bg.jpg) 50% no-repeat/cover;
+    background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url(/assets/img/about_bg.jpg) 50% no-repeat/cover
+}
+
+.about-wrapper .about-content {
+    max-width: 1300px;
+    width: 90%;
+    padding-top: 82px;
+    padding-bottom: 170px;
+    font-family: GTWalsheimPro;
+    font-size: 24px;
+    line-height: 32px;
+    color: #fff
+}
+
+.about-wrapper .middle-tittle {
+    color: #fff;
+    margin-bottom: 120px
+}
+
+.tabordion {
+    color: #000;
+    font-family: GTWalsheimPro;
+    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    margin: auto;
+    position: relative;
+    width: 100%;
+    height: 765px;
+    background: #f7f7f7
+}
+
+.tabordion input[name=sections] {
+    left: -9999px;
+    position: absolute;
+    top: -9999px
+}
+
+.tabordion section {
+    display: block;
+    position: static;
+    padding: 12px 0
+}
+
+.tabordion section > .tab {
+    border-radius: 10px;
+    cursor: pointer;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    width: 187px;
+    height: 44px;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 12px 16px;
+    position: relative;
+    z-index: 100;
+    margin-left: 20px
+}
+
+.tabordion section > .tab:hover {
+    background: #eaeaea
+}
+
+.personal-info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start
+}
+
+.personal-info__button {
+    margin-top: 31px
+}
+
+.input-wrapper .input-container input {
+    width: 460px
+}
+
+.tab.first {
+    margin-top: 55px
+}
+
+.material-icons.icon-account {
+    color: #6b6b6b;
+    margin-right: 13px
+}
+
+.tabordion section article {
+    display: none;
+    left: 230px;
+    width: 79%;
+    min-height: 670px;
+    padding: 30px;
+    margin: 38px 38px 0 0;
+    position: absolute;
+    text-align: left;
+    top: 0;
+    background: #fff;
+    border-radius: 10px
+}
+
+.tabordion section article .title {
+    font-family: GTWalsheimPro Medium;
+    font-size: 18px;
+    margin-bottom: 30px
+}
+
+.tabordion section article:after {
+    bottom: 0;
+    content: "";
+    display: block;
+    left: -229px;
+    position: absolute;
+    top: 0;
+    width: 220px;
+    z-index: 1
+}
+
+.tabordion input[name=sections]:checked + label {
+    background: #d6d6d6
+}
+
+.tabordion input[name=sections]:checked ~ article {
+    display: block
+}
+
+.my-tour {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.my-tour__card {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    border-radius: 10px;
+    border: 1px solid #02618e;
+    margin-bottom: 20px;
+    font-family: GTWalsheimPro Medium
+}
+
+.my-tour__card--header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 42px;
+    background: #f7f7f7;
+    padding: 10px 17px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px
+}
+
+.my-tour__card--header .card-title {
+    font-size: 14px
+}
+
+.my-tour__card--header .link {
+    color: #872300
+}
+
+.my-tour__card--content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 23px 17px
+}
+
+.my-tour__card--content img {
+    border-radius: 8px
+}
+
+.my-tour__card--content .tour-info {
+    margin-left: 30px;
+    font-size: 14px;
+    color: #000
+}
+
+.my-tour__card--content .tour-info .tour-date {
+    margin-top: 15px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
+.my-tour__card--content .tour-info .cost {
+    margin-top: 15px;
+    font-size: 30px
+}
+
+.my-tour__card--button {
+    position: absolute;
+    right: 20px;
+    bottom: 12px;
+    width: 205px
+}
+
+.my-tour__card--button .btn {
+    width: 100%
+}
+
+.admin-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 765px;
+    padding-top: 45px
+}
+
+.admin-container .table {
+    margin-bottom: 40px
+}
+
+.admin-container .table input[type=button] {
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer
+}
+
+.admin-container .table tr > th {
+    padding: 10px 5px;
+    border: 1px solid #307177;
+    text-align: center
+}
+
+.admin-container .table tr > td {
+    padding: 5px;
+    border: 1px solid #307177;
+    text-align: center;
+    vertical-align: middle
+}
+
+.admin-container .table tr > td .material-icons {
+    color: #000
+}
+
+.admin-container .table th {
+    background: #94b0b3
+}
+
+.admin-edit-container {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-height: 765px;
+    padding-top: 45px
+}
+
+.admin-edit-container .header-title {
+    text-align: start;
+    font-size: 20px;
+    text-decoration: underline
+}
+
+.admin-edit-container__form {
+    border: 2px solid #307177;
+    font-family: GTWalsheimPro;
+    font-size: 18px;
+    padding: 20px
+}
+
+.admin-edit-container__form, .admin-edit-container__form .form-user {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.admin-edit-container__form .form-user {
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start
+}
+
+.admin-edit-container__form .tour-name, .admin-edit-container__form .user-familyName, .admin-edit-container__form .user-name, .admin-edit-container__form .user-number, .admin-edit-container__form .user-role {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-family: GTWalsheimPro Medium;
+    margin-bottom: 30px
+}
+
+.admin-edit-container__form .tour-name p, .admin-edit-container__form .user-familyName p, .admin-edit-container__form .user-name p, .admin-edit-container__form .user-number p, .admin-edit-container__form .user-role p {
+    width: 200px;
+    text-decoration: underline;
+    text-align: start
+}
+
+.admin-edit-container__form .tour-name .input, .admin-edit-container__form .user-familyName .input, .admin-edit-container__form .user-name .input, .admin-edit-container__form .user-number .input, .admin-edit-container__form .user-role .input {
+    margin-left: 20px;
+    width: 40%;
+    height: 40px;
+    border: 1px solid #000;
+    padding: 10px;
+    color: #307177
+}
+
+.admin-edit-container__form .tour-name .user-role-checkbox, .admin-edit-container__form .user-familyName .user-role-checkbox, .admin-edit-container__form .user-name .user-role-checkbox, .admin-edit-container__form .user-number .user-role-checkbox, .admin-edit-container__form .user-role .user-role-checkbox {
+    margin-left: 20px;
+    text-decoration: none
+}
+
+.admin-edit-container__form .tour-name .btn, .admin-edit-container__form .user-familyName .btn, .admin-edit-container__form .user-name .btn, .admin-edit-container__form .user-number .btn, .admin-edit-container__form .user-role .btn {
+    text-align: left
+}
+
+.admin-edit-container__form .tour-participants {
+    text-align: left;
+    font-family: GTWalsheimPro Medium
+}
+
+.admin-edit-container__form .tour-participants input[type=button] {
+    background: rgba(0, 0, 0, 0);
+    cursor: pointer
+}
+
+.admin-edit-container__form .tour-participants p {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    text-decoration: underline;
+    height: 50px
+}
+
+.admin-edit-container__form .tour-participants p i {
+    margin-left: 10px
+}
+
+.admin-edit-container__form .tour-participants table {
+    border: 1px solid #000;
+    margin-bottom: 20px
+}
+
+.admin-edit-container__form .tour-participants table input {
+    text-align: center;
+    width: 90%
+}
+
+.admin-edit-container__form .tour-participants table tr > th {
+    padding: 10px 5px;
+    border: 1px solid #307177;
+    text-align: center
+}
+
+.admin-edit-container__form .tour-participants table tr > td {
+    padding: 5px;
+    border: 1px solid #307177;
+    text-align: center;
+    vertical-align: middle;
+    font-family: GTWalsheimPro
+}
+
+.admin-edit-container__form .tour-participants table tr > td .material-icons {
+    color: #000
+}
+
+.admin-edit-container__form .tour-participants table .equipment-count li {
+    min-height: 32px
+}
+
+.admin-edit-container__form .tour-participants table .equipment-count .add-equipment {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+
+.admin-edit-container__form .tour-participants table .equipment-count .add-equipment input {
+    padding-left: 8px
+}
+
+.admin-edit-container__form .tour-participants table .equipment-count input {
+    width: 90%;
+    border-bottom: 1px solid #307177
+}
+
+.admin-edit-container__form .tour-participants table .equipment {
+    text-align: left
+}
+
+.admin-edit-container__form .tour-participants table .equipment input {
+    width: 90%;
+    text-align: center
+}
+
+.admin-edit-container__form .tour-participants table .equipment ul > li > div {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-bottom: 1px solid #307177
+}
+
+.buttoun-tours {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+@media screen and (max-width: 768px) {
+    .main-wrap .header-wrap {
+        min-height: 820px
+    }
+
+    .main-wrap .header-wrap.page-not-found {
+        height: 700px
+    }
+
+    .content-wrapper.page-not-found {
+        margin-bottom: 150px
+    }
+
+    .content-compare, .content-header {
+        margin-bottom: 70px
+    }
+
+    .content-compare {
+        width: calc(100% - 68px)
+    }
+
+    .slick-list {
+        margin: 0 !important
+    }
+
+    .slider {
+        max-width: calc(100% - 128px) !important
+    }
+
+    .footer-wrapper .footer {
+        width: calc(100% - 68px)
+    }
+
+    html {
+        font-size: 15px
+    }
+
+    .tabs-wrapper .content .tab-wrap .content-tab-wrapper {
+        width: 320px;
+        margin-right: 60px
+    }
+
+    .tabs-wrapper .content .tab-wrap .content-tab-wrapper:last-of-type {
+        display: none
+    }
+
+    .table-compare-wrapper .table-compare {
+        width: calc(100% - 68px)
+    }
+
+    .table-compare-wrapper .table-compare .column-table {
+        height: 1993px
+    }
+
+    .container-detail-info {
+        max-width: 100%
+    }
+
+    .container-detail-info .img {
+        max-height: 380px
+    }
+
+    .container {
+        max-width: phoneWidth
+    }
+
+    .price-select-dropdown, .season-select-dropdown, .select, .select-dropdown, .select .select-text, .time-select-dropdown, .type-select-dropdown {
+        width: 90%
+    }
+
+    .list-item {
+        width: 45%
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .main-wrap .header-wrap {
+        min-height: 768px
+    }
+
+    .main-header .header-wrapper {
+        width: 87% !important;
+        margin-top: 25px;
+        margin-bottom: 0 !important
+    }
+
+    .main-header .header-wrapper .header-logo {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        margin-right: 0
+    }
+
+    .content-wrapper.page-not-found {
+        margin-top: 0;
+        margin-bottom: 0
+    }
+
+    .content-header.page-not-found {
+        margin: 22% auto
+    }
+
+    .content-header {
+        width: 87%;
+        margin: 50px auto
+    }
+
+    .content-header .header-title {
+        line-height: 1.33;
+        font-size: 18px
+    }
+
+    .content-header .header-title.page-not-found {
+        margin-bottom: 5%;
+        font-size: 100px
+    }
+
+    .content-header .header-text.page-not-found {
+        font-size: 14px
+    }
+
+    .content-compare {
+        width: 87%;
+        margin-bottom: 100px
+    }
+
+    .content-compare .content-compare-cards {
+        -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly
+    }
+
+    .container-title .header-title {
+        font-size: 18px
+    }
+
+    .slider {
+        max-width: 200px !important
+    }
+
+    .slider .slick-prev {
+        left: -40px
+    }
+
+    .footer-wrapper:before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 34px;
+        background: #f8f5fc;
+        z-index: 1
+    }
+
+    .footer-wrapper .footer {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 87%
+    }
+
+    .footer-wrapper .footer .footer-design-author {
+        z-index: 2
+    }
+
+    html {
+        font-size: 14px
+    }
+
+    .tabs-wrapper {
+        margin: 0 auto
+    }
+
+    .tabs-wrapper .tabs-header {
+        width: calc(100% - 40px)
+    }
+
+    .tabs-wrapper .tabs-title {
+        width: 100%;
+        top: -50px;
+        text-align: center
+    }
+
+    .tabs-wrapper li {
+        margin: 15px
+    }
+
+    .tabs-wrapper .content {
+        width: 87%
+    }
+
+    .tabs-wrapper .content .list-container-products .slide {
+        max-width: 280px;
+        text-align: center
+    }
+
+    .tabs-wrapper .content .list-container-products .slide-title br {
+        display: none
+    }
+
+    .tabs-wrapper .content .tab-wrap {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column
+    }
+
+    .tabs-wrapper .content .tab-wrap .content-tab-wrapper {
+        width: 100%;
+        margin-bottom: 30px
+    }
+
+    .tabs-wrapper .content .tab-wrap .content-tab-wrapper:nth-last-child(-n+2) {
+        margin-bottom: 0
+    }
+
+    .table-compare-wrapper {
+        margin-top: -30px
+    }
+
+    .table-compare-wrapper .table-compare {
+        width: 90%
+    }
+
+    .table-compare-wrapper .table-compare .column-table {
+        width: 280px;
+        margin-bottom: 0
+    }
+
+    .table-compare-wrapper .table-compare .column-table--logo {
+        min-height: 90px
+    }
+
+    .table-compare-wrapper .table-compare .column-table--block .title {
+        font-size: 14px
+    }
+
+    .table-compare-wrapper .table-compare .column-table--block .description {
+        font-size: 13px
+    }
+
+    .table-compare-wrapper .table-compare .column-table--block .description.vtb br:first-child {
+        display: none
+    }
+
+    .list-container .header-title {
+        font-size: 18px
+    }
+
+    .list-container .list-container-products .slide {
+        max-width: 280px;
+        text-align: center
+    }
+
+    .list-container .list-container-products .slide-title br {
+        display: none
+    }
+
+    .container-detail-info {
+        margin: 0 auto 40px
+    }
+
+    .container-detail-info .title {
+        font-size: 18px
+    }
+
+    .container-detail-info .img {
+        max-height: 380px
+    }
+
+    .container-detail-info .header-title {
+        font-size: 18px
+    }
+
+    .container {
+        max-width: smPhoneWidth
+    }
+
+    .container-wrapper {
+        width: 87%
+    }
+
+    .price-select-dropdown, .season-select-dropdown, .select, .select-dropdown, .time-select-dropdown, .type-select-dropdown {
+        display: none
+    }
+
+    .select.mobile {
+        display: block;
+        width: 95%
+    }
+
+    .select.mobile:after {
+        content: "";
+        width: 18px;
+        height: 10px;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10"><path fill="%235D2E88" fill-rule="nonzero" d="M8.997 9.989c-.323 0-.645-.12-.89-.36L.368 2.1a1.203 1.203 0 0 1 0-1.734 1.285 1.285 0 0 1 1.782 0l6.846 6.663L15.843.365a1.285 1.285 0 0 1 1.782 0 1.203 1.203 0 0 1 0 1.734L9.888 9.63c-.246.24-.569.36-.891.36z"/></svg>') bottom no-repeat;
+        background-size: contain;
+        position: absolute;
+        top: 30px;
+        right: 20px;
+        -webkit-transition: all .25s ease;
+        -o-transition: all ease .25s;
+        transition: all .25s ease
+    }
+
+    .select.mobile .select-text {
+        width: 95%
+    }
+
+    .popup {
+        max-width: 88%;
+        padding: 20px
+    }
+
+    .popup .form-horizontal .title-small.other-margin {
+        margin-bottom: 10px
+    }
+
+    .popup .form-horizontal .text {
+        font-size: 12px
+    }
+
+    .popup .form-horizontal .textarea-container {
+        height: 100px
+    }
+
+    .popup .form-horizontal .textarea-container textarea {
+        padding: 30px 20px 13px;
+        font-size: 14px
+    }
+
+    .popup .form-horizontal .textarea-container label {
+        top: 9px;
+        font-size: 12px
+    }
+
+    .input-wrapper {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        margin-bottom: 0
+    }
+
+    .input-wrapper .input-container {
+        height: 50px
+    }
+
+    .input-wrapper .input-container input {
+        padding: 30px 20px 13px;
+        font-size: 14px
+    }
+
+    .input-wrapper .input-container label {
+        top: 9px;
+        font-size: 12px
+    }
+
+    .input-wrapper .input-container {
+        width: 100%;
+        margin-bottom: 10px
+    }
+
+    .input-wrapper .input-container input {
+        width: 100%
+    }
+
+    .list-wrapper {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .list-item {
+        width: 100%
+    }
+
+    .header-title, .middle-tittle {
+        font-size: 18px
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .main-wrap .header-wrap.page-not-found {
+        height: 400px
+    }
+
+    .sidebar ul {
+        -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+        justify-content: space-evenly
+    }
+
+    .sidebar ul a {
+        margin-bottom: 0
+    }
+
+    .content-header.page-not-found {
+        margin: 0 auto
+    }
+
+    .popup {
+        max-height: 450px
+    }
+}
+
+@media screen and (max-width: 840px) {
+    .main-header .header-wrapper {
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+        margin-bottom: 70px
+    }
+
+    .main-header .header-wrapper .header-logo {
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center
+    }
+
+    .main-header .header-wrapper .main-nav {
+        -webkit-box-flex: 0;
+        -ms-flex-positive: 0;
+        flex-grow: 0;
+        -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+        order: 1
+    }
+
+    .main-header .header-wrapper .main-nav .nav-links {
+        display: none
+    }
+
+    .main-header .header-wrapper .main-nav #nav-icon {
+        display: block
+    }
+
+    .main-header .header-wrapper .btn-mobile {
+        display: block;
+        z-index: 11
+    }
+
+    .main-header .header-wrapper .btn {
+        z-index: 11;
+        display: none
+    }
+
+    .content-compare .content-compare-cards {
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .main-header .header-wrapper .main-nav {
+        font-size: 12px
+    }
+
+    .main-header .header-wrapper .main-nav .nav-links li {
+        margin: 0 0 0 15px
+    }
+
+    .slider {
+        width: 84% !important
+    }
+
+    .container {
+        max-width: 1000px
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .slider {
+        width: 91.5%
+    }
+
+    .container {
+        max-width: 1180px
+    }
+}
+
+@media screen and (max-width: 1180px) {
+    .slider {
+        width: 72.5%
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    html {
+        font-size: 16px
+    }
+
+    .section, section {
+        padding: 36px 0;
+        padding: 28px 0;
+        padding: 20px 0
+    }
+}
+
+@media screen and (max-width: 910px) {
+    .link.dark.news {
+        display: none
+    }
+}
+
+/*# sourceMappingURL=app.e8b673b2a24c6bb9ac19.css.map*/
