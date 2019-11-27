@@ -34,6 +34,7 @@
                     <nav class="main-nav">
                         <ul class="nav-links">
                             <li data-nav="main"><a href="{{ path('home') }}" class="link white"><span>Главная</span></a></li>
+                            <li data-nav="main"><a href="{{ path('tours') }}" class="link white"><span>Туры</span></a></li>
                             <li data-nav="about"><a href="{{ path('home') }}#about" class="link white"><span>О нас</span></a></li>
                         </ul>
 
@@ -77,6 +78,7 @@
             <div class="sidebar">
                 <ul>
                     <li><a href="{{ path('home') }}" class="link white">Главная</a></li>
+                    <li><a href="{{ path('tours') }}#about" class="link white">Туры</a></li>
                     <li><a href="{{ path('home') }}#about" class="link white">О нас</a></li>
                 </ul>
             </div>
@@ -102,11 +104,14 @@
             </div>
         </div>
     </div>
+
+    {% if not app.user %}
     <!-- popup login -->
     <div id="popup-login" class="popup mfp-hide login"></div>
 
     <!-- popup registration -->
     <div id="popup-registration" class="popup mfp-hide registration"></div>
+    {% endif %}
 
     <!-- popup feedback -->
     <div id="popup" class="popup mfp-hide">

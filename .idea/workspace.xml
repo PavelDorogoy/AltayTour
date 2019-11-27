@@ -2,52 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="839e6f08-0b6a-4ab0-bd5f-dc01bf3373de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/assets/css/slick.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/.gitkeep" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/GT-Walsheim-Pro-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/GTWalsheimProRegular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/OpenSans-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/fonts/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/about_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/all_tour_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/icons/boy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/icons/error.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/icons/girl.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/icons/ski-suit.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/icons/ski.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/icons/snowboard.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/logo-transparent.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/img/main_bg.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/script.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/main.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/modules/footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/modules/header.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/modules/slider.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/utils/fonts.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/utils/libs.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/utils/mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/utils/reset.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/scss/utils/vars.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/security/register_success.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Controller/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/SecurityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/SecurityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tour.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tour.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TouristRoute.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TouristRoute.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/TourRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/TourRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Repository/UserRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Repository/UserRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Security/LoginFormAuthenticator.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/account_confirm.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/account_confirm.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/login.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/login.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/security/register.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/security/register.html.twig" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -202,7 +167,8 @@
       <workItem from="1574661172393" duration="921000" />
       <workItem from="1574689786908" duration="24749000" />
       <workItem from="1574717840047" duration="363000" />
-      <workItem from="1574751304432" duration="46258000" />
+      <workItem from="1574751304432" duration="50606000" />
+      <workItem from="1574832051071" duration="18048000" />
     </task>
     <servers />
   </component>

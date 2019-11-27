@@ -20,8 +20,6 @@ class HomeController extends AbstractController
         $instructors = $repositoryInstructors->findUsersByRole("INSTRUCTOR");
 
         $repositoryTour = $this->getDoctrine()->getRepository(Tour::class);
-        $repositoryTouristRoute = $this->getDoctrine()->getRepository(TouristRoute::class);
-        $touristRoutes = $repositoryTouristRoute->findBy(array(),null,5,null);
         $tours =  $repositoryTour->findCurrent();
         $routeTours = [];
         foreach ($tours as $tour) {

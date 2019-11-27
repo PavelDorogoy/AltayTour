@@ -21,7 +21,7 @@
             </div>
 
             <!--  slider -->
-            <a class="btn fill" href="/all-tours">
+            <a class="btn fill" href="{{ path('tours') }}">
                 <span>Все туры</span>
             </a>
         </div>
@@ -35,7 +35,11 @@
     <h1 class="middle-tittle">ПОПУЛЯРНЫЕ ТУРЫ</h1>
     <div class="slider">
         {% for key, tourist_route in tourist_routes %}
-        <a class="slide " href="/tours/{{ key }}" style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ tourist_route.logo }}) no-repeat 50%/cover;">
+        <a class="slide " href="/tours/{{ key }}"
+            {% if tourist_route.logo is not empty %}
+                style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ tourist_route.logo }}) no-repeat 50%/cover;"
+            {% endif %}
+        >
             <div class="slide-icon snow"></div>
             <div class="slide-title">Ближайший: {{ tourist_route.minDate }}</div>
             <div class="slide-rate five"></div>
@@ -51,7 +55,7 @@
         </a>
         {% endfor %}
     </div>
-    <a class="btn fill-gradient" href="#">
+    <a class="btn fill-gradient" href="{{ path('tours') }}">
         <span>Смотреть все</span>
     </a>
 </div>

@@ -1,0 +1,99 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Туры | ALTAI TRAVEL{% endblock %}
+
+{% block content %}
+<!-- all-tours wrapper -->
+<div class="container">
+    <div class="container-wrapper all-tours">
+        <h1 class="header-title all-tours">Все туры</h1>
+
+        <div class="list-container all-tours">
+            {% if tourist_routes is not empty %}
+            <div class="list-container-products" id="tour-product">
+                {% for key, tourist_route in tourist_routes %}
+                    <a class="slide " href="/tours/{{ key }}"
+                        {% if tourist_route.logo is not empty %}
+                            style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ tourist_route.logo }}) no-repeat 50%/cover;"
+                        {% endif %}
+                        {% if tourist_route.tours is not empty %}
+                            data-tours="{{ tourist_route.tours }}"
+                        {% endif %}
+                    >
+                        <div class="slide-icon snow"></div>
+                        <div class="slide-title">Ближайший: {{ tourist_route.minDate }}</div>
+                        <div class="slide-rate five"></div>
+                        <div class="slide-name">{{ tourist_route.name }}</div>
+                        <div class="slide-list">{{ tourist_route.annotation | raw }}</div>
+                        <div class="slide-info">
+                            <span class="time">{{ tourist_route.days }} дней</span>
+                            <span class="distance">{{ tourist_route.distance }} км.</span>
+                        </div>
+                        <div class="slide-price">от {{ tourist_route.minPrice }} руб/чел.</div>
+
+                        <div class="slide-btn"><button class="btn white-outline">Программа тура</button></div>
+                    </a>
+                {% endfor %}
+            </div>
+            {% endif %}
+
+            <div class="list-container-filters">
+                <div class="filter-box" id="tour-filter">
+                    <h2 class="filter-box-title">Подбор тура</h2>
+                    <!-- type-->
+                    <ul class="type-select-dropdown" data-selected-value="type-never-mind">
+                        <li class="type-selected-option"><span>Не важно</span>
+                            <ul class="type-options">
+                                <li data-value="type-never-mind">Не важно</li>
+                                {% for route_type in route_types %}
+                                    <li data-value="{{ route_type.id }}">{{ route_type.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <label class="select-label">Вид тура</label>
+                    </ul>
+                    <!-- time -->
+                    <ul class="time-select-dropdown" data-selected-value="time-never-mind">
+                        <li class="time-selected-option"><span>Не важно</span>
+                            <ul class="time-options">
+                                <li data-value="time-never-mind">Не важно</li>
+                                <li data-value="1">До 5 дней</li>
+                                <li data-value="2">5-10 дней</li>
+                                <li data-value="3">Более 10 дней</li>
+                            </ul>
+                        </li>
+                        <label class="select-label">Длительность</label>
+                    </ul>
+                    <!-- season -->
+                    <ul class="season-select-dropdown" data-selected-value="season-never-mind">
+                        <li class="season-selected-option"><span>Не важно</span>
+                            <ul class="season-options">
+                                <li data-value="season-never-mind">Не важно</li>
+                                <li data-value="1">Зима</li>
+                                <li data-value="2">Весна</li>
+                                <li data-value="3">Лето</li>
+                                <li data-value="4">Осень</li>
+                            </ul>
+                        </li>
+                        <label class="select-label">Сезон</label>
+                    </ul>
+                    <!-- price -->
+                    <ul class="price-select-dropdown" data-selected-value="price-never-mind">
+                        <li class="price-selected-option"><span>Не важно</span>
+                            <ul class="price-options">
+                                <li data-value="price-never-mind">Не важно</li>
+                                <li data-value="1">До 10 000 руб.</li>
+                                <li data-value="2">10 000 - 20 000 руб.</li>
+                                <li data-value="3">20 000 - 30 000 руб.</li>
+                                <li data-value="4">30 000 - 40 000 руб.</li>
+                                <li data-value="4">Более 40 000 руб.</li>
+                            </ul>
+                        </li>
+                        <label class="select-label">Стоимость</label>
+                    </ul>
+                    <button class="btn gradient-outline"><span>Подобрать счет</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
