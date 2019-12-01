@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Tour;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Exception;
 
 /**
  * @method Tour|null find($id, $lockMode = null, $lockVersion = null)
@@ -20,8 +21,9 @@ class TourRepository extends ServiceEntityRepository
     }
 
     /**
-    * @return Tour[] Returns an array of Tour objects
-    */
+     * @return Tour[] Returns an array of Tour objects
+     * @throws Exception
+     */
     public function findCurrent()
     {
         $curDate = new \DateTime('now');
@@ -31,6 +33,24 @@ class TourRepository extends ServiceEntityRepository
         $qb->select('u')
             ->where('u.date >= :curDate')
             ->setParameter('curDate', $curDate);
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * @param int $routeID
+     * @return Tour[] Returns an array of Tour objects
+     * @throws Exception
+     */
+    public function findCurrentByRoute(int $routeID)
+    {
+        $curDate = new \DateTime('now');
+        $curDate->setTime(0, 0, 0);
+
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('u')
+            ->where('u.date >= :curDate AND u.route = :routeID')
+            ->setParameter('curDate', $curDate)
+            ->setParameter('routeID', $routeID);
         return $qb->getQuery()->getResult();
     }
 

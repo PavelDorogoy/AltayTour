@@ -1,0 +1,172 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Информация о туре | ALTAI TRAVEL{% endblock %}
+
+{% block content %}
+    <!-- Detail-info-header wrapper -->
+    <div class="wrapper">
+        <div class="content-wrapper">
+            <div class="content-header detail-rate"
+                {% if tourist_route.bgLogo is not empty %}
+                    style="background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url({{ tourist_route.bgLogo }}) top no-repeat/cover;"
+                {% endif %}
+            >
+                <div class="content-header--logo">
+                    <div class="icon snow"></div>
+                </div>
+                <h1 class=header-title>{{ tourist_route.name }}</h1>
+                <div class="header-text snow">
+                    {{ tourist_route.annotation | raw }}
+                </div>
+                <a href="#book-date" class="btn fill">Забронировать</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Detail-info wrapper -->
+    <div class="container">
+        <div class="container-wrapper">
+            <div class="container-detail-info">
+                <h1 class="title">Описание Тура</h1>
+                {{ tourist_route.description | raw }}
+
+                {% if photos is not empty %}
+                <div class="popup-gallery">
+                    <h1 class="title">Фотографии тура</h1>
+                    {% for key, photo in photos %}
+                        {% if (key == 0) %}
+                            <div class="big">
+                                <a href="{{ photo }}" title="Gesh">
+                                    <img src="{{ photo | imagine_filter('big_slide')}}" width="374" height="374">
+                                </a>
+                            </div>
+                        {% else %}
+                        <div>
+                            <a href="{{ photo }}" title="Gesh">
+                                <img src="{{ photo | imagine_filter('small_slide')}}" width="185" height="185">
+                            </a>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                {% if days is not empty %}
+                <div class="tour-detail-information">
+                    <h1 class="title">Подробный маршрут</h1>
+                    {% for day in days %}
+                    <div class="tour-detail-information__details">
+                        <div class="tour-detail-information__details-title">
+                            <p>День {{ day.day }}</p>
+                            <p><svg xmlns="http://www.w3.org/2000/svg" width="18" height="10" viewBox="0 0 18 10"><path fill="#307177" fill-rule="nonzero" class="animation" d="M8.997 9.989c-.323 0-.645-.12-.89-.36L.368 2.1a1.203 1.203 0 0 1 0-1.734 1.285 1.285 0 0 1 1.782 0l6.846 6.663L15.843.365a1.285 1.285 0 0 1 1.782 0 1.203 1.203 0 0 1 0 1.734L9.888 9.63c-.246.24-.569.36-.891.36z"/></svg></p>
+                        </div>
+                        <div class="tour-detail-information__details-wrap">
+                            <div class="tour-detail-information__details-inner">
+                                {{ day.description | raw }}
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endif %}
+
+                <div class="tour-equipment">
+                    <h1 class="title">Забронируйте снаряжение</h1>
+                    {% for tour in tours %}
+                    <div class="tour-equipment__content" data-tour="{{ tour.id }}">
+                        {% for key1, tour_equipment in tour.equipments %}
+                            <div class="equipment-card">
+                                <input type="checkbox" id="equipment{{key1}}-tour{{ tour.id }}" data-equipmet-id="{{ tour_equipment.equipment.id }}" data-equipmet-price="{{ tour_equipment.equipment.price * tourist_route.days }}" {{ attribute(tour.equipment_reservations, tour_equipment.equipment.id) }}/>
+                                <label for="equipment{{key1}}-tour{{ tour.id }}">
+                                    <div class="equipment-logo">
+                                        <img src="{{ asset( tour_equipment.equipment.logo ) }}" width="128" height="128"/>
+                                    </div>
+                                    <p class="equipment-title">{{ tour_equipment.equipment.name }}</p>
+                                </label>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    {% endfor %}
+
+                    <div class="tour-equipment__total">
+                        Итого:
+                        <span class="bold">1990 ₽</span>
+                    </div>
+                    {% if app.user %}
+                        <button class="btn js-tour-save-button" data-token="{{ csrf_token('tour_booking') }}" style="display: none">Сохранить</button>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="container-detail-card">
+                <div class="wrap-fixed">
+                    <!-- Date -->
+                    <div class="book-date" id="book-date">
+                        <div class="book-date__content">
+                            <h2 class="title">Выберите дату тура</h2>
+                            <div class="book-date-select">
+                            {% for key, tour in tours %}
+                            {% if ((key > 0) and ((key % 2) == 0)) %}
+                            </div>
+                            <div class="book-date-select">
+                            {% endif %}
+                                <div class="book-date-select-item {% if tour.isBooked %}booked{% endif %}" rel="{{ tour.id }}" data-count_person="{{ tour.count_person }}" data-reservation_count="{{ tour.reservation_count }}" data-price="{{ tour.price }}" data-booked="{{ tour.isBooked }}">{{ tour.date }}</div>
+                            {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card -->
+                    <div class="slide snow"
+                        {% if tourist_route.logo is not empty %}
+                            style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ tourist_route.logo }}) no-repeat 50%/cover;"
+                        {% endif %}
+                    >
+                        <div class="slide-icon snow"></div>
+                        <div class="slide-title" id="tour-date">{{ tours[0].date }}</div>
+                        <div class="slide-rate five"></div>
+                        <div class="slide-name">{{ tourist_route.name }}</div>
+                        <div class="slide-list">
+                            {{ tourist_route.annotation | raw}}
+                        </div>
+                        <div class="slide-info">
+                            <span class="time">{{ tourist_route.days }} дней</span>
+                            <span class="distance">{{ tourist_route.distance }} км.</span>
+                            <span class="person" id="tour-person">{{ tours[0].reservation_count }}/{{ tours[0].count_person }} чел.</span>
+                        </div>
+                        <div class="slide-price" id="tour-price">{{ tours[0].price }} руб/чел.</div>
+                        <div class="slide-btn">
+                            {% if app.user %}
+                                <button class="btn white-outline js-tour-book-button" data-token="{{ csrf_token('tour_booking') }}">Забронировать</button>
+                                <button class="btn white-outline unbook js-tour-unbook-button" data-token="{{ csrf_token('tour_booking') }}" style="display: none">Отменить бронирование</button>
+                            {% else %}
+                                <a href="#popup-login" class="btn white-outline js-login-button">Забронировать</a>
+                            {% endif %}
+                        </div>
+                    </div>
+
+                    {% if is_granted('ROLE_INSTRUCTOR') or is_granted('ROLE_ADMIN')%}
+                        <div class="participant-card">
+                            <div class="participant-card__content">
+                                <h2 class="title">Участники тура</h2>
+                                {% for tour in tours %}
+                                    <div class="participant-card-avatars" data-tour="{{ tour.id }}" style="display: none">
+                                    {% for reservation in tour.reservation %}
+                                        <div class="participant-card-avatar" data-reservation="{{ reservation.id }}" data-token="{{ csrf_token('tour_booking') }}">
+                                            <div>
+                                                <img src="/assets/img/icons/boy.png" width="60" height="60" id="user-1"/>
+                                            </div>
+                                            <p class="user-name">{{ reservation.user.name }}</p>
+                                            <p class="user-phone">{{ reservation.user.phone }}</p>
+                                        </div>
+                                    {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

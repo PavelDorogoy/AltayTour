@@ -965,6 +965,10 @@ td, th {
     background: url('data:image/svg+xml;utf8,<svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.78 5.841L13 0.210999L22 12.211H0L5.53 4.841L9.54 10.211H18L13 3.541L10.03 7.511L8.78 5.841ZM5.52002 8.18098L4 10.211H7.04004L5.52002 8.18098Z" fill="%23FAC917"/></svg>') 50% no-repeat
 }
 
+.slide-info span.person:before {
+    background: url('data:image/svg+xml;utf8,<svg width="32" height="23" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M22.82,20.55l-.63-.18c-1.06-.29-1.79-.51-1.91-1.75,2.83-3,2.79-5.67,2.73-8.47,0-.38,0-.76,0-1.15a7.1,7.1,0,0,0-7-7A7.1,7.1,0,0,0,9,9c0,.39,0,.77,0,1.15-.06,2.8-.1,5.45,2.73,8.47-.12,1.24-.85,1.46-1.91,1.75l-.63.18C5.61,21.74,2,25,2,29a1,1,0,0,0,2,0c0-3,3-5.61,5.82-6.55.16-.06.34-.1.52-.15A4.11,4.11,0,0,0,13.45,20a5.4,5.4,0,0,0,5.1,0,4.11,4.11,0,0,0,3.11,2.35c.18.05.36.09.52.15C25,23.39,28,26,28,29a1,1,0,0,0,2,0C30,25,26.39,21.74,22.82,20.55Zm-9.36-3C10.9,15,10.94,12.86,11,10.18,11,9.8,11,9.4,11,9A5,5,0,0,1,21,9c0,.4,0,.8,0,1.18,0,2.68.09,4.8-2.47,7.36A3.58,3.58,0,0,1,13.46,17.54Z" fill="%23FAC917"/></svg>') 50% no-repeat
+}
+
 .slide-info span.distance:before {
     background: url('data:image/svg+xml;utf8,<svg width="14" height="20" viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 6.10352e-05C10.31 6.10352e-05 13 2.69006 13 6.00006C13 10.5001 7 17.0001 7 17.0001C7 17.0001 1 10.5001 1 6.00006C1 2.69006 3.69 6.10352e-05 7 6.10352e-05ZM14 20.0001V18.0001H0V20.0001H14ZM3 6.00006C3 3.79006 4.79 2.00006 7 2.00006C9.21 2.00006 11 3.79006 11 6.00006C11 8.13006 8.92 11.4601 7 13.9101C5.08 11.4701 3 8.13006 3 6.00006ZM5 6.00006C5 4.90006 5.9 4.00006 7 4.00006C8.1 4.00006 9 4.90006 9 6.00006C9 7.10006 8.11 8.00006 7 8.00006C5.9 8.00006 5 7.10006 5 6.00006Z" fill="%23FAC917"/></svg>') 50% no-repeat
 }
@@ -1950,8 +1954,8 @@ li, ul {
     background: url('data:image/svg+xml;utf8,<svg width="21" height="24" viewBox="0 0 21 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M7 0H14V2.28682H7V0ZM9.33333 14.8642V8.00385H11.6667V14.8642H9.33333ZM18.7017 7.29492L20.3583 5.67129C19.8567 5.08815 19.3083 4.53932 18.7133 4.05909L17.0567 5.68272C15.2483 4.2649 12.9733 3.41878 10.5 3.41878C4.70167 3.41878 0 8.0267 0 13.7094C0 19.3921 4.69 24 10.5 24C16.31 24 21 19.3921 21 13.7094C21 11.2968 20.1367 9.06719 18.7017 7.29492ZM2.33333 13.7209C2.33333 18.1458 5.985 21.7247 10.5 21.7247C15.015 21.7247 18.6667 18.1458 18.6667 13.7209C18.6667 9.29589 15.015 5.71704 10.5 5.71704C5.985 5.71704 2.33333 9.29589 2.33333 13.7209Z" fill="%23FAC917"/></svg>') 50% no-repeat
 }
 
-.list-container .list-container-products .slide-info span.complexity:before {
-    background: url('data:image/svg+xml;utf8,<svg width="22" height="13" viewBox="0 0 22 13" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.78 5.841L13 0.210999L22 12.211H0L5.53 4.841L9.54 10.211H18L13 3.541L10.03 7.511L8.78 5.841ZM5.52002 8.18098L4 10.211H7.04004L5.52002 8.18098Z" fill="%23FAC917"/></svg>') 50% no-repeat
+.list-container .list-container-products .slide-info span.person:before {
+    background: url('data:image/svg+xml;utf8,<svg width="32" height="23" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path class="cls-1" d="M22.82,20.55l-.63-.18c-1.06-.29-1.79-.51-1.91-1.75,2.83-3,2.79-5.67,2.73-8.47,0-.38,0-.76,0-1.15a7.1,7.1,0,0,0-7-7A7.1,7.1,0,0,0,9,9c0,.39,0,.77,0,1.15-.06,2.8-.1,5.45,2.73,8.47-.12,1.24-.85,1.46-1.91,1.75l-.63.18C5.61,21.74,2,25,2,29a1,1,0,0,0,2,0c0-3,3-5.61,5.82-6.55.16-.06.34-.1.52-.15A4.11,4.11,0,0,0,13.45,20a5.4,5.4,0,0,0,5.1,0,4.11,4.11,0,0,0,3.11,2.35c.18.05.36.09.52.15C25,23.39,28,26,28,29a1,1,0,0,0,2,0C30,25,26.39,21.74,22.82,20.55Zm-9.36-3C10.9,15,10.94,12.86,11,10.18,11,9.8,11,9.4,11,9A5,5,0,0,1,21,9c0,.4,0,.8,0,1.18,0,2.68.09,4.8-2.47,7.36A3.58,3.58,0,0,1,13.46,17.54Z"/></svg>') 50% no-repeat
 }
 
 .list-container .list-container-products .slide-info span.distance:before {
@@ -2092,7 +2096,7 @@ li, ul {
     margin-bottom: 20px
 }
 
-.containter-detail-card {
+.container-detail-card {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2113,11 +2117,18 @@ li, ul {
     flex-direction: column
 }
 
-.containter-detail-card .slide {
+.container-detail-card .slide {
     max-height: 375px
 }
+.container-detail-card .slide .btn.unbook {
+     background: #DB8C87;
+     width: 200px;
+}
+.container-detail-card .slide .btn.unbook:hover {
+    background: #fff;
+}
 
-.containter-detail-card .participant-card {
+.container-detail-card .participant-card {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2132,15 +2143,15 @@ li, ul {
     margin-bottom: 30px
 }
 
-.containter-detail-card .participant-card__content {
+.container-detail-card .participant-card__content {
     width: 100%
 }
 
-.containter-detail-card .participant-card__content .title {
+.container-detail-card .participant-card__content .title {
     margin-bottom: 20px
 }
 
-.containter-detail-card .participant-card-avatars {
+.container-detail-card .participant-card-avatars {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2153,7 +2164,7 @@ li, ul {
     font-size: 18px
 }
 
-.containter-detail-card .participant-card-avatars .participant-card-avatar {
+.container-detail-card .participant-card-avatars .participant-card-avatar {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2169,15 +2180,15 @@ li, ul {
     margin-bottom: 20px
 }
 
-.containter-detail-card .participant-card-avatars .participant-card-avatar .user-name {
+.container-detail-card .participant-card-avatars .participant-card-avatar .user-name {
     font-size: 16px
 }
 
-.containter-detail-card .participant-card-avatars .participant-card-avatar .user-phone {
+.container-detail-card .participant-card-avatars .participant-card-avatar .user-phone {
     font-size: 14px
 }
 
-.containter-detail-card .participant-card-avatars .participant-card-avatar > div {
+.container-detail-card .participant-card-avatars .participant-card-avatar > div {
     -webkit-box-shadow: 0 0 0 2px #307177;
     box-shadow: 0 0 0 2px #307177;
     border-radius: 100%;
@@ -2187,7 +2198,7 @@ li, ul {
     position: relative
 }
 
-.containter-detail-card .participant-card-avatars .participant-card-avatar > div:hover:before {
+.container-detail-card .participant-card-avatars .participant-card-avatar > div:hover:before {
     content: "";
     position: absolute;
     top: 0;
@@ -2199,7 +2210,7 @@ li, ul {
     border-radius: 100%
 }
 
-.containter-detail-card .book-date {
+.container-detail-card .book-date {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -2218,7 +2229,7 @@ li, ul {
     margin-bottom: 30px
 }
 
-.containter-detail-card .book-date .book-date-select {
+.container-detail-card .book-date .book-date-select {
     margin-top: 20px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -2227,16 +2238,30 @@ li, ul {
     justify-content: space-around
 }
 
-.containter-detail-card .book-date .book-date-select div {
+.container-detail-card .book-date .book-date-select div {
     border: 2px solid #9c97bc;
     border-radius: 4px;
+    width: 45%;
     height: 40px;
     padding: 8px;
     cursor: pointer
 }
 
-.containter-detail-card .book-date .book-date-select div.active {
+.container-detail-card .book-date .book-date-select div.active {
     background: #fff
+}
+.container-detail-card .book-date .book-date-select div.booked {
+    border-color: #fff;
+    color: #fff;
+    background: #307177;
+}
+.container-detail-card .wrap-fixed.fixed {
+    position: fixed;
+    bottom: 20px;
+}
+.container-detail-card .wrap-fixed.bottom {
+    position: absolute;
+    bottom: 20px;
 }
 
 .container-detail-info {
@@ -2373,12 +2398,12 @@ li, ul {
 
 .container-detail-info .popup-gallery .big {
     max-width: 374px;
-    max-height: 374px;
+    max-height: 373px;
     overflow: hidden
 }
 
 .container-detail-info .popup-gallery .big img {
-    max-height: 374px
+    max-height: 373px
 }
 
 .container-detail-info .popup-gallery > div {
@@ -2454,37 +2479,26 @@ li, ul {
     padding: 16px
 }
 
-.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-wrap-title {
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner h2 {
+    font-family: GTWalsheimPro Medium;
+    margin-bottom: 16px;
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner p {
+    margin-bottom: 16px
+}
+
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .bold {
     font-family: GTWalsheimPro Medium
 }
 
-.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content {
-    margin-top: 16px
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner ul, .container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner ol {
+    padding-left: 15px;
+    margin-bottom: 16px
 }
 
-.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .bold, .container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .semibold {
-    font-family: GTWalsheimPro Medium
-}
-
-.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__list {
-    padding-left: 15px
-}
-
-.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__list li, .container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__list ul {
+.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner li {
     list-style-type: inherit !important
-}
-
-.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__car {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    align-items: center
-}
-
-.container-detail-info .tour-detail-information__details-wrap .tour-detail-information__details-inner .tour-information__details-content .tour-information__car .pl {
-    padding-left: 8px
 }
 
 .container-detail-info .tour-equipment {
@@ -2504,8 +2518,6 @@ li, ul {
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin-bottom: 18px;
-    border-bottom: 2px solid #94b0b3
 }
 
 .container-detail-info .tour-equipment__content .equipment-card {
@@ -2635,6 +2647,10 @@ li, ul {
     font-family: Roboto Light;
     -ms-flex-item-align: end;
     align-self: flex-end
+    width: 100%;
+    text-align: right;
+    border-top: 2px solid #94b0b3;
+    padding-top: 18px;
 }
 
 .container-detail-info .tour-equipment .tour-equipment__total .bold {

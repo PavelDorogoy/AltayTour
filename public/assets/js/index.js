@@ -106,29 +106,17 @@ $(document).ready(function(){
       })();
 
 // Show - Hide
-$(".tour-detail-information__details-title.one").click(function(){
-  $(this).toggleClass("active");
-  $(".tour-detail-information__details-wrap.one").slideToggle();
-});
-
-$(".tour-detail-information__details-title.two").click(function(){
-  $(this).toggleClass("active");
-  $(".tour-detail-information__details-wrap.two").slideToggle();
-});
-
-$(".tour-detail-information__details-title.three").click(function(){
-  $(this).toggleClass("active");
-  $(".tour-detail-information__details-wrap.three").slideToggle();
-});
-
-$(".tour-detail-information__details-title.four").click(function(){
-  $(this).toggleClass("active");
-  $(".tour-detail-information__details-wrap.four").slideToggle();
-});
-
-$(".tour-detail-information__details-title.five").click(function(){
-  $(this).toggleClass("active");
-  $(".tour-detail-information__details-wrap.five").slideToggle();
+$.each($(".tour-detail-information__details"), function(index){
+    let title = $(this).find(".tour-detail-information__details-title");
+    let wrap = $(this).find(".tour-detail-information__details-wrap");
+    if(index === 0) {
+        title.toggleClass("active");
+        wrap.slideToggle();
+    }
+    title.click(function(){
+        $(this).toggleClass("active");
+        wrap.slideToggle();
+    });
 });
 
 // Popup
@@ -139,6 +127,10 @@ $('#feedback').magnificPopup({
 $('#login').magnificPopup({
   type:'inline',
   midClick: true
+});
+$('.js-login-button').magnificPopup({
+    type:'inline',
+    midClick: true
 });
 $('#registration').magnificPopup({
   type:'inline',

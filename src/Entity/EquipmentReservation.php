@@ -19,13 +19,13 @@ class EquipmentReservation
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\TourReservation")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $reservation_tour;
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Equipment")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=false, onDelete="CASCADE")
      */
     private $equipment;
 

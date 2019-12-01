@@ -53,6 +53,16 @@ class TouristRoute
      */
     private $type;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $bg_logo;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $rating;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -138,6 +148,30 @@ class TouristRoute
     public function setType(?TouristRouteType $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getBgLogo(): ?string
+    {
+        return $this->bg_logo;
+    }
+
+    public function setBgLogo(?string $bg_logo): self
+    {
+        $this->bg_logo = $bg_logo;
+
+        return $this;
+    }
+
+    public function getRating(): ?int
+    {
+        return $this->rating;
+    }
+
+    public function setRating(?int $rating): self
+    {
+        $this->rating = $rating;
 
         return $this;
     }
