@@ -54,6 +54,25 @@ class TourRepository extends ServiceEntityRepository
         return $qb->getQuery()->getResult();
     }
 
+    /**
+     * @param int $instructorID
+     * @return Tour[] Returns an array of Tour objects
+     * @throws Exception
+     */
+    public function findCurrentByInstructor(int $instructorID)
+    {
+        $curDate = new \DateTime('now');
+        $curDate->setTime(0, 0, 0);
+
+        $qb = $this->createQueryBuilder('u');
+        $qb->select('u')
+            ->where('u.date >= :curDate AND u.instructor = :instructorID')
+            ->orderBy('u.date', 'ASC')
+            ->setParameter('curDate', $curDate)
+            ->setParameter('instructorID', $instructorID);
+        return $qb->getQuery()->getResult();
+    }
+
     // /**
     //  * @return Tour[] Returns an array of Tour objects
     //  */

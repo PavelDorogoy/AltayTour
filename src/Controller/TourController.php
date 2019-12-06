@@ -11,7 +11,6 @@ use App\Entity\TouristRoutePhotoAlbum;
 use App\Entity\TouristRoutePoint;
 use App\Entity\TouristRouteType;
 use App\Entity\TourReservation;
-use Doctrine\DBAL\ParameterType;
 use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

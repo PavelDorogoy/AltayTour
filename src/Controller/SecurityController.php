@@ -61,7 +61,7 @@ class SecurityController extends AbstractController
         $user = $userRepository->findOneBy(['email' => $email]);
 
         if ($user === null) {
-            return new Response('404');
+            throw $this->createNotFoundException('Вы не зарегистрированы');
         }
         return $this->render('security/register_success.html.twig', [
             'user' => $user,
@@ -102,7 +102,7 @@ class SecurityController extends AbstractController
         $user = $userRepository->findOneBy(['confirmationCode' => $code]);
 
         if ($user === null) {
-            return new Response('404');
+            throw $this->createNotFoundException('Вы не зарегистрированы');
         }
 
         $user->setIsConfirmed(true);

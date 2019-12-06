@@ -15,3 +15,13 @@ liip_imagine:
           filters:
             thumbnail: { size: [185, 185], mode: outbound }
             background: { size: [185, 185], position: center, color: '#fff' }
+        header_photo:
+          quality: 90
+          filters:
+            thumbnail: { size: [55, 55], mode: outbound }
+            background: { size: [55, 55], position: center, color: '#fff' }
+        my_tour_logo:
+          quality: 90
+          filters:
+            thumbnail: { size: [134, 107], mode: outbound }
+            background: { size: [134, 107], position: center, color: '#fff' }

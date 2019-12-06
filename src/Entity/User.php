@@ -4,6 +4,7 @@ namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
+use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -86,6 +87,22 @@ class User implements UserInterface
      * @Assert\Length(min=6)
      */
     private $plainPassword;
+
+    /**
+     * @Assert\Length(min=6)
+     */
+    private $plainEditPassword;
+
+    /**
+     * @Assert\Image(
+     *     minWidth = 200,
+     *     minHeight = 200,
+     *     mimeTypes = {"image/jpeg", "image/jpg", "image/png"},
+     *     mimeTypesMessage = "Картинка должны быть в одном из форматов: JPEG, JPG, PNG",
+     *     maxSize = "5Mi"
+     * )
+     */
+    private $image;
 
 
     public function getId(): ?int
@@ -225,6 +242,29 @@ class User implements UserInterface
         return $this;
     }
 
+    public function getPlainEditPassword(): ?string
+    {
+        return $this->plainEditPassword;
+    }
+
+    public function setPlainEditPassword(string $plainEditPassword): self
+    {
+        $this->plainEditPassword = $plainEditPassword;
+
+        return $this;
+    }
+
+    public function getImage(): ?File
+    {
+        return $this->image;
+    }
+
+    public function setImage(File $image): void
+    {
+        $this->image = $image;
+    }
+
+
     /**
      * Returns the salt that was originally used to encode the password.
      *
@@ -259,5 +299,6 @@ class User implements UserInterface
     {
         // TODO: Implement eraseCredentials() method.
         $this->plainPassword = null;
+        $this->image = null;
     }
 }

@@ -286,7 +286,13 @@ td, th {
     overflow: hidden;
     cursor: pointer
 }
-
+.btn-profile .photo {
+    width: 55px;
+    height: 55px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 2px #fff solid;
+}
 .btn-profile:active .dropdown, .btn-profile:focus .dropdown {
     -webkit-transform: translateY(20px);
     -ms-transform: translateY(20px);
@@ -2241,7 +2247,7 @@ li, ul {
 .container-detail-card .book-date .book-date-select div {
     border: 2px solid #9c97bc;
     border-radius: 4px;
-    width: 45%;
+    width: 47%;
     height: 40px;
     padding: 8px;
     cursor: pointer
@@ -3713,7 +3719,7 @@ li, ul {
     margin-left: 20px
 }
 
-.tabordion section > .tab:hover {
+.personal-info section > .tab:hover {
     background: #eaeaea
 }
 
@@ -3723,8 +3729,8 @@ li, ul {
     display: flex;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-    -ms-flex-direction: column;
-    flex-direction: column;
+    -ms-flex-direction: row;
+    flex-direction: row;
     -webkit-box-align: start;
     -ms-flex-align: start;
     align-items: flex-start;
@@ -3732,9 +3738,31 @@ li, ul {
     -ms-flex-pack: start;
     justify-content: flex-start
 }
-
+.personal-info_column {
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    width: 50%;
+    box-sizing: border-box;
+    padding-right: 20px;
+}
+.personal-info__image {
+    max-width: 300px;
+    display: flex;
+    margin: auto;
+}
 .personal-info__button {
     margin-top: 31px
+}
+.personal-info__button button {
+    display: block;
+}
+
+.personal-info__upload {
+    width: 250px;
 }
 
 .input-wrapper .input-container input {
@@ -3754,14 +3782,15 @@ li, ul {
     display: none;
     left: 230px;
     width: 79%;
-    min-height: 670px;
+    height: 670px;
     padding: 30px;
     margin: 38px 38px 0 0;
     position: absolute;
     text-align: left;
     top: 0;
     background: #fff;
-    border-radius: 10px
+    border-radius: 10px;
+    overflow-y: scroll;
 }
 
 .tabordion section article .title {

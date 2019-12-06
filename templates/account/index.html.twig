@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Мой аккаунт | ALTAI TRAVEL{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="container-wrapper">
+            <div class="tabordion">
+                <section id="section1">
+                    <input type="radio" name="sections" id="option1" checked="">
+                    <label for="option1" class="tab first">
+                        <i class="material-icons icon-account">account_circle</i>
+                        Личные данные
+                    </label>
+                    <article>
+                        <h2 class="title">Личные данные</h2>
+
+                        {{ form_start(form, {
+                            'method' : 'post',
+                            'action' : path('account'),
+                            'attr' : {
+                                'class' : 'personal-info',
+                                'role' : 'form'
+                            }
+                        }) }}
+                        <div class="personal-info_column">
+                            {% if form.name.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.name) }}</div>{% endif %}
+                            <div class="input-wrapper">
+                                <div class="input-container">
+                                    {{ form_widget(form.name, { 'attr': {'class': 'input', 'placeholder': 'Введите имя', 'pattern' : '.+'} }) }}
+                                    {{ form_label(form.name, 'Ваше Имя', {'label_attr': {'class': 'label'}}) }}
+                                </div>
+                            </div>
+
+                            {% if form.phone.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.phone) }}</div>{% endif %}
+                            <div class="input-wrapper">
+                                <div class="input-container">
+                                    {{ form_widget(form.phone, { 'attr': {'type' : 'tel','class': 'input', 'placeholder': 'Введите телефон', 'pattern' : '.+'} }) }}
+                                    {{ form_label(form.phone, 'Ваш телефон', {'label_attr': {'class': 'label'}}) }}
+                                </div>
+                            </div>
+
+                            {% if form.plainEditPassword.first.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.plainEditPassword.first) }}</div>{% endif %}
+                            <div class="input-wrapper">
+                                <div class="input-container">
+                                    {{ form_widget(form.plainEditPassword.first, { 'attr': {'class': 'input', 'placeholder': 'Введите новый пароль', 'pattern' : '.+'} }) }}
+                                    {{ form_label(form.plainEditPassword.first, 'Новый пароль', {'label_attr': {'class': 'label'}}) }}
+                                </div>
+                            </div>
+
+                            {% if form.plainEditPassword.second.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.plainEditPassword.second) }}</div>{% endif %}
+                            <div class="input-wrapper">
+                                <div class="input-container">
+                                    {{ form_widget(form.plainEditPassword.second, { 'attr': {'class': 'input', 'placeholder': 'Повторите пароль', 'pattern' : '.+'} }) }}
+                                    {{ form_label(form.plainEditPassword.second, 'Повторите пароль', {'label_attr': {'class': 'label'}}) }}
+                                </div>
+                            </div>
+
+                            <div class="personal-info__button">
+                                <button class="btn fill-gradient" type="submit" >
+                                    <span>Сохранить</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="personal-info_column">
+                            <img alt="logo" src="{% if app.user.photo is not null %} {{ app.user.photo }} {% else %} {{ asset('assets/img/no-logo.jpg') }} {% endif %}" class="personal-info__image">
+                            {% if form.image.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.image) }}</div>{% endif %}
+                            {{ form_label(form.image, 'Загрузить новую фотографию', {'label_attr': {'class': 'btn fill-gradient personal-info__upload'}}) }}
+                            {{ form_widget(form.image, { 'attr': {'class': 'input', 'style' : 'display: none'} }) }}
+                        </div>
+
+                        {{ form_end(form) }}
+                    </article>
+                </section>
+                {% if is_granted('ROLE_USER') or is_granted('ROLE_INSTRUCTOR') %}
+                <section id="section2">
+                    <input type="radio" name="sections" id="option2">
+                    <label for="option2" class="tab">
+                        <i class="material-icons icon-account">near_me</i>
+                        Мои туры
+                    </label>
+                    <article>
+                        <h2 class="title">Мои туры</h2>
+                        <div class="my-tour">
+                            {% if is_granted('ROLE_INSTRUCTOR') %}
+                                {% for instructors_tour in instructors_tours %}
+                                    <div class="my-tour__card">
+                                        <a href="{{ path('tour', {'id' : instructors_tour.route.id}) }}?tour={{ instructors_tour.id }}" class="my-tour__card--content">
+                                            <img src="{{ instructors_tour.route.logo | imagine_filter('my_tour_logo')}}" width="134" height="107">
+                                            <div class="tour-info">
+                                                <h1 class="tour-name">{{ instructors_tour.route.name }}</h1>
+                                                <p class="tour-date">
+                                                    <i class="material-icons icon-account">calendar_today</i>
+                                                    {{ instructors_tour.date |date("d.m") }} - {{ instructors_tour.date |date_modify("+#{instructors_tour.route.days} day")|date("d.m") }}
+                                                </p>
+                                                <h2 class="cost">{{ instructors_tour.price }} ₽</h2>
+                                            </div>
+                                        </a>
+                                        <div class="my-tour__card--button">
+                                            <a class="btn gradient-outline" href="{{ path('tour', {'id' : instructors_tour.route.id}) }}?tour={{ instructors_tour.id }}">
+                                                <span>Перейти к туру</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            {% elseif is_granted('ROLE_USER') %}
+                                {% for reservation in reservations %}
+                                    <div class="my-tour__card" data-tour="{{ reservation.tour.id }}" data-token="{{ csrf_token('tour_booking') }}">
+                                        <div class="my-tour__card--header">
+                                            <h2 class="card-title">Тур: {{ reservation.tour.id }}</h2>
+                                            <button class="link dark js-my-tour-unbook-button">Удалить бронирование</button>
+                                        </div>
+                                        <a href="{{ path('tour', {'id' : reservation.tour.route.id}) }}?tour={{ reservation.tour.id }}" class="my-tour__card--content">
+                                            <img src="{{ reservation.tour.route.logo | imagine_filter('my_tour_logo')}}" width="134" height="107">
+                                            <div class="tour-info">
+                                                <h1 class="tour-name">{{ reservation.tour.route.name }}</h1>
+                                                <p class="tour-date">
+                                                    <i class="material-icons icon-account">calendar_today</i>
+                                                    {{ reservation.tour.date |date("d.m") }} - {{ reservation.tour.date |date_modify("+#{reservation.tour.route.days} day")|date("d.m") }}
+                                                </p>
+                                                {% set sum = reservation.tour.price %}
+                                                {% for equipment_reservation in equipment_reservations %}
+                                                    {% if reservation.id == equipment_reservation.reservationTour.id %}
+                                                        {% set sum = sum + equipment_reservation.equipment.price * reservation.tour.route.days %}
+                                                    {% endif %}
+                                                {% endfor %}
+                                                <h2 class="cost">{{ sum }} ₽</h2>
+                                            </div>
+                                        </a>
+                                        <div class="my-tour__card--button">
+                                            <a class="btn gradient-outline" href="{{ path('tour', {'id' : reservation.tour.route.id}) }}?tour={{ reservation.tour.id }}">
+                                                <span>Перейти к туру</span>
+                                            </a>
+                                    </div>
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                        </div>
+                    </article>
+                </section>
+                {% endif %}
+                <section id="section3">
+                    <label class="tab">
+                        <i class="material-icons icon-account">cancel</i>
+                        <a href="{{ path('app_logout') }}" id="logout" class="link account">Выйти</a>
+                    </label>
+                </section>
+            </div>
+        </div>
+    </div>
+{% endblock %}

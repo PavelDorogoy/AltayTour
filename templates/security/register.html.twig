@@ -11,7 +11,7 @@
     {% if form_errors(form) is not null %}
         {{ form_errors(form) }}
     {% endif %}
-{{ form_errors(form) }}
+
     {% if form.name.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.name) }}</div>{% endif %}
     <div class="input-wrapper">
         <div class="input-container">

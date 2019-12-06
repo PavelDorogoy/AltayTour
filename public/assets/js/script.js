@@ -292,6 +292,34 @@ if(contentTourBlock.length) {
         }
     }
 }
+/*---------------------
+    Account routing
+---------------------*/
+if(window.location.pathname === "/account") {
+    let page = parseHref(window.location.href)['page'];
+    if(page === "mytour") {
+        $('#section2 input').prop('checked', true);
+    }
+}
+/*---------------------
+    Account | My tour cancel book
+---------------------*/
+$('.js-my-tour-unbook-button').on("click", function(e) {
+    let card = $(this).closest('.my-tour__card');
+    let data = {};
+    data['tour'] = card.attr('data-tour');
+    data['token'] = card.attr('data-token');
+    $.ajax({
+        type : 'POST',
+        url : '/tour-unbooking',
+        data : data,
+        success : function(response) {
+            if(response === 'unbooked') {
+                card.remove();
+            }
+        }
+    });
+});
 /* --------------------------
     parse get params
 -------------------------- */
