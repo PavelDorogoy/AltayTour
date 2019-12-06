@@ -17,7 +17,7 @@ class UserChangeType extends AbstractType
         $builder
             ->add('name')
             ->add('phone')
-            ->add('plainEditPassword', RepeatedType::class, [
+            ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class,
                 'required' => false
             ])
@@ -32,6 +32,7 @@ class UserChangeType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
+            'validation_groups' => ['Default', 'registration'],
         ]);
     }
 }

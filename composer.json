@@ -6,6 +6,7 @@
         "ext-ctype": "*",
         "ext-iconv": "*",
         "ext-intl": "*",
+        "easycorp/easyadmin-bundle": "^2.3",
         "fzaninotto/faker": "^1.9",
         "liip/imagine-bundle": "dev-master",
         "sensio/framework-extra-bundle": "^5.5",
@@ -26,7 +27,8 @@
         "symfony/twig-pack": "^1.0",
         "symfony/validator": "4.3.*",
         "symfony/yaml": "4.3.*",
-        "twig/extensions": "^1.5"
+        "twig/extensions": "^1.5",
+        "vich/uploader-bundle": "1.11.0"
     },
     "require-dev": {
         "symfony/profiler-pack": "^1.0"

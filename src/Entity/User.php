@@ -82,16 +82,12 @@ class User implements UserInterface
      */
     private $roles = [];
 
+
    /**
-     * @Assert\NotBlank()
+     * @Assert\NotBlank(groups={"registration"})
      * @Assert\Length(min=6)
      */
     private $plainPassword;
-
-    /**
-     * @Assert\Length(min=6)
-     */
-    private $plainEditPassword;
 
     /**
      * @Assert\Image(
@@ -103,6 +99,7 @@ class User implements UserInterface
      * )
      */
     private $image;
+
 
 
     public function getId(): ?int
@@ -238,18 +235,6 @@ class User implements UserInterface
     public function setPlainPassword(string $plainPassword): self
     {
         $this->plainPassword = $plainPassword;
-
-        return $this;
-    }
-
-    public function getPlainEditPassword(): ?string
-    {
-        return $this->plainEditPassword;
-    }
-
-    public function setPlainEditPassword(string $plainEditPassword): self
-    {
-        $this->plainEditPassword = $plainEditPassword;
 
         return $this;
     }

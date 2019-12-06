@@ -16,11 +16,11 @@ class UserRegisterType extends AbstractType
     {
         $builder
             ->add('email', EmailType::class)
+            ->add('name')
+            ->add('phone')
             ->add('plainPassword', RepeatedType::class, [
                 'type' => PasswordType::class
             ])
-            ->add('name')
-            ->add('phone')
         ;
     }
 

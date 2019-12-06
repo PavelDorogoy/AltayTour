@@ -40,19 +40,19 @@
                                 </div>
                             </div>
 
-                            {% if form.plainEditPassword.first.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.plainEditPassword.first) }}</div>{% endif %}
+                            {% if form.plainPassword.first.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.plainPassword.first) }}</div>{% endif %}
                             <div class="input-wrapper">
                                 <div class="input-container">
-                                    {{ form_widget(form.plainEditPassword.first, { 'attr': {'class': 'input', 'placeholder': 'Введите новый пароль', 'pattern' : '.+'} }) }}
-                                    {{ form_label(form.plainEditPassword.first, 'Новый пароль', {'label_attr': {'class': 'label'}}) }}
+                                    {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'input', 'placeholder': 'Введите новый пароль', 'pattern' : '.+'} }) }}
+                                    {{ form_label(form.plainPassword.first, 'Новый пароль', {'label_attr': {'class': 'label'}}) }}
                                 </div>
                             </div>
 
-                            {% if form.plainEditPassword.second.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.plainEditPassword.second) }}</div>{% endif %}
+                            {% if form.plainPassword.second.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.plainPassword.second) }}</div>{% endif %}
                             <div class="input-wrapper">
                                 <div class="input-container">
-                                    {{ form_widget(form.plainEditPassword.second, { 'attr': {'class': 'input', 'placeholder': 'Повторите пароль', 'pattern' : '.+'} }) }}
-                                    {{ form_label(form.plainEditPassword.second, 'Повторите пароль', {'label_attr': {'class': 'label'}}) }}
+                                    {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'input', 'placeholder': 'Повторите пароль', 'pattern' : '.+'} }) }}
+                                    {{ form_label(form.plainPassword.second, 'Повторите пароль', {'label_attr': {'class': 'label'}}) }}
                                 </div>
                             </div>
 

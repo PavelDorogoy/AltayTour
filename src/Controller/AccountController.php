@@ -37,8 +37,8 @@ class AccountController extends AbstractController
         $form = $this->createForm(UserChangeType::class, $user);
         $form->handleRequest($request);
         if($form->isSubmitted()) {
-            if($form->get("plainEditPassword")->isValid()) {
-                $password = $user->getPlainEditPassword();
+            if($form->get("plainPassword")->isValid()) {
+                $password = $user->getPlainPassword();
                 if(!empty($password)) {
                     $password = $passwordEncoder->encodePassword($user, $password);
                     $curUser->setPassword($password);
