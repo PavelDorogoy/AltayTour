@@ -108,4 +108,9 @@ class Tour
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->getRoute()->getName().":  ".$this->getDate()->format('d.m.Y');
+    }
 }

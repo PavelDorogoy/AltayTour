@@ -14,7 +14,7 @@
                     {% for key, tourist_route in tourist_routes %}
                         <a class="slide " href="/tours/{{ key }}"
                             {% if tourist_route.logo is not empty %}
-                                style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ tourist_route.logo }}) no-repeat 50%/cover;"
+                                style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ (path_upload_images ~ '/' ~ tourist_route.logo) | imagine_filter('tour_card') }}) no-repeat 50%/cover;"
                             {% endif %}
                         >
                             <div class="slide-icon snow"></div>

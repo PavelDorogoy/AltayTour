@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -33,6 +34,11 @@ class TourEquipment
      * @ORM\Column(type="integer")
      */
     private $count;
+
+    public function __construct()
+    {
+        $this->count = 1;
+    }
 
     public function getId(): ?int
     {

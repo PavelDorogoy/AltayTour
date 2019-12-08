@@ -1,5 +1,194 @@
 easy_admin:
+  site_name: 'Панель управления'
+  design:
+    menu:
+      - { label: 'Перейти на сайт', icon: 'home', url: '/' }
+      - { label: 'Пользователи', icon: 'user', children: ['UserAdmin','UserInstructor','UserCustomer'] }
+      - { label: 'Маршруты', icon: 'route', children: ['Route','RouteType','RoutePoint','RouteAlbum'] }
+      - { label: 'Туры', icon: 'calendar-alt', children: ['Tour','TourReservation', 'TourEquipment'] }
+      - { label: 'Снаряжение', icon: 'suitcase', children: ['Equipment','EquipmentReservation'] }
   entities:
-    User:
+    UserAdmin:
       class: App\Entity\User
-      label: 'Пользователи'
+      label: 'Администраторы'
+      form:
+        fields:
+          - { property: 'email', label: 'E-mail', type: 'email' }
+          - { property: 'name', label: 'Имя' }
+          - { property: 'phone', label: 'Телефон' }
+          - { property: 'imageFile', label: 'Фото', type: 'vich_image' }
+          - { property: 'isConfirmed', label: 'Подтверждение регистрации', type: 'checkbox' }
+          - { property: 'isActive', label: 'Активирован', type: 'checkbox' }
+          - { property: 'description', label: 'Описание', type: 'text_editor' }
+          - { property: 'roles', label: 'Роль', type: 'collection', type_options: { entry_type: 'choice', entry_options: { choices: {'Пользователь' : 'ROLE_USER', 'Инструктор':  'ROLE_INSTRUCTOR', 'Администратор': 'ROLE_ADMIN'}} } }
+      list:
+        dql_filter: "LOWER(entity.roles) LIKE '%%admin%%'"
+        fields:
+          - id
+          - { property: 'email', label: 'E-mail' }
+          - { property: 'name', label: 'Имя' }
+          - { property: 'phone', label: 'Телефон' }
+    UserInstructor:
+      class: App\Entity\User
+      label: 'Инструкторы'
+      form:
+        fields:
+          - { property: 'email', label: 'E-mail', type: 'email' }
+          - { property: 'name', label: 'Имя' }
+          - { property: 'phone', label: 'Телефон' }
+          - { property: 'imageFile', label: 'Фото', type: 'vich_image' }
+          - { property: 'isConfirmed', label: 'Подтверждение регистрации', type: 'checkbox' }
+          - { property: 'isActive', label: 'Активирован', type: 'checkbox' }
+          - { property: 'description', label: 'Описание', type: 'text_editor' }
+          - { property: 'roles', label: 'Роль', type: 'collection', type_options: { entry_type: 'choice', entry_options: { choices: {'Пользователь': 'ROLE_USER', 'Инструктор':  'ROLE_INSTRUCTOR', 'Администратор': 'ROLE_ADMIN'}} } }
+      list:
+        dql_filter: "LOWER(entity.roles) LIKE '%%instructor%%'"
+        fields:
+          - id
+          - { property: 'email', label: 'E-mail' }
+          - { property: 'name', label: 'Имя' }
+          - { property: 'phone', label: 'Телефон' }
+          - { property: 'photo', type: 'image', base_path: '%app.path.upload_images%', label: 'Фото' }
+          - { property: 'isActive', type: 'toggle', label: 'Активирован' }
+    UserCustomer:
+      class: App\Entity\User
+      label: 'Клиенты'
+      form:
+        fields:
+          - { property: 'email', label: 'E-mail', type: 'email' }
+          - { property: 'name', label: 'Имя' }
+          - { property: 'phone', label: 'Телефон' }
+          - { property: 'imageFile', label: 'Фото', type: 'vich_image' }
+          - { property: 'isConfirmed', label: 'Подтверждение регистрации', type: 'checkbox' }
+          - { property: 'isActive', label: 'Активирован', type: 'checkbox' }
+          - { property: 'description', label: 'Описание', type: 'text_editor' }
+          - { property: 'roles', label: 'Роль', type: 'collection', type_options: { entry_type: 'choice', entry_options: { choices: {'Пользователь': 'ROLE_USER', 'Инструктор':  'ROLE_INSTRUCTOR', 'Администратор': 'ROLE_ADMIN'}} } }
+      list:
+        dql_filter: "LOWER(entity.roles) LIKE '%%user%%'"
+        fields:
+          - id
+          - { property: 'email', label: 'E-mail' }
+          - { property: 'name', label: 'Имя' }
+          - { property: 'phone', label: 'Телефон' }
+          - { property: 'isConfirmed', type: 'toggle', label: 'Подтвержден' }
+    Route:
+      class: App\Entity\TouristRoute
+      label: 'Маршруты'
+      list:
+        fields:
+          - id
+          - { property: 'name', label: 'Имя' }
+          - { property: 'type', label: 'Тип' }
+          - { property: 'logo', label: 'Лого', base_path: '%app.path.upload_images%', type: 'image' }
+          - { property: 'days', label: 'Дней' }
+          - { property: 'distance', label: 'Км' }
+      form:
+        fields:
+          - { property: 'name', label: 'Имя' }
+          - { property: 'type', label: 'Тип' }
+          - { property: 'description', label: 'Описание'}
+          - { property: 'annotation', label: 'Аннотация'}
+          - { property: 'distance', label: 'Расстояние' }
+          - { property: 'days', label: 'Количество дней' }
+          - { property: 'imageFile', label: 'Логотип', type: 'vich_image' }
+          - { property: 'bgImageFile', label: 'Фон шапки', type: 'vich_image' }
+    RouteType:
+      class: App\Entity\TouristRouteType
+      label: 'Виды маршрутов'
+    RoutePoint:
+      class: App\Entity\TouristRoutePoint
+      label: 'Точки маршрутов'
+      list:
+        sort: 'route'
+        fields:
+          - id
+          - { property: 'route', label: 'Маршрут' }
+          - { property: 'day', label: 'День' }
+          - { property: 'description', label: 'Описание'}
+      form:
+        fields:
+          - { property: 'route', label: 'Маршрут' }
+          - { property: 'day', label: 'День' }
+          - { property: 'description', label: 'Описание'}
+    RouteAlbum:
+      class: App\Entity\TouristRoutePhotoAlbum
+      label: 'Фотоальбомы'
+      list:
+        fields:
+          - id
+          - { property: 'route', label: 'Маршрут' }
+          - { property: 'name', label: 'Наименование'}
+      form:
+        fields:
+          - { property: 'route', label: 'Маршрут' }
+          - { property: 'name', label: 'Наименование' }
+          - { property: 'images', label: 'Фотографии', type: 'collection', type_options: { entry_type: 'App\Form\ImageType' }}
+    Tour:
+      class: App\Entity\Tour
+      controller: App\Controller\Admin\TourAdminController
+      label: 'Туры'
+      list:
+        sort: 'route'
+        fields:
+          - id
+          - { property: 'date', label: 'Дата' }
+          - { property: 'route', label: 'Маршрут' }
+          - { property: 'instructor', label: 'Инструктор' }
+          - { property: 'price', label: 'Цена' }
+          - { property: 'count_person', label: 'Человек'}
+      form:
+        fields:
+          - { property: 'route', label: 'Маршрут' }
+          - { property: 'date', label: 'Дата' }
+          - { property: 'instructor' }
+          - { property: 'price', label: 'Цена' }
+          - { property: 'count_person', label: 'Количество человек', type: 'number' }
+    TourEquipment:
+      class: App\Entity\TourEquipment
+      label: 'Необходимое снаряжение'
+      list:
+        sort: 'tour'
+        fields:
+          - id
+          - { property: 'tour', label: 'Тур' }
+          - { property: 'equipment', label: 'Снаряжение' }
+      form:
+        fields:
+          - { property: 'tour', label: 'Тур' }
+          - { property: 'equipment', label: 'Снаряжение' }
+    TourReservation:
+      class: App\Entity\TourReservation
+      label: 'Бронирования'
+      list:
+        sort: 'tour'
+        fields:
+          - id
+          - { property: 'tour', label: 'Тур' }
+          - { property: 'user', label: 'Пользователь' }
+      form:
+        fields:
+          - { property: 'tour', label: 'Тур' }
+          - { property: 'user', label: 'Пользователь' }
+    Equipment:
+      class: App\Entity\Equipment
+      label: 'Снаряжение'
+      form:
+        fields:
+          - { property: 'name', label: 'Наименование' }
+          - { property: 'description', label: 'Описание'}
+          - { property: 'count', label: 'Кол-во в наличии'}
+          - { property: 'price', label: 'Стоимость аренды в день'}
+          - { property: 'imageFile', label: 'Иконка', type: 'vich_image' }
+    EquipmentReservation:
+      class: App\Entity\EquipmentReservation
+      label: 'Бронирование снаряжения'
+      list:
+        sort: 'reservation_tour'
+        fields:
+          - id
+          - { property: 'reservation_tour', label: 'Бронирование тура' }
+          - { property: 'equipment', label: 'Забронированное снаряжение' }
+      form:
+        fields:
+          - { property: 'reservation_tour', label: 'Бронирование тура' }
+          - { property: 'equipment', label: 'Забронированное снаряжение' }

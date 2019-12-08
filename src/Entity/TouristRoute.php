@@ -3,10 +3,14 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\Validator\Constraints as Assert;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TouristRouteRepository")
  * @ORM\Table(name="`routes`")
+ * @Vich\Uploadable
  */
 class TouristRoute
 {
@@ -62,6 +66,35 @@ class TouristRoute
      * @ORM\Column(type="integer", nullable=true)
      */
     private $rating;
+
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="upload_images", fileNameProperty="logo")
+     * @Assert\Image(
+     *     minWidth = 400,
+     *     minHeight = 400,
+     *     mimeTypes = {"image/jpeg", "image/jpg", "image/png"},
+     *     mimeTypesMessage = "Картинка должны быть в одном из форматов: JPEG, JPG, PNG",
+     *     maxSize = "5Mi"
+     * )
+     */
+    private $imageFile;
+    /**
+     * @var File
+     * @Vich\UploadableField(mapping="upload_images", fileNameProperty="bg_logo")
+     * @Assert\Image(
+     *     minWidth = 600,
+     *     minHeight = 400,
+     *     mimeTypes = {"image/jpeg", "image/jpg", "image/png"},
+     *     mimeTypesMessage = "Картинка должны быть в одном из форматов: JPEG, JPG, PNG",
+     *     maxSize = "10Mi"
+     * )
+     */
+    private $bgImageFile;
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
     public function getId(): ?int
     {
@@ -174,5 +207,52 @@ class TouristRoute
         $this->rating = $rating;
 
         return $this;
+    }
+
+    public function getImageFile(): ?File
+    {
+        return $this->imageFile;
+    }
+
+    public function setImageFile(File $imageFile): self
+    {
+        if ($imageFile) {
+            $this->updatedAt = new \DateTime('now');
+        }
+        $this->imageFile = $imageFile;
+
+        return $this;
+    }
+
+    public function getBgImageFile(): ?File
+    {
+        return $this->bgImageFile;
+    }
+
+    public function setBgImageFile(File $bgImageFile): self
+    {
+        if ($bgImageFile) {
+            $this->updatedAt = new \DateTime('now');
+        }
+        $this->bgImageFile = $bgImageFile;
+
+        return $this;
+    }
+
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

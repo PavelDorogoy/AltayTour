@@ -25,3 +25,9 @@ liip_imagine:
           filters:
             thumbnail: { size: [134, 107], mode: outbound }
             background: { size: [134, 107], position: center, color: '#fff' }
+        tour_card:
+          quality: 90
+          filters:
+            upscale: { min: [350, 550] }
+            thumbnail: { size: [350, 550], mode: outbound }
+            background: { size: [350, 550], position: center, color: '#fff' }

@@ -94,7 +94,6 @@ class TourController extends AbstractController
     }
 
     /**
-     * Param TouristRoute $touristRoute
      * @param TouristRoute $touristRoute
      * @return Response
      * @Route("/tours/{id}", name="tour")
@@ -152,7 +151,7 @@ class TourController extends AbstractController
         $photoAlbums = $repositoryPhotos->findBy( ['route' => $touristRouteID] );
         $photos = [];
         if(!empty($photoAlbums)) {
-            $photos = $photoAlbums[0]->getPhotosJSON();
+            $photos = $photoAlbums[0]->getImages();
         }
         //get day points
         $repositoryPoints = $this->getDoctrine()->getRepository(TouristRoutePoint::class);

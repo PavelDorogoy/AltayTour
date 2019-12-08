@@ -63,10 +63,10 @@
                             </div>
                         </div>
                         <div class="personal-info_column">
-                            <img alt="logo" src="{% if app.user.photo is not null %} {{ app.user.photo }} {% else %} {{ asset('assets/img/no-logo.jpg') }} {% endif %}" class="personal-info__image">
-                            {% if form.image.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.image) }}</div>{% endif %}
-                            {{ form_label(form.image, 'Загрузить новую фотографию', {'label_attr': {'class': 'btn fill-gradient personal-info__upload'}}) }}
-                            {{ form_widget(form.image, { 'attr': {'class': 'input', 'style' : 'display: none'} }) }}
+                            <img alt="logo" src="{% if app.user.photo is not null %} {{ path_upload_images ~ '/' ~ app.user.photo }} {% else %} {{ asset('assets/img/no-logo.jpg') }} {% endif %}" class="personal-info__image">
+                            {% if form.imageFile.vars.errors is not null %}<div class="input-errors">{{ form_errors(form.imageFile) }}</div>{% endif %}
+                            {{ form_label(form.imageFile, 'Загрузить новую фотографию', {'label_attr': {'class': 'btn fill-gradient personal-info__upload'}}) }}
+                            {{ form_widget(form.imageFile, { 'attr': {'class': 'input', 'style' : 'display: none'} }) }}
                         </div>
 
                         {{ form_end(form) }}
@@ -86,7 +86,7 @@
                                 {% for instructors_tour in instructors_tours %}
                                     <div class="my-tour__card">
                                         <a href="{{ path('tour', {'id' : instructors_tour.route.id}) }}?tour={{ instructors_tour.id }}" class="my-tour__card--content">
-                                            <img src="{{ instructors_tour.route.logo | imagine_filter('my_tour_logo')}}" width="134" height="107">
+                                            <img src="{{ (path_upload_images ~ '/' ~ instructors_tour.route.logo) | imagine_filter('my_tour_logo')}}" width="134" height="107">
                                             <div class="tour-info">
                                                 <h1 class="tour-name">{{ instructors_tour.route.name }}</h1>
                                                 <p class="tour-date">
@@ -111,7 +111,7 @@
                                             <button class="link dark js-my-tour-unbook-button">Удалить бронирование</button>
                                         </div>
                                         <a href="{{ path('tour', {'id' : reservation.tour.route.id}) }}?tour={{ reservation.tour.id }}" class="my-tour__card--content">
-                                            <img src="{{ reservation.tour.route.logo | imagine_filter('my_tour_logo')}}" width="134" height="107">
+                                            <img src="{{ (path_upload_images ~ '/' ~ reservation.tour.route.logo) | imagine_filter('my_tour_logo')}}" width="134" height="107">
                                             <div class="tour-info">
                                                 <h1 class="tour-name">{{ reservation.tour.route.name }}</h1>
                                                 <p class="tour-date">

@@ -57,4 +57,9 @@ class TourReservation
 
         return $this;
     }
+
+    public function __toString(): string
+    {
+        return $this->getTour()->getRoute()->getName().":  ".$this->getTour()->getDate()->format('d.m.Y').".  ".$this->getUser()->getName();
+    }
 }

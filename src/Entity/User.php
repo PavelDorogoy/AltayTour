@@ -7,12 +7,13 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
-
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @UniqueEntity(fields="email", message="Этот E-mail уже зарегистрирован")
  * @ORM\Table(name="`users`")
+ * @Vich\Uploadable
  */
 class User implements UserInterface
 {
@@ -43,7 +44,7 @@ class User implements UserInterface
     private $password;
 
     /**
-     *@ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255)
      */
     private $name;
 
@@ -90,6 +91,8 @@ class User implements UserInterface
     private $plainPassword;
 
     /**
+     * @var File
+     * @Vich\UploadableField(mapping="upload_images", fileNameProperty="photo")
      * @Assert\Image(
      *     minWidth = 200,
      *     minHeight = 200,
@@ -98,8 +101,12 @@ class User implements UserInterface
      *     maxSize = "5Mi"
      * )
      */
-    private $image;
+    private $imageFile;
 
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $updatedAt;
 
 
     public function getId(): ?int
@@ -198,6 +205,9 @@ class User implements UserInterface
 
     public function setIsConfirmed(bool $is_confirmed): self
     {
+        if($is_confirmed) {
+            $this->confirmationCode = "";
+        }
         $this->is_confirmed = $is_confirmed;
 
         return $this;
@@ -239,17 +249,35 @@ class User implements UserInterface
         return $this;
     }
 
-    public function getImage(): ?File
+    public function getImageFile(): ?File
     {
-        return $this->image;
+        return $this->imageFile;
     }
 
-    public function setImage(File $image): void
+    public function setImageFile(File $image): void
     {
-        $this->image = $image;
+        $this->imageFile = $image;
+        if ($image) {
+            $this->updatedAt = new \DateTime('now');
+        }
     }
 
+    public function getUpdatedAt(): ?\DateTimeInterface
+    {
+        return $this->updatedAt;
+    }
 
+    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
+    }
     /**
      * Returns the salt that was originally used to encode the password.
      *
@@ -284,6 +312,6 @@ class User implements UserInterface
     {
         // TODO: Implement eraseCredentials() method.
         $this->plainPassword = null;
-        $this->image = null;
+        $this->imageFile = null;
     }
 }

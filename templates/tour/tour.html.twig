@@ -8,7 +8,7 @@
         <div class="content-wrapper">
             <div class="content-header detail-rate"
                 {% if tourist_route.bgLogo is not empty %}
-                    style="background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url({{ tourist_route.bgLogo }}) top no-repeat/cover;"
+                    style="background: linear-gradient(90deg, rgba(49, 49, 49, .5), rgba(49, 49, 49, .5)), url({{ path_upload_images ~ '/' ~ tourist_route.bgLogo }}) top no-repeat/cover;"
                 {% endif %}
             >
                 <div class="content-header--logo">
@@ -36,14 +36,14 @@
                     {% for key, photo in photos %}
                         {% if (key == 0) %}
                             <div class="big">
-                                <a href="{{ photo }}" title="Gesh">
-                                    <img src="{{ photo | imagine_filter('big_slide')}}" width="374" height="374">
+                                <a href="{{ path_upload_images ~ '/' ~ photo.image }}" title="Gesh">
+                                    <img src="{{ (path_upload_images ~ '/' ~ photo.image) | imagine_filter('big_slide')}}" width="374" height="374">
                                 </a>
                             </div>
                         {% else %}
                         <div>
-                            <a href="{{ photo }}" title="Gesh">
-                                <img src="{{ photo | imagine_filter('small_slide')}}" width="185" height="185">
+                            <a href="{{ path_upload_images ~ '/' ~ photo.image }}" title="Gesh">
+                                <img src="{{ (path_upload_images ~ '/' ~ photo.image) | imagine_filter('small_slide')}}" width="185" height="185">
                             </a>
                         </div>
                         {% endif %}
@@ -79,7 +79,7 @@
                                 <input type="checkbox" id="equipment{{key1}}-tour{{ tour.id }}" data-equipmet-id="{{ tour_equipment.equipment.id }}" data-equipmet-price="{{ tour_equipment.equipment.price * tourist_route.days }}" {{ attribute(tour.equipment_reservations, tour_equipment.equipment.id) }}/>
                                 <label for="equipment{{key1}}-tour{{ tour.id }}">
                                     <div class="equipment-logo">
-                                        <img src="{{ asset( tour_equipment.equipment.logo ) }}" width="128" height="128"/>
+                                        <img src="{{ asset( path_upload_images ~ '/' ~ tour_equipment.equipment.logo ) }}" width="128" height="128"/>
                                     </div>
                                     <p class="equipment-title">{{ tour_equipment.equipment.name }}</p>
                                 </label>
@@ -119,7 +119,7 @@
                     <!-- Card -->
                     <div class="slide snow"
                         {% if tourist_route.logo is not empty %}
-                            style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ tourist_route.logo }}) no-repeat 50%/cover;"
+                            style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ (path_upload_images ~ '/' ~ tourist_route.logo) | imagine_filter('tour_card') }}) no-repeat 50%/cover;"
                         {% endif %}
                     >
                         <div class="slide-icon snow"></div>

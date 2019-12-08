@@ -34,6 +34,11 @@ class EquipmentReservation
      */
     private $count;
 
+    public function __construct()
+    {
+        $this->count = 1;
+    }
+
     public function getId(): ?int
     {
         return $this->id;

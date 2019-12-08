@@ -37,7 +37,7 @@
         {% for key, tourist_route in tourist_routes %}
         <a class="slide " href="/tours/{{ key }}"
             {% if tourist_route.logo is not empty %}
-                style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ tourist_route.logo }}) no-repeat 50%/cover;"
+                style="background: linear-gradient(90deg,rgba(49,49,49,.5),rgba(49,49,49,.5)),url({{ (path_upload_images ~ '/' ~ tourist_route.logo) | imagine_filter('tour_card') }}) no-repeat 50%/cover;"
             {% endif %}
         >
             <div class="slide-icon snow"></div>
@@ -68,12 +68,12 @@
     <div class="slider instructor">
         {% for key, instructor in instructors %}
         <!-- {{ key }} -->
-        <div class="slide instructor" style="background: linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.5)),url({{ instructor.photo }}) no-repeat 50%/cover;">
+        <div class="slide instructor" style="background: linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,.5)),url({{ path_upload_images ~ '/' ~ instructor.photo }}) no-repeat 50%/cover;">
             <div class="slide-instructor-name">
                 <p class="name">{{ instructor.name }}</p>
             </div>
             <div class="slide-instructor-list">
-                {{ instructor.description }}
+                {{ instructor.description | raw }}
             </div>
         </div>
         {% endfor %}

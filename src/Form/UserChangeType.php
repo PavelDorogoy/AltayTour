@@ -21,7 +21,7 @@ class UserChangeType extends AbstractType
                 'type' => PasswordType::class,
                 'required' => false
             ])
-            ->add('image', FileType::class, [
+            ->add('imageFile', FileType::class, [
                 'label' => 'Загрузите картинку',
                 'required' => false
             ])

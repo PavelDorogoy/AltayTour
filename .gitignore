@@ -15,3 +15,4 @@
 ###> uploads file ###
 /public/uploads/
 ###< uploads file ###
+bin.bat

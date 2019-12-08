@@ -113,12 +113,12 @@ class TouristRoutePoint
         return $this;
     }
 
-    public function getRouteId(): ?TouristRoute
+    public function getRoute(): ?TouristRoute
     {
         return $this->route;
     }
 
-    public function setRouteId(?TouristRoute $route): self
+    public function setRoute(?TouristRoute $route): self
     {
         $this->route = $route;
 

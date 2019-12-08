@@ -44,16 +44,15 @@ class AccountController extends AbstractController
                     $curUser->setPassword($password);
                 }
             }
-            if($form->get("image")->isValid()) {
-                $image = $user->getImage();
+            if($form->get("imageFile")->isValid()) {
+                $image = $user->getImageFile();
                 if(!empty($image)) {
                     $filesystem = new Filesystem();
                     $path = $this->getParameter('kernel.project_dir')."/public".$curUser->getPhoto();
                     $filesystem->remove($path);
 
-                    $pathPackage = new PathPackage('/uploads', new EmptyVersionStrategy());
-                    $imageFileName = $fileUploader->upload($image);
-                    $curUser->setPhoto($pathPackage->getUrl($imageFileName));
+                    $imageFileName = $fileUploader->upload($image, $this->getParameter('kernel.project_dir')."/public".$this->getParameter('app.path.upload_images'));
+                    $curUser->setPhoto($imageFileName);
                 }
             }
             if($form->get("name")->isValid()) {
