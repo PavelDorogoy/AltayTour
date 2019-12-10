@@ -2,34 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="839e6f08-0b6a-4ab0-bd5f-dc01bf3373de" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Controller/Admin/TourAdminController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/easy_admin.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/easy_admin.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/liip_imagine.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/twig.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/twig.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/packages/vich_uploader.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/AccountController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AccountController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/TourController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/TourController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Equipment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Equipment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/EquipmentReservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/EquipmentReservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Tour.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Tour.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TourEquipment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TourEquipment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TourReservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TourReservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TouristRoute.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TouristRoute.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TouristRoutePhotoAlbum.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TouristRoutePhotoAlbum.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TouristRoutePoint.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TouristRoutePoint.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/TouristRouteType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/TouristRouteType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Form/UserChangeType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Form/UserChangeType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Service/FileUploader.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/FileUploader.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Service/Mailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Service/Mailer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/account/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/account/index.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html.twig" afterDir="false" />
@@ -213,7 +189,8 @@
       <workItem from="1575525839396" duration="31223000" />
       <workItem from="1575616064988" duration="6598000" />
       <workItem from="1575705736028" duration="26477000" />
-      <workItem from="1575782375283" duration="26257000" />
+      <workItem from="1575782375283" duration="27366000" />
+      <workItem from="1576009812571" duration="2808000" />
     </task>
     <servers />
   </component>

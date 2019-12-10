@@ -14,7 +14,7 @@ use Twig\Error\SyntaxError;
 
 class Mailer
 {
-    public const FROM_ADDRESS = 'example@yandex.ru';
+    private $siteEmail = "";
 
     /**
      * @var Swift_Mailer
@@ -26,14 +26,10 @@ class Mailer
      */
     private $twig;
 
-    public function __construct(
-        Swift_Mailer $mailer,
-        Environment $twig
-
-    )  {
+    public function __construct($siteEmail, Swift_Mailer $mailer, Environment $twig)  {
+        $this->siteEmail = $siteEmail;
         $this->mailer = $mailer;
         $this->twig = $twig;
-
     }
 
     /**
@@ -53,7 +49,7 @@ class Mailer
         $message = new Swift_Message();
         $message
             ->setSubject('Вы успешно прошли регистрацию!')
-            ->setFrom(self::FROM_ADDRESS)
+            ->setFrom($this->siteEmail)
             ->setTo($user->getEmail())
             ->setBody($messageBody, 'text/html');
 
